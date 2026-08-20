@@ -11,7 +11,7 @@ Không thay đổi mục tiêu, phạm vi, thứ tự M/Phase, timeline, kiến 
 
 ## Quy trình
 
-1. Tạo ID tăng dần `CR-001`, `CR-002` trong Change Request Register; không tái sử dụng ID.
+1. Tạo ID tăng dần `CR-XXX`, `CR-YYY` trong Change Request Register; không tái sử dụng ID.
 2. Ghi nguồn phát sinh, vấn đề, đề xuất, lý do, phạm vi bị tác động và trạng thái ban đầu `PROPOSED`.
 3. Đánh giá impact theo checklist: ROADMAP/M/Phase, SRS/acceptance, Architecture/ADR, registry, dependency, chi phí, timeline, security/data, test/evidence và residual/debt.
 4. Ghi phương án thay thế và rủi ro của phương án không làm. Nếu thiếu dữ liệu, ghi `OPEN`, không tự đoán.
@@ -21,19 +21,15 @@ Không thay đổi mục tiêu, phạm vi, thứ tự M/Phase, timeline, kiến 
 
 ## Change Request Register
 
+The register starts empty for a new project. Add one row per approved or pending change; do not use this kernel repository as the project register.
+
 | ID | Mô tả ngắn | Nguồn | Artifact ảnh hưởng | Trạng thái | Decision | Ngày |
 |---|---|---|---|---|---|---|
-| CR-001 | Phê duyệt P0 machine state + evidence schema + traceability core + deterministic governance gate; đưa Adaptive Governance xuống P1 | User-approved backlog | ROADMAP, SRS, Architecture, registry, `.newera/`, `scripts/`, evidence/report | ACCEPTED | DEC-001 | 2026-08-20 |
+| CR-XXX | | | | PROPOSED | | |
 
-## CR-001 — Approved scope
+## Quy tắc source ownership
 
-- **Phạm vi P0:** machine-readable project state, evidence schema, traceability graph contract, STANDARD baseline và deterministic governance gate.
-- **Identity của NewEra:** traceability là core feature; mọi entity phải nối được tới nguồn/đích phù hợp.
-- **P1:** LITE/STRICT adaptive profiles sau khi STANDARD ổn định; change machine integration; impact analysis; verification matrix; risk register; deterministic drift detection trước semantic advisory.
-- **Ngoài phạm vi iteration này:** semantic code understanding hoàn chỉnh, tự động acceptance, production deployment và technology-specific adapter.
-- **Source of truth:** ROADMAP vẫn là nguồn sự thật cho M/Phase/scope/order; structured state sở hữu machine lifecycle/reference/edge; Markdown giữ narrative.
-- **Validation policy:** gate deterministic có thể FAIL technical governance; không được tự chuyển `ACCEPTED`.
-
+The NewEra repository defines the change-control method. A project adopting NewEra owns its own CR register and decision history in the project workspace.
 ## Mẫu change request
 
 ```markdown

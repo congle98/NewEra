@@ -8,6 +8,6 @@
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Review this NewEra documentation change for source-of-truth consistency, structured state/schema consistency when `.newera/` changes, status clarity, traceability IDs, ROADMAP impact and accidental scope expansion. Do not rewrite unrelated files."
+    "prompt": "Review this NewEra documentation change for source-of-truth consistency, status clarity, traceability IDs, ROADMAP impact and accidental scope expansion. Do not rewrite unrelated files."
   }
 }

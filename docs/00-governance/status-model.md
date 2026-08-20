@@ -48,13 +48,13 @@ Các giá trị sau không thay thế trạng thái vòng đời:
 | Intake/charter/SRS/setup | `INTAKE`, `CHARTER`, `SRS`, `SETUP` | `INTAKE-001`, `SRS-001` |
 | Use case/acceptance/security/performance/operations | `UC`, `AC`, `SEC`, `PERF`, `OPS` | `UC-001`, `AC-001` |
 | Requirement/business/data/integration/NFR | `REQ`, `BR`, `DATA`, `INT`, `NFR` | `REQ-001`, `NFR-001` |
-| Namespaced kernel quality attributes | `NFR-<PROJECT>` | `NFR-NEWERA-001` |
+| Namespaced kernel quality attributes | `NFR-<PROJECT>` | `NFR-<PROJECT>-001` |
 | Assumption/constraint/risk | `ASM`, `CON`, `RISK` | `ASM-001` |
 | Research/question | `RES` | `RES-001` |
-| Milestone/Phase/task/test | `M`, `P`, `TASK`, `TEST`, `TASK-<PROJECT>`, `TEST-<PROJECT>` | `M01-P01`, `TASK-M01-P01-001`, `TASK-NEWERA-DOC-001` |
-| Evidence/checkpoint/report | `EVD`, `CHK`, `RPT`, `EVD-<PROJECT>`, `CHK-<PROJECT>` | `EVD-M01-P01`, `CHK-M01-P01`, `EVD-NEWERA-DOCS-001` |
-| Blocker/risk/issue | `BLOCKER`, `RISK`, `ENV-ISSUE` | `BLOCKER-M01-P01-001` |
-| Change/decision/architecture | `CR`, `DEC`, `ADR` | `CR-001`, `DEC-001`, `ADR-001` |
+| Milestone/Phase/task/test | `M`, `P`, `TASK`, `TEST`, `TASK-<PROJECT>`, `TEST-<PROJECT>` | `<M>-<P>`, `TASK-<M>-<P>-001`, `TASK-<PROJECT>-001` |
+| Evidence/checkpoint/report | `EVD`, `CHK`, `RPT`, `EVD-<PROJECT>`, `CHK-<PROJECT>` | `EVD-<M>-<P>`, `CHK-<M>-<P>` |
+| Blocker/risk/issue | `BLOCKER`, `RISK`, `ENV-ISSUE` | `BLOCKER-<M>-<P>-001` |
+| Change/decision/architecture | `CR`, `DEC`, `ADR` | `CR-XXX`, `DEC-XXX`, `ADR-XXX` |
 | Environment/service/dependency/action | `ENV-SVC`, `ENV-DEP`, `ACTION` | `ENV-SVC-001`, `ENV-DEP-001` |
 | Component/residual/debt | `C`, `RESID`, `DEBT` | `C-001`, `RESID-NEWERA-001`, `DEBT-NEWERA-001` |
 

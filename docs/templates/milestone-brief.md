@@ -57,6 +57,6 @@
 - Phase report sau mỗi Phase:
 - Milestone report:
 - Quyết định cần người dùng:
-- M01.x cần thiết nếu có residual:
+- <M-ID>.x cần thiết nếu có residual:
 
 M không được chuyển `READY` chỉ vì brief đã tạo; phải kiểm tra các gap và status trong ROADMAP.

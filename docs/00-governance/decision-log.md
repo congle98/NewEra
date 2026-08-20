@@ -4,14 +4,12 @@ Decision Log là lịch sử quyết định có ảnh hưởng đến scope, ar
 
 | ID | Ngày | Quyết định | Bối cảnh | Ảnh hưởng | Người/role | Trạng thái |
 |---|---|---|---|---|---|---|
-| DEC-000 | 2026-08-20 | Đề xuất dùng NewEra v0.1 làm baseline quy trình | Cần một kernel có governance, traceability, verification và acceptance tách biệt | Áp dụng cấu trúc tài liệu, automation và triết lý hiện tại; chưa xác nhận nghiệm thu cuối | Chưa ghi nhận | PROPOSED |
-| DEC-001 | 2026-08-20 | Chấp thuận backlog P0/P1 và kiến trúc machine-readable foundation | Markdown hiện phục vụ con người nhưng gate/traceability cần contract máy đọc được | M01 triển khai state/evidence/traceability/gate; STANDARD là baseline; adaptive/impact/drift/risk nâng lên P1 | User | ACCEPTED |
+| DEC-XXX | | | | | | PROPOSED |
 
-`DEC-000` chỉ ghi nhận baseline đã được tạo trong repository; `PROPOSED` là cố ý vì chưa có record người/role nghiệm thu. `DEC-001` là quyết định phạm vi/kiến trúc của iteration, không phải acceptance sản phẩm.
-
+The NewEra repository provides the decision-log format. A project adopting NewEra owns the actual decision records and acceptance decisions in its own workspace.
 ## Quy tắc
 
-1. ID tăng dần `DEC-001`, `DEC-002` và không tái sử dụng.
+1. ID tăng dần `DEC-XXX`, `DEC-YYY` và không tái sử dụng.
 2. Quyết định lớn phải liên kết tới CR, ADR, requirement hoặc research liên quan.
 3. `ACCEPTED` ở Decision Log nghĩa là quyết định đã được thông qua, không đồng nghĩa M/Phase đã nghiệm thu.
 4. Khi quyết định bị thay thế, giữ bản cũ ở `SUPERSEDED`, ghi ID quyết định thay thế và không xóa lịch sử.

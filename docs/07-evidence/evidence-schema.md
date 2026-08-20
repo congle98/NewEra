@@ -1,51 +1,51 @@
 # Evidence Schema Guide
 
-P0 dùng hai lớp evidence có cùng ID:
+Evidence là bằng chứng kiểm chứng kỹ thuật của **project sử dụng NewEra**. NewEra kernel chỉ cung cấp quy tắc và template; không lưu evidence của chính kernel.
 
-1. **Machine envelope:** `.newera/evidence/EVD-*.json`, dùng cho validator/graph/gate.
-2. **Human narrative:** `docs/07-evidence/EVD-*.md`, dùng giải thích context, output dài, limitation và review.
+## Hai lớp evidence tùy chọn
 
-Không copy toàn bộ nội dung giữa hai lớp. JSON là owner cho metadata máy đọc; Markdown link về JSON và diễn giải kết quả.
+1. **Machine envelope:** đặt trong thư mục machine state của project khi structured mode được bật.
+2. **Human narrative:** đặt trong thư mục evidence canonical của project.
 
-## Required machine fields
+Hai lớp dùng cùng ID nhưng không copy mù nội dung. Machine envelope sở hữu metadata/result; Markdown sở hữu context, interpretation, output dài và limitations.
+
+## Required fields đề xuất
 
 | Field | Ý nghĩa | Rule |
 |---|---|---|
-| `schemaVersion` | Version envelope | Hiện tại là `1` |
-| `id` | Evidence ID | `EVD-*`, trùng state reference |
-| `scope` | M/Phase hoặc kernel scope | Không rỗng |
-| `requirementRefs` | Requirements được chứng minh | Ít nhất một ID |
-| `testRefs` | Checks/kịch bản | Ít nhất một ID |
-| `type` | static/unit/integration/e2e/security/product/gate/review | Enum |
+| `schemaVersion` | Version envelope | Tăng version khi breaking change |
+| `id` | Evidence ID | Ổn định, truy nguyên được |
+| `scope` | M/Phase/requirement scope | Không rỗng |
+| `requirementRefs` | Requirements được chứng minh | Có ít nhất một ID khi áp dụng |
+| `testRefs` | Checks/kịch bản | Có lệnh hoặc kịch bản tái chạy |
 | `command` | Cách tái chạy | Không ghi “đã test” chung chung |
-| `expected`/`actual` | Kết quả có thể đối chiếu | Không rỗng |
+| `expected` / `actual` | Kết quả đối chiếu | Ghi đủ để review |
 | `result` | Kết luận kỹ thuật | `VERIFIED`, `PARTIAL`, `FAILED`, `BLOCKED`, `NOT_RUN` |
-| `commitRef` | Version/worktree | Git SHA hoặc `WORKTREE@SHA` |
+| `commitRef` | Version/worktree | SHA hoặc reference rõ |
 | `timestamp` | Thời điểm | ISO-8601 |
 | `environment` | OS/tool/runtime | Không chứa secret |
 | `acceptanceStatus` | Acceptance riêng | Mặc định `NOT_ACCEPTED` |
-| `limitations` | Phần chưa chứng minh | Array, có thể rỗng khi đầy đủ |
+| `limitations` | Phần chưa chứng minh | Ghi rõ residual/blocker |
 
 ## Status semantics
 
-`PASS`/`FAIL` là kết quả của từng test row; `result` là kết luận evidence-level. Evidence `VERIFIED` không tạo `ACCEPTED`. `NOT_RUN` được gate mặc định cảnh báo và strict gate chặn trước checkpoint.
+`PASS`/`FAIL` là kết quả của một check; `result` là kết luận evidence-level. `VERIFIED` không tạo `ACCEPTED`. `NOT_RUN` không được dùng làm cơ sở chuyển `VERIFIED`.
 
-## Human Markdown template
+## Template narrative
 
 ```markdown
-# EVD-<...>
-- Machine envelope: `.newera/evidence/EVD-<...>.json`
+# EVD-<PROJECT>-<M>-<P>
+- Scope:
 - Requirement IDs:
 - Test IDs:
 - Commit/worktree:
-- Verification status:
+- Verification status: NOT_RUN
 - Acceptance status: NOT_ACCEPTED
 
+## Command and expected result
+## Actual output and artifacts
 ## Interpretation
-## Output and artifacts
-## Limitations/residual/blocker
+## Limitations / residual / blocker
 ```
 
-## Migration
-
-Khi field schema thay đổi, tạo schema version mới và evidence migration note. Không sửa evidence cũ để thay đổi lịch sử kết quả.
+Evidence cũ không sửa để thay đổi lịch sử. Khi scope hoặc commit thay đổi, tạo revision/evidence mới theo policy của project.

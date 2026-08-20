@@ -1,35 +1,17 @@
 # Verification Evidence
 
-Evidence chứng minh các kiểm tra kỹ thuật đã được thực hiện. Evidence không tự động là nghiệm thu sản phẩm.
+Evidence chứng minh các kiểm tra kỹ thuật đã được thực hiện trong một project sử dụng NewEra. Evidence không tự động là nghiệm thu sản phẩm và NewEra kernel không lưu evidence của chính nó.
 
-## Canonical location
+Mỗi evidence của project cần có:
 
-- Evidence của Phase: `docs/07-evidence/EVD-<M>-<P>.md`.
-- Evidence của baseline/kernel: `docs/07-evidence/EVD-NEWERA-*.md`.
-- Checkpoint là artifact review riêng; không dùng checkpoint thay cho evidence.
+- ID;
+- M/Phase/requirement liên quan;
+- commit hoặc worktree reference;
+- môi trường;
+- lệnh/kịch bản đã chạy;
+- expected và actual output;
+- kết quả và timestamp;
+- phần chưa kiểm chứng, residual hoặc blocker;
+- acceptance status tách riêng.
 
-## Required fields
-
-Mỗi evidence cần có:
-
-- ID và scope/M/Phase/requirement liên quan;
-- task/test IDs và commit hoặc worktree reference;
-- môi trường, agent/operator và timestamp;
-- command/kịch bản có thể tái chạy;
-- expected, actual/output summary, status và artifact path;
-- limitations, `NOT_APPLICABLE` reason, residual và blocker;
-- acceptance status rõ ràng là `NOT_ACCEPTED` nếu chưa có quyết định.
-
-## Machine evidence
-
-Evidence Phase có hai lớp: `.newera/evidence/EVD-*.json` là envelope máy đọc và `docs/07-evidence/EVD-*.md` là narrative con người. Hai lớp dùng cùng ID; JSON sở hữu metadata/result, Markdown sở hữu context/interpretation. Gate kiểm tra envelope trước checkpoint.
-
-Machine evidence vẫn do `.newera/evidence/*.json` sở hữu metadata/result. P1 impact và matrix là projection đọc từ state/graph, không tạo evidence hoặc acceptance; drift detector chỉ trả kết quả scope deterministic và semantic advisory non-blocking.
-
-## Evidence lifecycle
-
-1. Tạo từ test plan trước hoặc trong verification.
-2. Ghi kết quả nguyên văn hoặc summary đủ tái lập, không chỉ ghi “pass”.
-3. Link vào traceability, checkpoint và report.
-4. Không sửa evidence cũ để đổi lịch sử; tạo revision/evidence mới khi scope hoặc commit thay đổi.
-5. Evidence chỉ kết luận `VERIFIED`, `PARTIAL`, `FAILED`, `BLOCKED` hoặc `NOT_RUN`; `PASS`/`FAIL` chỉ là kết quả của từng check. Acceptance nằm ở acceptance policy.
+Dùng `docs/templates/verification-evidence.md` hoặc `docs/07-evidence/evidence-schema.md` làm hướng dẫn. Không tạo file `EVD-*` trong kernel chỉ để chứng minh kernel đã được review.
