@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "id": "NEWERA",
+    "status": "IN_PROGRESS",
+    "governanceProfile": "STANDARD",
+    "roadmapPath": "docs/02-roadmap/roadmap.md"
+  },
+  "documents": [
+    {"id": "DOC-ROADMAP", "role": "roadmap", "path": "docs/02-roadmap/roadmap.md", "status": "VERIFIED"},
+    {"id": "DOC-SRS", "role": "srs", "path": "docs/03-requirements/srs.md", "status": "VERIFIED"},
+    {"id": "DOC-ARCH", "role": "architecture", "path": "docs/04-architecture/architecture.md", "status": "VERIFIED"},
+    {"id": "DOC-TASK", "role": "task", "path": "docs/06-execution/README.md", "status": "VERIFIED"},
+    {"id": "DOC-TEST", "role": "test", "path": "docs/templates/test-plan.md", "status": "VERIFIED"},
+    {"id": "DOC-EVIDENCE", "role": "evidence", "path": "docs/07-evidence/README.md", "status": "VERIFIED"},
+    {"id": "DOC-ACCEPTANCE", "role": "acceptance", "path": "docs/03-requirements/acceptance-policy.md", "status": "VERIFIED"}
+  ],
+  "milestones": [
+    {"id": "M01", "status": "IN_PROGRESS", "phaseIds": ["M01-P01", "M01-P02"]},
+    {"id": "M02", "status": "DRAFT", "phaseIds": []}
+  ],
+  "phases": [
+    {"id": "M01-P01", "milestoneId": "M01", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002", "REQ-NEWERA-P0-003"], "taskIds": ["TASK-NEWERA-P01-001", "TASK-NEWERA-P01-002"], "testIds": ["TEST-NEWERA-P01-001", "TEST-NEWERA-P01-002"], "evidenceIds": ["EVD-NEWERA-P0-001"]},
+    {"id": "M01-P02", "milestoneId": "M01", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-004", "REQ-NEWERA-P0-005"], "taskIds": ["TASK-NEWERA-P02-001", "TASK-NEWERA-P02-002"], "testIds": ["TEST-NEWERA-P02-001", "TEST-NEWERA-P02-002"], "evidenceIds": ["EVD-NEWERA-P0-001"]}
+  ],
+  "requirements": [
+    {"id": "REQ-NEWERA-P0-001", "status": "VERIFIED", "acceptanceCriteriaIds": ["AC-NEWERA-P0-001", "AC-NEWERA-P0-002"], "srsRef": "SRS-NEWERA-P0-001", "architectureRefs": ["ARCH-NEWERA-AUTO-001"]},
+    {"id": "REQ-NEWERA-P0-002", "status": "VERIFIED", "acceptanceCriteriaIds": ["AC-NEWERA-P0-003", "AC-NEWERA-P0-004"], "srsRef": "SRS-NEWERA-P0-002", "architectureRefs": ["ARCH-NEWERA-AUTO-001"]},
+    {"id": "REQ-NEWERA-P0-003", "status": "VERIFIED", "acceptanceCriteriaIds": ["AC-NEWERA-P0-005", "AC-NEWERA-P0-006"], "srsRef": "SRS-NEWERA-P0-003", "architectureRefs": ["ARCH-NEWERA-AUTO-001"]},
+    {"id": "REQ-NEWERA-P0-004", "status": "VERIFIED", "acceptanceCriteriaIds": ["AC-NEWERA-P0-007", "AC-NEWERA-P0-008"], "srsRef": "SRS-NEWERA-P0-004", "architectureRefs": ["ARCH-NEWERA-AUTO-002"]},
+    {"id": "REQ-NEWERA-P0-005", "status": "VERIFIED", "acceptanceCriteriaIds": ["AC-NEWERA-P0-009"], "srsRef": "SRS-NEWERA-P0-005", "architectureRefs": ["ARCH-NEWERA-AUTO-002"]},
+    {"id": "REQ-NEWERA-P1-001", "status": "DRAFT", "acceptanceCriteriaIds": ["AC-NEWERA-P1-001"], "srsRef": "SRS-NEWERA-P1-001", "architectureRefs": ["ARCH-NEWERA-P1-001"]},
+    {"id": "REQ-NEWERA-P1-002", "status": "DRAFT", "acceptanceCriteriaIds": ["AC-NEWERA-P1-002"], "srsRef": "SRS-NEWERA-P1-002", "architectureRefs": ["ARCH-NEWERA-P1-001"]},
+    {"id": "REQ-NEWERA-P1-003", "status": "DRAFT", "acceptanceCriteriaIds": ["AC-NEWERA-P1-003"], "srsRef": "SRS-NEWERA-P1-003", "architectureRefs": ["ARCH-NEWERA-P1-002"]},
+    {"id": "REQ-NEWERA-P1-004", "status": "DRAFT", "acceptanceCriteriaIds": ["AC-NEWERA-P1-004"], "srsRef": "SRS-NEWERA-P1-004", "architectureRefs": ["ARCH-NEWERA-P1-003"]},
+    {"id": "REQ-NEWERA-P1-005", "status": "DRAFT", "acceptanceCriteriaIds": ["AC-NEWERA-P1-005"], "srsRef": "SRS-NEWERA-P1-005", "architectureRefs": ["ARCH-NEWERA-P1-004"]}
+  ],
+  "tasks": [
+    {"id": "TASK-NEWERA-P01-001", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002", "REQ-NEWERA-P0-003"], "testIds": ["TEST-NEWERA-P01-001"]},
+    {"id": "TASK-NEWERA-P01-002", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002", "REQ-NEWERA-P0-003"], "testIds": ["TEST-NEWERA-P01-002"]},
+    {"id": "TASK-NEWERA-P02-001", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-004"], "testIds": ["TEST-NEWERA-P02-001"]},
+    {"id": "TASK-NEWERA-P02-002", "status": "VERIFIED", "requirementIds": ["REQ-NEWERA-P0-004", "REQ-NEWERA-P0-005"], "testIds": ["TEST-NEWERA-P02-002"]}
+  ],
+  "tests": [
+    {"id": "TEST-NEWERA-P01-001", "status": "VERIFIED", "type": "static", "requirementIds": ["REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002"], "taskIds": ["TASK-NEWERA-P01-001"], "evidenceIds": ["EVD-NEWERA-P0-001"]},
+    {"id": "TEST-NEWERA-P01-002", "status": "VERIFIED", "type": "gate", "requirementIds": ["REQ-NEWERA-P0-003"], "taskIds": ["TASK-NEWERA-P01-002"], "evidenceIds": ["EVD-NEWERA-P0-001"]},
+    {"id": "TEST-NEWERA-P02-001", "status": "VERIFIED", "type": "gate", "requirementIds": ["REQ-NEWERA-P0-004"], "taskIds": ["TASK-NEWERA-P02-001"], "evidenceIds": ["EVD-NEWERA-P0-001"]},
+    {"id": "TEST-NEWERA-P02-002", "status": "VERIFIED", "type": "gate", "requirementIds": ["REQ-NEWERA-P0-005"], "taskIds": ["TASK-NEWERA-P02-002"], "evidenceIds": ["EVD-NEWERA-P0-001"]}
+  ],
+  "evidence": [
+    {"id": "EVD-NEWERA-P0-001", "path": ".newera/evidence/EVD-NEWERA-P0-001.json", "status": "VERIFIED", "acceptanceStatus": "NOT_ACCEPTED"}
+  ],
+  "risks": [
+    {"id": "RISK-NEWERA-P1-001", "status": "DEFERRED", "severity": "MEDIUM", "probability": "MEDIUM", "impact": "HIGH", "mitigation": "Giữ P1 sau STANDARD stable; không mở rộng P0 gate ngoài contract.", "requirementIds": ["REQ-NEWERA-P1-004"], "taskIds": []}
+  ],
+  "changes": [
+    {"id": "CR-001", "status": "ACCEPTED", "affectedIds": ["M01", "REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002", "REQ-NEWERA-P0-003", "REQ-NEWERA-P0-004", "REQ-NEWERA-P0-005"], "decisionRef": "DEC-001"}
+  ],
+  "traceability": [
+    {"source": "REQ-NEWERA-P0-001", "target": "SRS-NEWERA-P0-001", "type": "specified-by"},
+    {"source": "REQ-NEWERA-P0-002", "target": "SRS-NEWERA-P0-002", "type": "specified-by"},
+    {"source": "REQ-NEWERA-P0-003", "target": "SRS-NEWERA-P0-003", "type": "specified-by"},
+    {"source": "REQ-NEWERA-P0-004", "target": "SRS-NEWERA-P0-004", "type": "specified-by"},
+    {"source": "REQ-NEWERA-P0-005", "target": "SRS-NEWERA-P0-005", "type": "specified-by"},
+    {"source": "REQ-NEWERA-P0-001", "target": "TASK-NEWERA-P01-001", "type": "planned-in"},
+    {"source": "REQ-NEWERA-P0-002", "target": "TASK-NEWERA-P01-002", "type": "planned-in"},
+    {"source": "REQ-NEWERA-P0-003", "target": "TASK-NEWERA-P01-002", "type": "planned-in"},
+    {"source": "REQ-NEWERA-P0-004", "target": "TASK-NEWERA-P02-001", "type": "planned-in"},
+    {"source": "REQ-NEWERA-P0-005", "target": "TASK-NEWERA-P02-002", "type": "planned-in"},
+    {"source": "TASK-NEWERA-P01-001", "target": "TEST-NEWERA-P01-001", "type": "verified-by"},
+    {"source": "TASK-NEWERA-P01-002", "target": "TEST-NEWERA-P01-002", "type": "verified-by"},
+    {"source": "TASK-NEWERA-P02-001", "target": "TEST-NEWERA-P02-001", "type": "verified-by"},
+    {"source": "TASK-NEWERA-P02-002", "target": "TEST-NEWERA-P02-002", "type": "verified-by"},
+    {"source": "TEST-NEWERA-P01-001", "target": "EVD-NEWERA-P0-001", "type": "evidenced-by"},
+    {"source": "TEST-NEWERA-P01-002", "target": "EVD-NEWERA-P0-001", "type": "evidenced-by"},
+    {"source": "TEST-NEWERA-P02-001", "target": "EVD-NEWERA-P0-001", "type": "evidenced-by"},
+    {"source": "TEST-NEWERA-P02-002", "target": "EVD-NEWERA-P0-001", "type": "evidenced-by"}
+  ],
+  "acceptance": {"status": "NOT_ACCEPTED", "decisionRef": null}
+}

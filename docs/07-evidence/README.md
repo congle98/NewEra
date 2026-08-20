@@ -20,6 +20,12 @@ Mỗi evidence cần có:
 - limitations, `NOT_APPLICABLE` reason, residual và blocker;
 - acceptance status rõ ràng là `NOT_ACCEPTED` nếu chưa có quyết định.
 
+## Machine evidence
+
+Evidence Phase có hai lớp: `.newera/evidence/EVD-*.json` là envelope máy đọc và `docs/07-evidence/EVD-*.md` là narrative con người. Hai lớp dùng cùng ID; JSON sở hữu metadata/result, Markdown sở hữu context/interpretation. Gate kiểm tra envelope trước checkpoint.
+
+Machine evidence vẫn do `.newera/evidence/*.json` sở hữu metadata/result. P1 impact và matrix là projection đọc từ state/graph, không tạo evidence hoặc acceptance; drift detector chỉ trả kết quả scope deterministic và semantic advisory non-blocking.
+
 ## Evidence lifecycle
 
 1. Tạo từ test plan trước hoặc trong verification.

@@ -7,6 +7,6 @@
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Run the NewEra verification workflow for the selected M or Phase. Read the relevant test-plan, execute applicable checks, create evidence, update traceability and report blockers. Do not convert verification into acceptance."
+    "prompt": "Before reviewing the selected M or Phase, run `python3 scripts/newera_validate.py --state .newera/project-state.json`. If the checkpoint is imminent, also run the `--strict` form. Then read the relevant test-plan, execute applicable checks, create evidence, update traceability and report blockers. A gate FAIL must be fixed, recorded or moved to BLOCKED/residual. Do not convert verification into acceptance."
   }
 }

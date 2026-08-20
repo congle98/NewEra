@@ -4,62 +4,66 @@
 
 ## Tầm nhìn sản phẩm
 
-Chưa xác định. Đây là trạng thái trung thực hiện tại của intake, không phải lời mời tự suy đoán. ROADMAP chỉ được chuyển sang `READY` sau khi project intake, charter và các câu hỏi ảnh hưởng scope đã được làm rõ hoặc ghi thành `ASM`/`RES` có owner và cách xử lý.
+NewEra trở thành process kernel có thể đọc/ghi/kiểm tra bằng máy, trong khi Markdown vẫn phục vụ narrative, review và quyết định của con người. Traceability là capability nhận diện của NewEra; governance gate bảo vệ quy trình nhưng không thay thế acceptance.
 
 ## Quy tắc phân cấp
 
 ```text
-M = kết quả lớn có ý nghĩa với sản phẩm
+M = kết quả lớn có ý nghĩa với sản phẩm/kernel
 Phase = khối triển khai có thể kiểm chứng độc lập
 Task = công việc cụ thể có output và tiêu chí hoàn thành
 ```
 
-Phân chia theo giá trị sản phẩm và khả năng kiểm chứng, không chia theo lớp kỹ thuật. Một Phase có thể chứa code, test và tài liệu; không tạo M chỉ vì có thêm một module kỹ thuật.
+Phân chia theo giá trị và khả năng kiểm chứng, không chia theo lớp kỹ thuật. Không tạo M chỉ vì có thêm một module kỹ thuật.
 
 ## Milestone Index
 
 | M | Tên | Mục tiêu | Phase | Dependency | Trạng thái | Readiness gap |
 |---|---|---|---|---|---|---|
-| M01 | Chưa xác định | Chưa xác định | P01 (placeholder) | Intake, charter, SRS và architecture | DRAFT | Chưa có outcome, scope, acceptance criteria và Phase thực tế |
+| M01 | Governance Automation Foundation | State, evidence, traceability, STANDARD baseline và deterministic gate | M01-P01, M01-P02 | CR-001/DEC-001, current Markdown contracts | IN_PROGRESS | P0 evidence/gate verification và documentation còn đang chạy |
+| M02 | Adaptive and Impact Governance | Profiles LITE/STRICT, impact analysis, matrix, risk và drift detection | M02-P01..P04 | M01 STANDARD stable, dogfood evidence | DRAFT | Chưa bắt đầu; cần P0 graph/state trước |
 
-M01/P01 là dòng khung hiện có, chưa phải cam kết triển khai. Không tạo task hoặc claim completion dựa trên dòng này cho tới khi điền đầy đủ milestone brief và được cập nhật qua change control nếu phạm vi thay đổi.
+## M01 — Governance Automation Foundation
 
-## Hợp đồng tối thiểu của một M
+### M01-P01 — Machine State, Evidence Schema và Traceability Core
 
-Mỗi M phải có: outcome đo được, in-scope/out-of-scope, Phase theo thứ tự, dependency, rủi ro có owner, acceptance criteria, tài liệu registry cần kích hoạt và điều kiện chuyển tiếp. M chỉ có thể đi từ `DRAFT` sang `READY` khi các trường này không còn `Chưa xác định` ở phần ảnh hưởng trực tiếp.
+- **Mục tiêu:** tạo structured state/evidence contract và graph references cho automation.
+- **Phạm vi:** `.newera/project-state.json`, JSON schemas, evidence envelope, state/profile contract, traceability edges.
+- **Ngoài phạm vi:** semantic code graph, tự động acceptance, YAML dependency bắt buộc.
+- **Tiêu chí hoàn thành:** schema parse được; state references resolve; evidence có required fields; Markdown/state ownership policy được ghi.
+- **Trạng thái:** IN_PROGRESS.
 
-## Hợp đồng tối thiểu của một Phase
+### M01-P02 — STANDARD Automated Governance Gate
 
-Phase phải có requirements với ID, task có output/dependency/status, test-plan với expected result, environment reference, checkpoint, evidence, report và residual/debt. Phase hoàn tất kỹ thuật ở `VERIFIED`; khi cần người xem xét thì `CHECKPOINT_PENDING`; không dùng `ACCEPTED` nếu chưa có quyết định nghiệm thu.
+- **Mục tiêu:** validator deterministic phát hiện thiếu requirement/test/evidence/reference và scope/status conflict.
+- **Phạm vi:** `scripts/newera_validate.py`, STANDARD profile, PASS/WARN/FAIL, strict mode, invalid fixture.
+- **Ngoài phạm vi:** semantic drift detection, adaptive profile switching runtime, auto-acceptance.
+- **Tiêu chí hoàn thành:** valid state không có structural error; incomplete state WARN; strict/inconsistent state FAIL; exit code ổn định.
+- **Trạng thái:** IN_PROGRESS.
+
+## M02 — Adaptive and Impact Governance (P1)
+
+| Phase | Mục tiêu | Dependency | Trạng thái |
+|---|---|---|---|
+| M02-P01 | Machine-integrated change management và requirement version diff | M01 state/graph | DRAFT |
+| M02-P02 | Change impact analysis và generated verification matrix | M01 traceability graph | DRAFT |
+| M02-P03 | Risk register, risk graph và LITE/STRICT profile enforcement | M01 STANDARD stable | DRAFT |
+| M02-P04 | Deterministic scope drift detection, sau đó semantic advisory | M01 gate + M02 graph | DRAFT |
+
+## Hợp đồng tối thiểu của một M/Phase
+
+Mỗi M phải có outcome đo được, in/out scope, Phase theo thứ tự, dependency, risk có owner, acceptance criteria, registry và điều kiện chuyển tiếp. M01 P0 còn `IN_PROGRESS`; không gọi là `VERIFIED` hay `ACCEPTED` chỉ vì validator đã chạy.
+
+Mỗi Phase phải có requirements với ID, task có output/dependency/status, test-plan, state/evidence references, checkpoint, report và residual/debt. Gate FAIL chặn technical progression; acceptance vẫn do người/role quyết định.
 
 ## Quy trình cập nhật ROADMAP
 
-1. Đọc intake, charter, SRS, architecture và dependency hiện tại.
-2. Khi phát sinh scope/architecture/timeline mới, tạo CR trước; không sửa trực tiếp để hợp thức hóa việc đã làm.
-3. Sau quyết định, cập nhật ROADMAP trước khi cập nhật Phase/Task/implementation.
-4. Đồng bộ `milestone-index.md`, traceability, registry và report liên quan.
-5. Ghi `changed by`, ngày, CR/DEC liên quan trong commit/changelog hoặc decision record.
-
-## Template milestone
-
-```markdown
-## MXX - Tên milestone
-- Mục tiêu:
-- Kết quả sản phẩm đo được:
-- Phạm vi:
-- Ngoài phạm vi:
-- Phase và thứ tự:
-- Dependency:
-- Rủi ro / owner / mitigation:
-- Requirement và acceptance criteria:
-- Tài liệu registry cần kích hoạt:
-- Tiêu chí bắt đầu (DoR):
-- Tiêu chí hoàn thành (DoD):
-- Dự kiến:
-- CR/Decision liên quan:
-- Trạng thái: DRAFT | READY | IN_PROGRESS | VERIFIED | CHECKPOINT_PENDING | ACCEPTED | BLOCKED | DEFERRED | REJECTED
-```
+1. Đọc intake/charter, SRS, architecture, state contract và dependency.
+2. Scope/architecture/timeline mới phải có CR trước.
+3. Sau quyết định, cập nhật ROADMAP trước Phase/Task/implementation.
+4. Đồng bộ milestone-index, registry, state, traceability, evidence và report.
+5. Ghi CR/DEC trong commit/changelog hoặc decision record.
 
 ## Quy tắc thay đổi
 
-Thay đổi ROADMAP phải đi qua `docs/00-governance/change-control.md` và ghi Decision Log nếu là quyết định lớn. Phase không được tự ý mở rộng phạm vi. Residual hoặc `M01.x` chỉ trả nợ mục tiêu cũ; tính năng mới phải là CR và xuất hiện trong ROADMAP.
+Thay đổi ROADMAP phải đi qua `docs/00-governance/change-control.md`. Adaptive Governance, impact analysis, risk, matrix và drift detection là P1; không triển khai chúng bằng cách nới lỏng P0 gate. Residual/M01.x chỉ trả nợ mục tiêu cũ; feature mới phải qua CR và vào ROADMAP.

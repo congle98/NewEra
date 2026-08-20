@@ -5,8 +5,9 @@ Decision Log là lịch sử quyết định có ảnh hưởng đến scope, ar
 | ID | Ngày | Quyết định | Bối cảnh | Ảnh hưởng | Người/role | Trạng thái |
 |---|---|---|---|---|---|---|
 | DEC-000 | 2026-08-20 | Đề xuất dùng NewEra v0.1 làm baseline quy trình | Cần một kernel có governance, traceability, verification và acceptance tách biệt | Áp dụng cấu trúc tài liệu, automation và triết lý hiện tại; chưa xác nhận nghiệm thu cuối | Chưa ghi nhận | PROPOSED |
+| DEC-001 | 2026-08-20 | Chấp thuận backlog P0/P1 và kiến trúc machine-readable foundation | Markdown hiện phục vụ con người nhưng gate/traceability cần contract máy đọc được | M01 triển khai state/evidence/traceability/gate; STANDARD là baseline; adaptive/impact/drift/risk nâng lên P1 | User | ACCEPTED |
 
-`DEC-000` chỉ ghi nhận baseline đã được tạo trong repository; `PROPOSED` là cố ý vì chưa có record người/role nghiệm thu. Không dùng dòng này để suy ra sản phẩm đã được accepted.
+`DEC-000` chỉ ghi nhận baseline đã được tạo trong repository; `PROPOSED` là cố ý vì chưa có record người/role nghiệm thu. `DEC-001` là quyết định phạm vi/kiến trúc của iteration, không phải acceptance sản phẩm.
 
 ## Quy tắc
 

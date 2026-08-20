@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "EVD-NEWERA-P0-001",
+  "scope": "M01-P01/M01-P02 P0 foundation",
+  "requirementRefs": ["REQ-NEWERA-P0-001", "REQ-NEWERA-P0-002", "REQ-NEWERA-P0-003", "REQ-NEWERA-P0-004", "REQ-NEWERA-P0-005"],
+  "testRefs": ["TEST-NEWERA-P01-001", "TEST-NEWERA-P01-002", "TEST-NEWERA-P02-001", "TEST-NEWERA-P02-002"],
+  "type": "gate",
+  "command": "python3 scripts/newera_validate.py --state .newera/project-state.json --strict",
+  "expected": "State, evidence envelope, references and STANDARD governance requirements validate without errors.",
+  "actual": "JSON_PARSE_PASS files=6; invalid fixture exit 1 with missing requirement/evidence errors; final strict gate PASS.",
+  "result": "VERIFIED",
+  "commitRef": "WORKTREE@bac0f04",
+  "timestamp": "2026-08-20T20:43:51+07:00",
+  "environment": {"os": "linux", "tools": {"python": "3.14.4", "git": "2.53.0"}},
+  "acceptanceStatus": "NOT_ACCEPTED",
+  "limitations": ["Kiro hook runtime dogfood is not yet verified.", "P1 adaptive/impact/risk/drift features are not implemented in this P0 scope."]
+}

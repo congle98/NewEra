@@ -44,3 +44,12 @@ Với kernel baseline (không có M/Phase sản phẩm), checkpoint là `docs/08
 - Trạng thái kỹ thuật là `VERIFIED` hoặc `PARTIAL/FAILED/BLOCKED` đúng bằng chứng; không tự đánh dấu `ACCEPTED`.
 
 Dùng template trong `docs/templates/`. Không đánh dấu M/Phase hoàn tất nếu thiếu report, evidence hoặc residual work.
+
+## P0/P1 machine governance
+
+- P0 requirements hiện hành được định nghĩa trong `REQ-NEWERA-P0-*` và machine state.
+- Gate kiểm tra requirement criteria, task/test/evidence links, profile required roles, ID/status và typed edges.
+- `STANDARD` là profile active; `LITE`/`STRICT` là contract để P1 enforce theo mức rủi ro sau khi STANDARD stable.
+- P1 groundwork đã có machine `changes[]`/`risks[]`, requirement version diff, graph impact traversal, generated matrix và deterministic drift command; M02 vẫn `DRAFT` cho tới khi có phase evidence/checkpoint riêng.
+- P1 tools không duy trì state ngoài graph: impact/matrix chỉ đọc state; drift chỉ trả exit code deterministic; semantic tier advisory.
+

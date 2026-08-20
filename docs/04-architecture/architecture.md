@@ -86,3 +86,40 @@ Các quyết định kỹ thuật có ảnh hưởng dài hạn đặt trong `do
 - Không nhúng autonomy policy hoặc thay thế chính sách an toàn của Kiro/model.
 - Không coi hook chạy thành công là nghiệm thu sản phẩm.
 - Project-specific architecture vẫn `OPEN` cho tới khi intake và SRS cung cấp dữ liệu; đây là giới hạn có chủ ý, không phải thiếu sót cần che giấu.
+
+## 10. Automation contract và machine state
+
+P0 bổ sung machine-readable state/evidence nhưng không tạo nguồn sự thật kép:
+
+- ROADMAP Markdown giữ scope, M/Phase và thứ tự.
+- `.newera/project-state.json` giữ lifecycle, reference và traceability edge.
+- `.newera/evidence/*.json` giữ evidence metadata/result.
+- Markdown giữ narrative, context, decision và human-readable report.
+- `scripts/newera_validate.py` kiểm tra schema-level consistency và profile rules.
+
+### Thành phần P0
+
+| Component | Trách nhiệm | Artifact | Status |
+|---|---|---|---|
+| C-009 State Contract | Versioned project state và lifecycle | `.newera/schemas/project-state.schema.json` | IN_PROGRESS |
+| C-010 Evidence Contract | Machine evidence envelope | `.newera/schemas/evidence.schema.json` | IN_PROGRESS |
+| C-011 Traceability Graph | Entity refs và typed edges | `.newera/project-state.json` | IN_PROGRESS |
+| C-012 Governance Gate | Deterministic validation, WARN/FAIL/strict | `scripts/newera_validate.py` | IN_PROGRESS |
+| C-013 Profile Contract | STANDARD baseline; LITE/STRICT P1 | `.newera/governance-profiles.json` | IN_PROGRESS |
+
+Gate không được tự tạo acceptance; hook/agent chỉ có thể gọi hoặc giải thích gate result.
+
+## 11. P1 boundary và groundwork
+
+Adaptive Governance, machine-integrated change management, impact analysis, generated verification matrix, risk graph và drift detection dùng state/graph/gate P0 làm dependency; không nới lỏng P0 gate. M02 vẫn `DRAFT` cho tới khi từng Phase có requirements/task/test-plan/evidence/checkpoint/report riêng.
+
+Đã triển khai groundwork technology-neutral:
+
+- `changes[]` trong machine state nối CR với affected IDs và decision reference; version diff đầy đủ vẫn là M02-P01 residual.
+- `risks[]` trong machine state giữ severity/probability/impact/mitigation và requirement links; risk graph/profile enforcement đầy đủ vẫn là M02-P03.
+- `newera_change.py` tạo requirement version diff read-only cho Change Control; kết quả không tự ghi state hoặc acceptance.
+- `newera_impact.py` traverse downstream typed edges.
+- `newera_matrix.py` sinh projection requirement → test type → evidence.
+- `newera_drift.py` chạy deterministic ID/path scope trước; `--semantic-advisory` chỉ ghi `ADVISORY_NOT_RUN` và không block.
+
+Các script không cập nhật state và không tạo acceptance. Semantic drift chỉ được mở rộng sau khi deterministic rules có evidence về precision/override policy.

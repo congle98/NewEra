@@ -13,19 +13,22 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 7. Khi thiếu dữ liệu quan trọng, ghi rõ `BLOCKED`, `OPEN` hoặc `ASSUMED`; không trình bày giả định như sự thật.
 8. Mỗi Phase phải có requirements, task, test-plan, verification evidence và report.
 9. Mỗi M phải có milestone brief, milestone report và danh sách residual work.
-10. Sau thay đổi logic, phải cập nhật test và tài liệu liên quan.
-11. Sau đơn vị công việc logic đạt điều kiện, tạo Git commit mô tả được thay đổi.
-12. Không lưu secret, token, mật khẩu hoặc dữ liệu cá nhân thật trong repository.
-13. Chính sách an toàn và quyền thực thi của model/Kiro là lớp kiểm soát bên ngoài; NewEra không sao chép hoặc thay thế chính sách đó.
+10. Mọi Phase có structured state/evidence reference phải chạy `python3 scripts/newera_validate.py`; gate FAIL phải được sửa, ghi nhận hoặc chuyển BLOCKED/residual trước checkpoint.
+11. Structured state/evidence là machine contract; không lưu secret và không tự chuyển acceptance.
+12. Sau thay đổi logic, phải cập nhật test và tài liệu liên quan.
+13. Sau đơn vị công việc logic đạt điều kiện, tạo Git commit mô tả được thay đổi.
+14. Không lưu secret, token, mật khẩu hoặc dữ liệu cá nhân thật trong repository.
+15. Chính sách an toàn và quyền thực thi của model/Kiro là lớp kiểm soát bên ngoài; NewEra không sao chép hoặc thay thế chính sách đó.
 
 ## Thứ tự đọc
 
 1. File này và `README.md`/`GUIDE.md` để hiểu mục đích.
 2. `docs/00-governance/status-model.md` để dùng đúng vocabulary/ID.
 3. `docs/00-governance/git-policy.md`, `document-registry.md`, `change-control.md` và `decision-log.md`.
-4. `docs/02-roadmap/roadmap.md` và `milestone-index.md`.
-5. SRS, acceptance policy, traceability, Architecture và environment.
-6. Tài liệu của M/Phase đang thực hiện.
+4. `docs/00-governance/automation-contract.md` và `.newera/` khi Phase có structured reference.
+5. `docs/02-roadmap/roadmap.md` và `milestone-index.md`.
+6. SRS, acceptance policy, traceability, Architecture và environment.
+7. Tài liệu của M/Phase đang thực hiện.
 
 ## Khi kết thúc công việc
 

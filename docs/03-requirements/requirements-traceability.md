@@ -1,42 +1,43 @@
 # Requirements Traceability
 
-Bảng này là đường đi hai chiều từ ý định sản phẩm tới bằng chứng. Mỗi requirement trong SRS phải đi xuống được ROADMAP → Phase → Task → Test → Evidence; khi có kết quả, evidence phải truy ngược được về acceptance criteria cụ thể.
+Traceability là capability nhận diện của NewEra. Markdown matrix phục vụ human review; `.newera/project-state.json` giữ machine lifecycle/reference/typed edge. Không duy trì hai quan hệ độc lập: nếu mismatch, gate FAIL.
 
-## Ma trận product requirements hiện tại
+## P0 matrix
 
-| Requirement | ROADMAP/M | Phase | Task | Test | Evidence | Acceptance criteria | Status | Gap/next action |
-|---|---|---|---|---|---|---|---|---|
-| REQ-001 | Chưa xác định | Chưa xác định | Chưa tạo | Chưa tạo | Chưa tạo | Chưa xác định | DRAFT | Hoàn thiện intake/charter trước |
-
-Dòng `REQ-001` hiện là placeholder từ SRS, không phải bằng chứng rằng M01/P01 đã tồn tại hoặc đã kiểm chứng. Khi có requirement thật, thay nội dung bằng ID ổn định và giữ lịch sử trong diff.
-
-## Ma trận quality attributes của kernel
-
-Các dòng dưới đây là quality attributes trong Architecture, không tạo M/Phase sản phẩm mới. Vì ROADMAP hiện chưa có project scope, cột M/Phase ghi rõ `Không có`; evidence hiện chỉ kiểm chứng static documentation contract.
-
-| Requirement/NFR | ROADMAP/M | Phase | Task | Test | Evidence | Status | Gap/next action |
+| Requirement | SRS | Architecture | ROADMAP/Phase | Task | Test | Evidence | Status |
 |---|---|---|---|---|---|---|---|
-| NFR-NEWERA-001 Traceability | Kernel baseline (không có M) | Không có | TASK-NEWERA-DOC-001 | TEST-NEWERA-DOCS-002/003 | EVD-NEWERA-DOCS-001 | PARTIAL | Dogfood project để kiểm tra traceability end-to-end |
-| NFR-NEWERA-002 Auditability | Kernel baseline (không có M) | Không có | TASK-NEWERA-DOC-001 | TEST-NEWERA-DOCS-003/005 | EVD-NEWERA-DOCS-001 | PARTIAL | Giữ evidence/decision/CR theo commit |
-| NFR-NEWERA-003 Technology neutrality | Kernel baseline (không có M) | Không có | TASK-NEWERA-DOC-001 | TEST-NEWERA-DOCS-004 | EVD-NEWERA-DOCS-001 | VERIFIED | Re-check khi project con kích hoạt adapter |
-| NFR-NEWERA-004 Honest status | Kernel baseline (không có M) | Không có | TASK-NEWERA-DOC-001 | TEST-NEWERA-DOCS-004 | EVD-NEWERA-DOCS-001 | VERIFIED | Acceptance vẫn chờ người/role |
-| NFR-NEWERA-005 Operability | Kernel baseline (không có M) | Không có | TASK-NEWERA-DOC-001 | TEST-NEWERA-DOCS-001/006 | EVD-NEWERA-DOCS-001 | PARTIAL | Runtime Kiro dogfood còn residual |
+| REQ-NEWERA-P0-001 | SRS-NEWERA-P0-001 | ARCH-NEWERA-AUTO-001 | M01-P01 | TASK-NEWERA-P01-001/002 | TEST-NEWERA-P01-001/002 | EVD-NEWERA-P0-001 | IN_PROGRESS |
+| REQ-NEWERA-P0-002 | SRS-NEWERA-P0-002 | ARCH-NEWERA-AUTO-001 | M01-P01 | TASK-NEWERA-P01-001/002 | TEST-NEWERA-P01-001 | EVD-NEWERA-P0-001 | IN_PROGRESS |
+| REQ-NEWERA-P0-003 | SRS-NEWERA-P0-003 | ARCH-NEWERA-AUTO-001 | M01-P01 | TASK-NEWERA-P01-002 | TEST-NEWERA-P01-002 | EVD-NEWERA-P0-001 | IN_PROGRESS |
+| REQ-NEWERA-P0-004 | SRS-NEWERA-P0-004 | ARCH-NEWERA-AUTO-002 | M01-P02 | TASK-NEWERA-P02-001/002 | TEST-NEWERA-P02-001 | EVD-NEWERA-P0-001 | IN_PROGRESS |
+| REQ-NEWERA-P0-005 | SRS-NEWERA-P0-005 | ARCH-NEWERA-AUTO-002 | M01-P02 | TASK-NEWERA-P02-002 | TEST-NEWERA-P02-002 | EVD-NEWERA-P0-001 | IN_PROGRESS |
 
-## Quy tắc cập nhật
+## Typed graph edges
 
-1. Không tạo mapping tới M/Phase chưa có trong ROADMAP. `Kernel baseline (không có M)` ở bảng quality attributes là context, không phải M mới.
-2. Một requirement có nhiều acceptance criteria phải có thể truy ngược từng criteria; có thể dùng cột `Criteria ID` hoặc tách dòng.
-3. Test phải nêu được loại check và command/kịch bản; `PASS` là kết quả test, không phải acceptance.
-4. Evidence phải có ID, commit/worktree reference, environment, timestamp, expected, actual và limitations.
-5. Requirement chỉ được `VERIFIED` khi mọi criteria bắt buộc đã có evidence đạt hoặc có ngoại lệ được ghi rõ trong Decision Log.
-6. Requirement chỉ được `ACCEPTED` sau quyết định nghiệm thu của người/role có thẩm quyền; bảng này không tự tạo acceptance.
-7. Nếu một requirement bị đổi, tạo CR khi đổi nghĩa/scope; không sửa ID để che lịch sử.
+| Source | Type | Target | Owner |
+|---|---|---|---|
+| REQ-NEWERA-P0-* | specified-by | SRS-NEWERA-P0-* | State + SRS |
+| REQ-NEWERA-P0-* | architected-by | ARCH-NEWERA-AUTO-* | State + Architecture |
+| REQ-NEWERA-P0-* | planned-in | TASK-NEWERA-* | State + Phase task |
+| TASK-NEWERA-* | verified-by | TEST-NEWERA-* | State + test plan |
+| TEST-NEWERA-* | evidenced-by | EVD-NEWERA-P0-001 | State + evidence envelope |
+| EVD-NEWERA-P0-001 | accepted-by | DEC-/acceptance decision | Future human decision |
 
-## Các trạng thái truy nguyên
+## P1 backlog traceability
 
-- `DRAFT/OPEN`: chưa đủ dữ liệu hoặc chưa có mapping.
-- `IN_PROGRESS`: đang thực hiện task liên quan.
-- `VERIFIED`: criteria kỹ thuật đạt, có evidence.
-- `PARTIAL`: chỉ một phần criteria đạt; phần còn lại phải là residual/blocker.
-- `BLOCKED`: không thể kiểm chứng vì dependency/quyền/dữ liệu.
-- `ACCEPTED`: chỉ sau nghiệm thu, không suy ra từ `VERIFIED`.
+| Requirement | Future capability | Dependency | Status |
+|---|---|---|---|
+| REQ-NEWERA-P1-001 | Adaptive LITE/STRICT | STANDARD stable | DRAFT |
+| REQ-NEWERA-P1-002 | Machine change management | State/graph | DRAFT |
+| REQ-NEWERA-P1-003 | Impact analysis + verification matrix | Graph | DRAFT |
+| REQ-NEWERA-P1-004 | Risk register/graph | State/profile | DRAFT |
+| REQ-NEWERA-P1-005 | Deterministic then semantic drift detection | Gate/graph | DRAFT |
+
+## Quy tắc
+
+1. Requirement thật phải có SRS, Architecture reference khi cần, M/Phase, task, test và evidence reference.
+2. Task không có requirement hoặc test, test không có evidence và evidence không có requirement là governance failure.
+3. `PASS`/`FAIL` là check-level; evidence-level dùng `VERIFIED`/`PARTIAL`/`FAILED`/`BLOCKED`/`NOT_RUN`.
+4. Git commit/worktree là version reference; acceptance là decision riêng, không suy ra từ graph edge.
+5. Không map P1 vào M01 P0 nếu chưa có CR/ROADMAP update.
+6. Graph projection có thể được sinh từ state; không sửa tay projection để che mismatch.
