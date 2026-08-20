@@ -1,0 +1,13 @@
+{
+  "name": "Review NewEra Documentation Changes",
+  "version": "1.0.0",
+  "description": "Nhắc kiểm tra truy nguyên khi tài liệu NewEra thay đổi.",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["AGENTS.md", "docs/**/*.md", ".kiro/steering/*.md", ".kiro/skills/**/SKILL.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review this NewEra documentation change for source-of-truth consistency, status clarity, traceability IDs, ROADMAP impact and accidental scope expansion. Do not rewrite unrelated files."
+  }
+}

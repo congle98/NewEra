@@ -1,0 +1,12 @@
+{
+  "name": "Run NewEra Verification Review",
+  "version": "1.0.0",
+  "description": "Chạy review kiểm chứng khi người dùng kích hoạt thủ công.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run the NewEra verification workflow for the selected M or Phase. Read the relevant test-plan, execute applicable checks, create evidence, update traceability and report blockers. Do not convert verification into acceptance."
+  }
+}

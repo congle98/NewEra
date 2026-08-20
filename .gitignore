@@ -1,0 +1,23 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime/build output
+node_modules/
+dist/
+build/
+coverage/
+.pytest_cache/
+__pycache__/
+.venv/
+
+# Local IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

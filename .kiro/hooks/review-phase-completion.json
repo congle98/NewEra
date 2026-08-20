@@ -1,0 +1,12 @@
+{
+  "name": "Review NewEra Phase Completion",
+  "version": "1.0.0",
+  "description": "Kiểm tra evidence, report, residual work và trạng thái nghiệm thu sau khi task kết thúc.",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the completed NewEra task. Check requirements, task status, tests, evidence, report, residual work, commit and acceptance status. Keep CHECKPOINT_PENDING distinct from ACCEPTED and report any missing artifact. Do not mark acceptance automatically."
+  }
+}
