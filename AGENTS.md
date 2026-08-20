@@ -13,10 +13,11 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 7. Khi thiếu dữ liệu quan trọng, ghi rõ `BLOCKED`, `OPEN` hoặc `ASSUMED`; không trình bày giả định như sự thật.
 8. Mỗi Phase phải có requirements, task, test-plan, verification evidence và report.
 9. Mỗi M phải có milestone brief, milestone report và danh sách residual work.
-10. Sau thay đổi logic, phải cập nhật test và tài liệu liên quan.
-11. Sau đơn vị công việc logic đạt điều kiện, tạo Git commit mô tả được thay đổi.
-12. Không lưu secret, token, mật khẩu hoặc dữ liệu cá nhân thật trong repository.
-13. Chính sách an toàn và quyền thực thi của model/Kiro là lớp kiểm soát bên ngoài; NewEra không sao chép hoặc thay thế chính sách đó.
+10. Repository NewEra chỉ giữ kernel, guidance và templates; không tự tạo M/Phase/evidence/report/status của chính kernel nếu chưa có project scope riêng.
+11. Sau thay đổi logic, phải cập nhật test và tài liệu liên quan.
+12. Sau đơn vị công việc logic đạt điều kiện, tạo Git commit mô tả được thay đổi.
+13. Không lưu secret, token, mật khẩu hoặc dữ liệu cá nhân thật trong repository.
+14. Chính sách an toàn và quyền thực thi của model/Kiro là lớp kiểm soát bên ngoài; NewEra không sao chép hoặc thay thế chính sách đó.
 
 ## Thứ tự đọc
 

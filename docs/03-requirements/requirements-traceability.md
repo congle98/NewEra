@@ -2,7 +2,7 @@
 
 | Requirement | ROADMAP | Phase | Task | Test | Evidence | Status |
 |---|---|---|---|---|---|---|
-| REQ-001 | M01 | M01-P01 | TASK-001 | TEST-001 | EVD-001 | DRAFT |
+| REQ-XXX | <M-ID> | <M-ID>-<P-ID> | TASK-XXX | TEST-XXX | EVD-XXX | DRAFT |
 
 ## Luật
 

@@ -18,7 +18,7 @@ Task = công việc cụ thể
 
 | M | Tên | Mục tiêu | Phase | Trạng thái |
 |---|---|---|---|---|
-| M01 | Chưa xác định | Chưa xác định | P01 | DRAFT |
+| <M-ID> | Chưa xác định | Chưa xác định | <P-ID> | DRAFT |
 
 ## Template milestone
 

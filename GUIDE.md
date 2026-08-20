@@ -53,7 +53,7 @@ NewEra không định nghĩa quyền hạn của AI. Quyền thực thi và chí
 | Môi trường và lệnh | `docs/05-environment/environment-manifest.md` |
 | Hồ sơ M/Phase đang làm | `docs/06-execution/<M>/` |
 | Bằng chứng kiểm chứng | `docs/07-evidence/` |
-| Việc còn nợ | `docs/08-reports/residual-work.md` |
+| Việc còn nợ | `docs/templates/residual-work.md` và bản project trong `docs/08-reports/` |
 | Template mọi loại | `docs/templates/` |
 | Prompt gốc | `docs/prompts/` |
 
@@ -69,13 +69,13 @@ NewEra không định nghĩa quyền hạn của AI. Quyền thực thi và chí
         -> ROADMAP  (M, Phase, thứ tự)
           -> SRS + Architecture
             -> Environment check
-              -> M01
-                 P01 -> task -> code -> test -> evidence -> report -> commit
-                 P02 -> ...
+              -> <M>
+                 <P> -> task -> implementation -> test -> evidence -> report -> commit
+                 <P> -> ...
                 -> Milestone report
                   -> Residual work
-                    -> M01.1 nếu cần bồi hoàn
-                      -> M02
+                    -> <M>.1 nếu cần bồi hoàn
+                      -> M tiếp theo
 ```
 
 Con người tham gia ở ba điểm: cung cấp ý tưởng và quyết định sản phẩm, cấp thông tin/quyền không thể tự lấy, và nghiệm thu.
@@ -144,7 +144,7 @@ P  = khối triển khai kiểm chứng được độc lập
 Task = việc cụ thể, có output rõ
 ```
 
-Chia theo giá trị sản phẩm, không chia theo lớp kỹ thuật. `M01 Xác thực người dùng` tốt hơn `M01 Backend`.
+Chia theo giá trị sản phẩm, không chia theo lớp kỹ thuật. `<M-ID> Kết quả người dùng` tốt hơn `<M-ID> Backend`.
 
 ---
 
@@ -272,17 +272,17 @@ AI cập nhật trạng thái và Decision Log theo quyết định đó. Trư�
 
 ## 10. Giai đoạn 7: Bồi hoàn M.x
 
-Sau mỗi M, đọc lại `docs/08-reports/residual-work.md` và milestone report.
+Sau mỗi M, project adopter đọc bản residual work trong `docs/08-reports/` được tạo từ `docs/templates/residual-work.md`, cùng với milestone report.
 
 ### Quy tắc đặt tên
 
 ```text
-M01.1   hoàn thiện, sửa lỗi, trả nợ cho M01
-M01.2   vòng bồi hoàn tiếp theo của M01
-M02     mục tiêu sản phẩm mới
+<M>.1   hoàn thiện, sửa lỗi, trả nợ cho <M>
+<M>.2   vòng bồi hoàn tiếp theo của <M>
+<M-next> mục tiêu sản phẩm mới
 ```
 
-Không dùng `M01.1` để lén thêm tính năng mới. Tính năng mới phải qua change control và vào ROADMAP.
+Không dùng `<M-ID>.1` để lén thêm tính năng mới. Tính năng mới phải qua change control và vào ROADMAP.
 
 ### Cách chạy
 
@@ -322,7 +322,7 @@ Dựa trên intake đã ghi, hãy tạo tài liệu nền theo NewEra.
 6. Ghi quyết định lớn vào decision-log.md.
 
 Chỗ nào chưa đủ thông tin thì ghi ASSUMED hoặc OPEN, không tự nhận là sự thật.
-Cuối cùng cho tôi biết có thể bắt đầu M01 hay chưa và vì sao.
+Cuối cùng cho tôi biết có thể bắt đầu `<M-ID>` hay chưa và vì sao.
 ```
 
 ### 11.3 Triển khai trọn một M
@@ -490,12 +490,12 @@ Skill nạp theo ngữ cảnh nên gọi đúng skill giúp tiết kiệm contex
 ### Ví dụ
 
 ```text
-docs(newera): define roadmap and srs
-chore(M01): prepare environment
-feat(auth): implement email login
-test(auth): cover login failure paths
-verify(M01-P02): record verification evidence
-docs(M01-P02): add phase report
+docs(<M-ID>): define roadmap and srs
+chore(<M-ID>): prepare environment
+feat(<scope>): implement feature
+test(<scope>): cover failure paths
+verify(<M-ID>-<P-ID>): record verification evidence
+docs(<M-ID>-<P-ID>): add phase report
 ```
 
 ### Mốc nên commit

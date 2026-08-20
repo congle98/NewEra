@@ -1,15 +1,17 @@
 # Verification Evidence
 
-Evidence chứng minh các kiểm tra kỹ thuật đã được thực hiện. Evidence không tự động là nghiệm thu sản phẩm.
+Evidence chứng minh các kiểm tra kỹ thuật đã được thực hiện trong một project sử dụng NewEra. Evidence không tự động là nghiệm thu sản phẩm và NewEra kernel không lưu evidence của chính nó.
 
-Mỗi evidence cần có:
+Mỗi evidence của project cần có:
 
 - ID;
 - M/Phase/requirement liên quan;
-- commit;
+- commit hoặc worktree reference;
 - môi trường;
-- lệnh đã chạy;
-- output hoặc link artifact;
-- kết quả;
-- timestamp;
-- phần chưa kiểm chứng.
+- lệnh/kịch bản đã chạy;
+- expected và actual output;
+- kết quả và timestamp;
+- phần chưa kiểm chứng, residual hoặc blocker;
+- acceptance status tách riêng.
+
+Dùng `docs/templates/verification-evidence.md` hoặc `docs/07-evidence/evidence-schema.md` làm hướng dẫn. Không tạo file `EVD-*` trong kernel chỉ để chứng minh kernel đã được review.

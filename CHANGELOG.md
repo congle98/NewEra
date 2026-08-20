@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+- Làm rõ NewEra repository là documentation/process kernel, không phải project tự chạy quy trình của chính nó.
+- Tách template/guidance khỏi project-specific M/Phase, evidence, report, residual và technical-debt artifacts.
+- Bổ sung hướng dẫn optional structured mode nhưng không đưa machine runtime/state vào kernel.
+
 ## NewEra v0.1
 
 - Khởi tạo kernel quy trình NewEra.

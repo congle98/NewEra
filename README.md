@@ -2,6 +2,8 @@
 
 NewEra là baseline quy trình phát triển phần mềm tự động hóa cho Kiro. Nó không khóa công nghệ; mỗi dự án có thể bật hoặc bỏ các tài liệu kỹ thuật theo `document-registry.md`.
 
+Repository này là **process/documentation kernel**, không phải một project sản phẩm đang chạy NewEra. M/Phase, evidence, report, residual và machine state chỉ được tạo trong workspace của project sử dụng kernel.
+
 ## Bắt đầu
 
 Đọc `GUIDE.md` trước; đó là hướng dẫn vận hành đầy đủ kèm thư viện prompt.
@@ -30,8 +32,9 @@ Sau đó theo trình tự:
 - `AGENTS.md`: hiến pháp dự án.
 - `GUIDE.md`: quy trình vận hành và thư viện prompt.
 - `.kiro/`: Steering, agents, skills và hooks.
-- `docs/`: tài liệu, kế hoạch, evidence và report.
-- `src/`, `tests/`, `scripts/`: vùng triển khai dự án.
+- `docs/`: governance, discovery, planning, requirements, architecture, environment, templates, prompts và guidance.
+- `docs/06-execution/`, `docs/07-evidence/`, `docs/08-reports/`: chỉ chứa index/guidance trong kernel; project sử dụng kernel tạo artifact cụ thể ở workspace riêng.
+- `src/`, `tests/`, `scripts/`: không thuộc kernel baseline; chỉ xuất hiện khi project adopter cần triển khai hoặc tích hợp adapter.
 
 ## Phiên bản
 
