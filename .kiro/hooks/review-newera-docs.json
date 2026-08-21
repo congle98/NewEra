@@ -1,13 +1,20 @@
 {
-  "name": "Review NewEra Documentation Changes",
+  "name": "Review NewEra Runtime and Documentation Changes",
   "version": "1.0.0",
-  "description": "Nhắc kiểm tra truy nguyên khi tài liệu NewEra thay đổi.",
+  "description": "Nhắc kiểm tra source ownership, resource references và authority boundary khi tài liệu hoặc runtime layer NewEra thay đổi.",
   "when": {
     "type": "fileEdited",
-    "patterns": ["AGENTS.md", "docs/**/*.md", ".kiro/steering/*.md", ".kiro/skills/**/SKILL.md"]
+    "patterns": [
+      "AGENTS.md",
+      "docs/**/*.md",
+      ".kiro/steering/*.md",
+      ".kiro/skills/**/SKILL.md",
+      ".kiro/agents/**/*.md",
+      ".kiro/hooks/**/*.json"
+    ]
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Review this NewEra documentation change for source-of-truth consistency, status clarity, traceability IDs, ROADMAP impact and accidental scope expansion. Do not rewrite unrelated files."
+    "prompt": "Review this NewEra change for canonical source-of-truth consistency, correct separation of steering/skills/agents/hooks, valid resource references, least-authority role boundaries, precise skill metadata, traceability IDs, ROADMAP impact and accidental scope expansion. Check that no framework/tool is hardcoded into the project-neutral kernel and that no hook or agent creates acceptance automatically. Do not rewrite unrelated files."
   }
 }
