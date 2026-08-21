@@ -1,42 +1,31 @@
-# NewEra v0.2
+# NewEra Kernel
 
-NewEra là baseline quy trình phát triển phần mềm tự động hóa cho Kiro. Nó không khóa công nghệ; mỗi dự án có thể bật hoặc bỏ các tài liệu kỹ thuật theo `document-registry.md`.
+NewEra là process/documentation kernel dùng để tổ chức quy trình phát triển phần mềm
+theo hướng có scope, traceability, verification và acceptance rõ ràng.
 
-Repository này là **process/documentation kernel**, không phải một project sản phẩm đang chạy NewEra. M/Phase, evidence, report, residual và machine state chỉ được tạo trong workspace của project sử dụng kernel.
+Repository này chứa kernel, governance, guidance, templates và runtime instructions.
+Đây không phải repository của một project sản phẩm và không chứa M/Phase/evidence/report
+cụ thể của project adopter.
 
 ## Bắt đầu
 
-Đọc `AGENTS.md` trước để biết luật bắt buộc, sau đó đọc `GUIDE.md` để xem workflow và prompt index.
+1. Đọc [AGENTS.md](AGENTS.md) để biết các luật bắt buộc.
+2. Đọc [Kernel overview](docs/00-governance/README.md).
+3. Đọc [Kernel guide](docs/00-governance/GUIDE.md).
+4. Dùng [prompt library](docs/prompts/README.md) khi bắt đầu hoặc tiếp tục workflow.
 
-Đường ngắn nhất để bắt đầu một dự án:
+## Canonical documents
 
-```text
-/newera-intake
-```
+- [Kernel overview](docs/00-governance/README.md)
+- [Kernel guide](docs/00-governance/GUIDE.md)
+- [Document registry](docs/00-governance/document-registry.md)
+- [Automation contract](docs/00-governance/automation-contract.md)
+- [Status model](docs/00-governance/status-model.md)
+- [Acceptance policy](docs/03-requirements/acceptance-policy.md)
+- [Kernel changelog](docs/00-governance/CHANGELOG.md)
 
-Sau đó theo trình tự:
+## Boundary
 
-1. Đọc `AGENTS.md`.
-2. Điền `docs/01-discovery/project-intake.md`.
-3. Hoàn thiện `docs/02-roadmap/roadmap.md`.
-4. Hoàn thiện SRS và Architecture.
-5. Chọn M đầu tiên và dùng template trong `docs/templates/`.
-6. Chạy verification trước khi chuyển Phase sang `CHECKPOINT_PENDING`.
-
-## Nguyên tắc trạng thái
-
-Xem `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md` để biết status, checkpoint và acceptance; README chỉ tóm tắt boundary.
-
-## Cấu trúc chính
-
-- `AGENTS.md`: hiến pháp dự án.
-- `GUIDE.md`: quy trình vận hành và prompt index.
-- `docs/prompts/README.md`: thư viện prompt canonical theo quy trình.
-- `.kiro/`: Steering, agents, skills và hooks.
-- `docs/`: governance, discovery, planning, requirements, architecture, environment, templates, prompt guide và guidance.
-- `docs/06-execution/`, `docs/07-evidence/`, `docs/08-reports/`: chỉ chứa index/guidance trong kernel; project sử dụng kernel tạo artifact cụ thể ở workspace riêng.
-- `src/`, `tests/`, `scripts/`: không thuộc kernel baseline; chỉ xuất hiện khi project adopter cần triển khai hoặc tích hợp adapter.
-
-## Phiên bản
-
-NewEra v0.2 là kernel tài liệu quy trình và documentation, ưu tiên tính dễ hiểu và có thể mở rộng.
+Project adopter tạo README, CHANGELOG, M/Phase, requirements, task, evidence,
+report và các artifact sản phẩm trong workspace của project đó.
+NewEra kernel không tự tạo các artifact project-specific của chính nó.

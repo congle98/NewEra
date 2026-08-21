@@ -21,14 +21,35 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 15. Không lưu secret, token, mật khẩu hoặc dữ liệu cá nhân thật trong repository.
 16. Chính sách an toàn và quyền thực thi của model/Kiro là lớp kiểm soát bên ngoài; NewEra không sao chép hoặc thay thế chính sách đó.
 
+## Runtime map cho Kiro
+
+`AGENTS.md` là điểm vào bắt buộc và là hiến pháp của NewEra. `.kiro/` là runtime adapter để Kiro áp dụng kernel; không phải nguồn sự thật thứ hai và không thay thế các policy trong `docs/`.
+
+- `.kiro/steering/`: guardrail và runtime reminder áp dụng theo workspace. Giữ ngắn, không chép nguyên văn governance dài và không chứa scope sản phẩm cụ thể.
+- `.kiro/skills/`: workflow có thể tái sử dụng, kích hoạt theo nhu cầu. Mỗi skill phải có `SKILL.md` hợp lệ, description nói rõ làm gì và khi nào dùng, cùng input, procedure, output, blocker và handoff.
+- `.kiro/agents/`: role, tool, permission, resource và authority boundary. Agent không sở hữu policy; agent phải dẫn chiếu tới canonical documents và skill phù hợp.
+- `.kiro/hooks/`: automation theo event để nhắc hoặc kiểm tra. Hook không tự chuyển scope, status hoặc acceptance nếu chưa có authority và evidence phù hợp.
+- `docs/00-governance/`, ROADMAP, SRS, Architecture, acceptance policy và các template là canonical source of truth. Khi runtime guidance mâu thuẫn với canonical document, canonical document được ưu tiên và runtime guidance phải được sửa.
+
+Khi dùng custom agent, resources phải bao gồm `AGENTS.md`, steering cần thiết và skills liên quan bằng `file://`/`skill://`; không giả định custom agent tự nạp toàn bộ context. Agent phải tuân thủ least authority:
+
+- `newera-orchestrator` route và dispatch, không tự làm thay builder/verifier hoặc quyết định acceptance.
+- `newera-builder` chỉ mutation trong scope đã được preflight và phải cập nhật verification/evidence liên quan.
+- `newera-researcher` ghi fact, assumption, recommendation, confidence và limitation; impact scope/design phải handoff CR/DEC/ADR.
+- `newera-verifier` kiểm chứng theo capability profile, ghi evidence và checkpoint; không biến technical result thành acceptance.
+- `newera-report-manager` tổng hợp report, residual và debt; không đổi scope, xóa lịch sử hoặc tự acceptance.
+
+Mọi workflow `.kiro` phải giữ các invariant của NewEra: preflight trước mutation, `MICRO_CHANGE` không bỏ binding/scope check/targeted verification/evidence, environment readiness trước M/Phase, capability-first testing, phân biệt `VERIFIED`/`CHECKPOINT_PENDING`/`ACCEPTED`, human-only decision boundary và project-adopter boundary.
+
 ## Thứ tự đọc
 
 1. File này
-2. `GUIDE.md`
+2. `docs/00-governance/GUIDE.md`
 3. `docs/00-governance/status-model.md` và `document-registry.md`
 4. `docs/00-governance/git-policy.md`
 5. ROADMAP, SRS và Architecture
 6. Tài liệu của M/Phase đang thực hiện
+7. `.kiro/` runtime layer phù hợp với role/workflow đang chạy
 
 ## Khi kết thúc công việc
 

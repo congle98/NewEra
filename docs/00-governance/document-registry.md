@@ -6,6 +6,10 @@ Registry là khung hướng dẫn để **project sử dụng NewEra** quyết �
 
 | Document/concern | Canonical path | Required | Ownership |
 |---|---|---:|---|
+| Kernel overview | `docs/00-governance/README.md` | Yes | NewEra kernel boundary and navigation |
+| Kernel guide | `docs/00-governance/GUIDE.md` | Yes | NewEra kernel workflow and prompt index |
+| Kernel changelog | `docs/00-governance/CHANGELOG.md` | Yes | NewEra kernel release history; not adopter product history |
+| Project README/changelog | Adopter project workspace | Per project | Product/project documentation and release history; never kernel state |
 | Governance baseline | `docs/00-governance/` | Yes | Status, git, change, decision và registry policy |
 | Project Intake | `docs/01-discovery/project-intake.md` | Yes | Ý tưởng, bối cảnh và câu trả lời intake |
 | Project Charter | `docs/01-discovery/project-charter.md` | Yes | Vision, objective, scope, stakeholder và success/exit |
@@ -38,7 +42,7 @@ Registry là khung hướng dẫn để **project sử dụng NewEra** quyết �
 ## Templates và runtime guidance
 
 - `docs/templates/` chứa template; không điền dữ liệu project vào kernel.
-- `docs/prompts/README.md` là prompt source canonical duy nhất; GUIDE chỉ là workflow và prompt index.
+- `docs/00-governance/GUIDE.md` là kernel workflow và prompt index; `docs/prompts/README.md` là prompt source canonical duy nhất.
 - `.kiro/steering/`, `.kiro/skills/` và `.kiro/agents/` chỉ giữ instruction runtime-specific và dẫn về canonical docs.
 - Machine state/evidence là optional contract; chỉ bật khi registry của project ghi rõ nhu cầu.
 
