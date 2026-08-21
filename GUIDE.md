@@ -205,9 +205,10 @@ Toàn bộ một M dùng prompt [11.3](#113-triển-khai-trọn-một-m). Một 
 ```text
 docs/06-execution/<M>/<P>/requirements.md
 docs/06-execution/<M>/<P>/task.md
-docs/06-execution/<M>/<P>/test-plan.md
-docs/06-execution/<M>/<P>/checkpoint.md
-docs/07-evidence/EVD-<M>-<P>.md
+  ├── task list
+  ├── test plan and verification matrix
+  ├── verification evidence
+  └── checkpoint and review
 docs/06-execution/<M>/<P>/report.md
 ```
 
@@ -236,7 +237,7 @@ Hoặc prompt [11.5](#115-kiểm-chứng-một-phase). Hook `Run NewEra Verifica
 
 ### Đầu ra
 
-Evidence theo `docs/templates/verification-evidence.md`, gồm command, expected, actual, commit, environment và limitations.
+Evidence theo phần **Verification evidence** trong `docs/templates/task.md`, gồm command, expected, actual, commit, environment và limitations.
 
 Kết quả verification chỉ được ghi `VERIFIED`, `FAILED`, `PARTIAL` hoặc `BLOCKED`. Không được ghi `ACCEPTED`.
 
@@ -337,7 +338,7 @@ Chuẩn bị:
 - Tạo milestone-brief cho <M-ID>.
 
 Với từng Phase theo đúng thứ tự dependency:
-- Tạo requirements.md, task.md, test-plan.md từ template.
+- Tạo requirements.md và task.md từ template; task.md đã bao gồm test plan, evidence và checkpoint.
 - Triển khai từng task, chạy test liên quan, tự sửa lỗi trong phạm vi.
 - Cập nhật task status và tài liệu bị ảnh hưởng.
 - Commit theo git-policy sau mỗi nhóm task logic.
@@ -360,9 +361,9 @@ Ràng buộc:
 Hãy triển khai <M-ID>-<P-ID> theo NewEra bằng skill newera-phase-execution.
 
 - Đọc ROADMAP, SRS, architecture và requirements của Phase này.
-- Tạo hoặc cập nhật requirements.md, task.md, test-plan.md.
+- Tạo hoặc cập nhật requirements.md và task.md; dùng các section test plan, evidence, checkpoint trong task.md.
 - Làm từng task, chạy test, cập nhật tài liệu, commit theo git-policy.
-- Tạo evidence, checkpoint và phase report.
+- Hoàn thiện task.md và phase report.
 - Ghi mọi phần chưa xong vào residual-work.md.
 
 Dừng và báo cho tôi nếu gặp blocker cần quyết định của tôi.
@@ -442,7 +443,7 @@ Theo NewEra:
 ```text
 Hãy tiếp tục công việc NewEra đang dở.
 
-- Đọc git log gần nhất, task.md, checkpoint.md và report.md của Phase đang mở.
+- Đọc git log gần nhất, task.md (bao gồm checkpoint), và report.md của Phase đang mở.
 - Xác định chính xác task nào dở, cái gì đã kiểm chứng, cái gì chưa.
 - Báo cho tôi trạng thái hiện tại trước khi làm tiếp.
 - Sau đó tiếp tục theo đúng thứ tự task còn lại.

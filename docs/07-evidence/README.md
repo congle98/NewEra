@@ -14,4 +14,4 @@ Mỗi evidence của project cần có:
 - phần chưa kiểm chứng, residual hoặc blocker;
 - acceptance status tách riêng.
 
-Dùng `docs/templates/verification-evidence.md` hoặc `docs/07-evidence/evidence-schema.md` làm hướng dẫn. Không tạo file `EVD-*` trong kernel chỉ để chứng minh kernel đã được review.
+Dùng `docs/templates/task.md` làm template chính: phần **Verification evidence** trong `task.md` là nơi ghi evidence mặc định của Phase. `docs/07-evidence/` chỉ dùng cho narrative/evidence file riêng khi registry của project yêu cầu; không còn template verification-evidence độc lập trong kernel. Không tạo file `EVD-*` trong kernel chỉ để chứng minh kernel đã được review.
