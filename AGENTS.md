@@ -24,7 +24,7 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 ## Thứ tự đọc
 
 1. File này
-2. `GUIDE.md`
+2. `docs/00-governance/GUIDE.md`
 3. `docs/00-governance/status-model.md` và `document-registry.md`
 4. `docs/00-governance/git-policy.md`
 5. ROADMAP, SRS và Architecture

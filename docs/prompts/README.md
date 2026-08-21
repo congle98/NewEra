@@ -7,7 +7,7 @@
 ### 0. Quy tắc chung trước mọi prompt
 
 1. Đọc `AGENTS.md`.
-2. Đọc `GUIDE.md` để hiểu workflow tổng thể.
+2. Đọc `docs/00-governance/GUIDE.md` để hiểu workflow tổng thể.
 3. Đọc `docs/00-governance/document-registry.md` để biết artifact nào áp dụng.
 4. Đọc `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md` khi prompt chạm status, verification, checkpoint hoặc acceptance.
 5. Trước mọi mutation, chạy process preflight và chọn một route: `READ_ONLY`, `MICRO_CHANGE` hoặc `NORMAL_OR_SCOPE_CHANGE`.

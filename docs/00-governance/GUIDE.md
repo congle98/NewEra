@@ -312,7 +312,7 @@ Dùng section **8. Plan M.x repayment** trong `docs/prompts/README.md`.
 
 ## 11. Thư viện prompt
 
-Prompt canonical duy nhất: [`docs/prompts/README.md`](docs/prompts/README.md). File này chứa cách dùng theo quy trình và toàn bộ prompt từ intake tới acceptance.
+Prompt canonical duy nhất: [`docs/prompts/README.md`](../prompts/README.md). File này chứa cách dùng theo quy trình và toàn bộ prompt từ intake tới acceptance.
 
 | Giai đoạn | Section trong prompt guide |
 |---|---|
