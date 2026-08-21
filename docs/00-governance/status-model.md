@@ -82,7 +82,7 @@ Một artifact chỉ dùng những nhóm áp dụng cho nó:
 | Research/question | `RES` | `RES-001` |
 | Milestone/Phase/task/test | `M`, `P`, `TASK`, `TEST` | `<M-ID>-<P-ID>`, `TASK-<M-ID>-<P-ID>-001` |
 | Evidence/checkpoint/report | `EVD`, `CHK`, `RPT` | `EVD-<M-ID>-<P-ID>`, `CHK-<M-ID>-<P-ID>` |
-| Blocker/environment/action | `BLOCKER`, `ENV-ISSUE`, `ENV-SVC`, `ENV-DEP`, `ACTION` | `BLOCKER-<M-ID>-<P-ID>-001` |
+| Blocker/environment/action/capability | `BLOCKER`, `ENV-ISSUE`, `ENV-SVC`, `ENV-DEP`, `ENV-CAP`, `ACTION` | `BLOCKER-<M-ID>-<P-ID>-001`, `ENV-CAP-001` |
 | Change/decision/architecture | `CR`, `DEC`, `ADR` | `CR-001`, `DEC-001`, `ADR-001` |
 | Component/residual/debt | `C`, `RESID`, `DEBT` | `C-001`, `RESID-<PROJECT>-001`, `DEBT-<PROJECT>-001` |
 

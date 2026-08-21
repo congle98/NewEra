@@ -150,32 +150,51 @@ Chia theo giá trị sản phẩm, không chia theo lớp kỹ thuật. `<M-ID> 
 
 ## 6. Giai đoạn 3: Chuẩn bị M
 
-Trước khi triển khai, kiểm tra ba thứ: môi trường, dependency, và tài liệu của M.
+Trước mỗi M, project phải hoàn thiện **M Environment Readiness Pack**. Đây là gate trước mutation, không phải một Phase kỹ thuật mới.
 
-### Cách chạy
+### Thứ tự chuẩn bị
 
 ```text
-Kiểm tra môi trường cho <M-ID> theo docs/05-environment/environment-manifest.md.
-Ghi kết quả vào setup-report.md.
-Những gì tự xử lý được thì xử lý; những gì cần tài khoản, secret,
-quyền hệ thống hoặc chi phí thì ghi BLOCKED kèm hướng dẫn cụ thể cho tôi.
+M trong ROADMAP
+  -> M test capability profile
+    -> environment capability matrix
+      -> human setup actions + AI setup actions
+        -> setup report + smoke/health checks
+          -> environment gate: ALLOW | BLOCKED
+            -> bắt đầu Phase/task
 ```
 
-### AI thường tự làm
+### AI phải rà soát
 
-Kiểm tra version, cài dependency theo lockfile, tạo file cấu hình dự án, tạo Dockerfile hoặc compose, khởi động service local, chạy migration local, chạy test.
+- Capability/runtime/dependency nào M cần.
+- Lớp kiểm chứng nào áp dụng: static, unit/component, integration, API/contract, UI/client, accessibility/usability, visual, performance/load, security/operations hoặc human review.
+- Adapter/tool nào project adopter đã chọn và version/config cần dùng.
+- Setup command, smoke test, evidence artifact và limitation.
+- Môi trường nào có thể reuse từ M/Phase trước và trigger nào buộc phải kiểm tra lại.
 
-### Thường cần bạn
+### AI có thể tự làm
 
-Cài phần mềm ở cấp hệ thống, đăng nhập cloud, tạo API key, tạo billing, cấp quyền repository, đưa secret vào `.env` hoặc secret manager, phê duyệt chi phí, quyết định pháp lý và dữ liệu thật.
+Kiểm tra version, cài dependency theo lockfile, khởi động local dependency được phép, tạo config từ example không chứa secret, chạy smoke test và thu thập evidence.
 
-Không dán secret vào chat. Đặt vào `.env` rồi nói cho AI biết tên biến.
+### Cần con người hoặc quyền ngoài agent
+
+Cài software cấp hệ thống, cấp account/permission, secret/API key, cloud resource/billing, VPN/network, device lab, dữ liệu thật, approval security/compliance hoặc quyết định chi phí. AI phải ghi rõ owner, lý do, quyền cần cấp và điều kiện hoàn tất; không tự giả định đã có.
+
+### Environment gate
+
+- `ALLOW`: required capability đã đủ hoặc limitation được giới hạn rõ.
+- `BLOCKED`: thiếu capability bắt buộc, quyền, secret, service, device hoặc approval; không bắt đầu mutation.
+- Setup result `VERIFIED | PARTIAL | BLOCKED` phải được ghi trong `setup-report.md`.
+
+Mỗi M không cần dùng mọi capability hoặc mọi adapter. `NOT_APPLICABLE` phải có lý do; `PARTIAL` chỉ được tiếp tục trong phạm vi đã ghi.
 
 ### Đầu ra
 
 ```text
 docs/06-execution/<M>/milestone-brief.md
+docs/05-environment/environment-manifest.md
 docs/05-environment/setup-report.md
+docs/06-execution/<M>/<P>/task.md  (test capability profile + evidence)
 ```
 
 ---

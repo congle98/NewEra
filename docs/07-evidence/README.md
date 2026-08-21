@@ -27,6 +27,11 @@ Hai lớp dùng cùng ID nhưng không copy mù nội dung; machine envelope s�
 | `timestamp` | Thời điểm | ISO-8601 |
 | `environment` | OS/tool/runtime | Không chứa secret |
 | `acceptanceStatus` | Acceptance riêng | Mặc định `PENDING` |
+| `capabilityRefs` | Năng lực/lớp kiểm chứng áp dụng | Liên kết M/Phase capability profile |
+| `environmentRef` | Environment Manifest/Setup Report | Có gate và limitation tương ứng |
+| `adapter` | Adapter/tool được project chọn | Ghi tên/version/config cần tái chạy; không phải NewEra default |
+| `artifacts` | Evidence files | Report/log/trace/screenshot/video/network/metric/accessibility hoặc artifact phù hợp |
+| `humanReview` | Review cần con người | Ghi role, scope và decision nếu có |
 | `limitations` | Phần chưa chứng minh | Ghi rõ residual/blocker |
 
 ## Status semantics

@@ -106,15 +106,26 @@ Dựa trên intake đã ghi, tạo tài liệu nền theo NewEra.
 
 Bạn là NewEra Orchestrator. Hãy triển khai `<M-ID>` theo ROADMAP.
 
+Trước khi tạo task implementation hoặc cho phép mutation, hoàn thiện M readiness pack:
+
+- Đọc Environment Manifest và xác định capability cần cho M.
+- Lập test capability profile theo requirement, risk và acceptance criteria; đánh dấu lớp không áp dụng kèm lý do.
+- Tách human setup actions khỏi AI setup actions; không tự giả định account, secret, billing, device, network, permission hoặc approval đã có.
+- Chạy setup/smoke checks phù hợp và ghi Setup Report.
+- Chỉ tiếp tục khi Environment gate là `ALLOW`; `PARTIAL` chỉ được allow với limitation và phạm vi rõ. `BLOCKED` phải dừng implementation và ghi action.
+
+Sau readiness gate:
+
 - Đọc AGENTS, status model, Git policy, ROADMAP, SRS, Architecture và research liên quan.
-- Tạo milestone brief, requirements và task cho từng Phase; task bao gồm test plan, evidence và checkpoint.
-- Kiểm tra environment manifest và dependency.
+- Tạo milestone brief, requirements và task cho từng Phase; task bao gồm test capability profile, test plan, evidence và checkpoint.
+- Kiểm tra dependency và environment delta trước từng Phase.
 - Triển khai từng Phase theo dependency.
-- Sau mỗi task logic, chạy kiểm tra phù hợp, cập nhật `task.md` và tạo commit theo Git policy.
+- Chạy lớp kiểm chứng phù hợp với capability profile; không mặc định chỉ unit test.
+- Sau mỗi task logic, cập nhật `task.md` và tạo commit theo Git policy khi đủ điều kiện.
 - Sau mỗi Phase, hoàn thiện `task.md`, phase report, residual work và technical debt.
 - Sau M, tạo milestone report và cập nhật ROADMAP.
 
-Kết thúc bằng thay đổi, test, commit, evidence, blocker, residual work, debt, trạng thái kỹ thuật và acceptance status. Không đánh dấu acceptance chỉ vì test pass hoặc checkpoint tồn tại.
+Kết thúc bằng thay đổi, test/capability checks, commit, evidence artifacts, blocker, residual work, debt, trạng thái kỹ thuật và acceptance status. Không đánh dấu acceptance chỉ vì test pass, tool output hoặc checkpoint tồn tại.
 
 ## 4. Execute phase
 

@@ -66,7 +66,19 @@ Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật
 - Residual/blocker/risk:
 - Ghi chú reviewer:
 
-## 3. Test plan và verification matrix
+## 3. Test capability profile
+
+- M/Phase capability profile reference:
+- Environment Manifest/Setup Report reference:
+- Environment gate: `ALLOW` | `BLOCKED`
+- Applied verification layers: static/quality | unit/component | integration | API/contract | UI/client | accessibility/usability | visual | performance/load | security/operations | human review
+- Not applicable layers and reason:
+- Selected adapters/tools and versions: project-specific; do not assume a NewEra default.
+- Human setup actions/blockers:
+
+Mỗi lớp được chọn phải có requirement/acceptance mapping, expected result, command/kịch bản tái chạy, environment reference và evidence. Interactive agent tooling có thể hỗ trợ khám phá/debug; kết luận verification cần artifact và cách chạy lặp lại phù hợp với project.
+
+## 4. Test plan và verification matrix
 
 - Requirement scope:
 - Owner/agent:
@@ -101,7 +113,7 @@ Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật
 
 Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task và evidence. Nếu command khác với manifest, ghi lý do và cập nhật manifest/CR nếu cần.
 
-## 4. Verification evidence
+## 5. Verification evidence
 
 - Evidence ID: EVD-<M-ID>-<P-ID>
 - M/Phase:
@@ -146,7 +158,7 @@ Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task v
 
 Evidence là bằng chứng verification kỹ thuật; acceptance status áp dụng `docs/03-requirements/acceptance-policy.md`.
 
-## 5. Checkpoint và review
+## 6. Checkpoint và review
 
 - Checkpoint ID: CHK-<M-ID>-<P-ID>
 - M:
@@ -191,6 +203,6 @@ Evidence là bằng chứng verification kỹ thuật; acceptance status áp d�
 
 Checkpoint này ghi nhận điểm xem xét; giữ status và acceptance theo `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`.
 
-## 6. Definition of Done
+## 7. Definition of Done
 
 Mỗi task phải có output, dependency, requirement link, verification result và status. Task chỉ `VERIFIED` khi output đã được kiểm tra; task chưa xong không được đánh dấu hoàn thành chỉ vì code hoặc file đã tồn tại. Phase chỉ được chuyển sang checkpoint khi các section test, evidence và checkpoint trong file này đã được cập nhật. Nếu không hoàn thành, ghi residual/blocker ID và lý do.
