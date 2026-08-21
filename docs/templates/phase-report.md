@@ -10,7 +10,7 @@
 - Report status: DRAFT | FINAL
 - Trạng thái kỹ thuật: IN_PROGRESS | VERIFIED | PARTIAL | FAILED | BLOCKED
 - Trạng thái checkpoint: INCOMPLETE | CHECKPOINT_PENDING
-- Trạng thái nghiệm thu: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Trạng thái nghiệm thu: PENDING | ACCEPTED | REJECTED | DEFERRED
 
 ## Tóm tắt và boundary
 
@@ -73,4 +73,4 @@ Report là bản tóm tắt có truy nguyên; không xóa phần chưa hoàn th�
 - [ ] Test/evidence/checkpoint references point to sections in task.md.
 - [ ] Environment, commit, limitations and NOT_RUN/BLOCKED results are recorded.
 - [ ] Residual/debt/blocker/risk items have owner and next action.
-- [ ] Acceptance remains NOT_ACCEPTED until an authorized decision is recorded.
+- [ ] Acceptance remains PENDING until an authorized decision is recorded.

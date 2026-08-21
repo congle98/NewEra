@@ -7,6 +7,22 @@
 
 Template này gom toàn bộ công việc thực thi và kiểm chứng của một Phase vào một file. `requirements.md` giữ requirement/acceptance criteria; `report.md` giữ tổng kết sau Phase.
 
+## 0. Process preflight
+
+Mỗi mutation request phải ghi một preflight ngắn trước khi sửa:
+
+- Request type:
+- Route: `READ_ONLY` | `MICRO_CHANGE` | `NORMAL_OR_SCOPE_CHANGE`
+- Project/repository:
+- ROADMAP/M/Phase/task hoặc CR binding:
+- Scope boundary / planned files:
+- Expected output:
+- Verification plan:
+- Gate: `ALLOW` | `BLOCKED`
+- Blocker/next action:
+
+Với `MICRO_CHANGE`, có thể bỏ qua full foundation/Phase report khi không ảnh hưởng requirement, acceptance, API, data, security, deployment hoặc architecture. Không được bỏ task/request binding, path scope, targeted verification hoặc evidence ngắn. Nếu phát sinh thay đổi ngoài boundary, chuyển route và tạo CR nếu cần.
+
 ## 1. Definition of Ready cho task
 
 Task chỉ được `READY` khi có một output kiểm tra được, dependency rõ, requirement/acceptance criteria liên quan, cách kiểm chứng và biết tài liệu nào sẽ cập nhật. Task thiếu dữ liệu quan trọng phải là `BLOCKED` hoặc `OPEN`, không giả định.
@@ -96,7 +112,7 @@ Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task v
 - Agent/operator:
 - Timestamp/timezone:
 - Verification status: VERIFIED | PARTIAL | FAILED | BLOCKED | NOT_RUN
-- Acceptance status: NOT_ACCEPTED
+- Acceptance status: PENDING
 
 ### Commands hoặc kịch bản
 
@@ -138,7 +154,7 @@ Evidence là bằng chứng verification kỹ thuật; acceptance status áp d�
 - Reviewer/acceptor:
 - Verification status: NOT_RUN | PARTIAL | FAILED | VERIFIED | BLOCKED
 - Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
-- Acceptance status: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Acceptance status: PENDING | ACCEPTED | REJECTED | DEFERRED
 
 ### Điều kiện trước checkpoint
 

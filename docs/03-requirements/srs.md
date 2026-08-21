@@ -128,7 +128,8 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 - Related use cases/glossary:
 - Architecture/ADR reference:
 - Task/test/evidence references:
-- Trạng thái: DRAFT | READY | IN_PROGRESS | VERIFIED | BLOCKED | DEFERRED
+- Lifecycle status: DRAFT | READY | IN_PROGRESS | BLOCKED | CLOSED | DEFERRED | CANCELLED
+- Verification status: NOT_RUN | PARTIAL | VERIFIED | FAILED | BLOCKED | NOT_APPLICABLE
 
 #### Acceptance criteria
 
@@ -207,7 +208,7 @@ SRS là canonical source cho traceability cấp product requirement. Phase-level
 
 | Requirement | ROADMAP/M/Phase | Architecture/ADR | Task | Test | Evidence in task.md | Phase report | Acceptance | Status |
 |---|---|---|---|---|---|---|---|---|
-| REQ-<REQ-ID> | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | NOT_ACCEPTED | DRAFT |
+| REQ-<REQ-ID> | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | PENDING | DRAFT |
 
 ### Phase traceability view
 

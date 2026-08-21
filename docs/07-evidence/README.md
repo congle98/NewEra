@@ -26,7 +26,7 @@ Hai lớp dùng cùng ID nhưng không copy mù nội dung; machine envelope s�
 | `commitRef` | Version/worktree | SHA hoặc reference rõ |
 | `timestamp` | Thời điểm | ISO-8601 |
 | `environment` | OS/tool/runtime | Không chứa secret |
-| `acceptanceStatus` | Acceptance riêng | Mặc định `NOT_ACCEPTED` |
+| `acceptanceStatus` | Acceptance riêng | Mặc định `PENDING` |
 | `limitations` | Phần chưa chứng minh | Ghi rõ residual/blocker |
 
 ## Status semantics

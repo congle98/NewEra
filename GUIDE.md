@@ -212,7 +212,7 @@ docs/06-execution/<M>/<P>/task.md
 docs/06-execution/<M>/<P>/report.md
 ```
 
-Nếu giữa Phase phát sinh yêu cầu mới: không làm luôn. Tạo change request theo `change-control.md`, cập nhật ROADMAP nếu được chấp thuận, rồi mới triển khai.
+Nếu giữa Phase phát sinh yêu cầu mới: phân loại trước. Nếu là `MICRO_CHANGE` cục bộ, không đổi requirement, acceptance, API, data, security, deployment hoặc architecture, bind vào task/request hiện có, ghi path boundary, chạy targeted test và evidence ngắn; không tạo full Phase artifact chỉ vì thay đổi nhỏ. Nếu là `NORMAL_OR_SCOPE_CHANGE`, không làm luôn: tạo change request theo `change-control.md`, cập nhật ROADMAP nếu được chấp thuận, rồi mới triển khai.
 
 ---
 

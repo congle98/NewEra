@@ -45,7 +45,7 @@
 
 | M ID | Tên/outcome | Priority | Phase order | Dependency | Target window | Owner | Readiness gap | Next action/due | Verification | Checkpoint | Acceptance | Status |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| <M-ID> | | MUST/SHOULD/COULD | <P-ID> → <P-ID> | | | | | | NOT_RUN | INCOMPLETE | NOT_ACCEPTED | DRAFT |
+| <M-ID> | | MUST/SHOULD/COULD | <P-ID> → <P-ID> | | | | | | NOT_RUN | INCOMPLETE | PENDING | DRAFT |
 
 Status và transition theo `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`; không suy ra acceptance từ việc có row trong bảng.
 
@@ -67,7 +67,10 @@ Status và transition theo `docs/00-governance/status-model.md` và `docs/03-req
 - Risk/owner/mitigation:
 - Capacity/budget constraint:
 - Acceptance boundary:
-- Status: DRAFT | READY | IN_PROGRESS | VERIFIED | CHECKPOINT_PENDING | ACCEPTED | BLOCKED | DEFERRED
+- Lifecycle status: DRAFT | READY | IN_PROGRESS | BLOCKED | CLOSED | DEFERRED | CANCELLED
+- Verification status: NOT_RUN | PARTIAL | VERIFIED | FAILED | BLOCKED | NOT_APPLICABLE
+- Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
+- Acceptance status: PENDING | ACCEPTED | REJECTED | DEFERRED
 
 #### Phase order and outcome
 

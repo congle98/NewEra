@@ -10,9 +10,32 @@
 2. Đọc `GUIDE.md` để hiểu workflow tổng thể.
 3. Đọc `docs/00-governance/document-registry.md` để biết artifact nào áp dụng.
 4. Đọc `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md` khi prompt chạm status, verification, checkpoint hoặc acceptance.
-5. Thay mọi placeholder `<...>` bằng ID/context của project adopter.
-6. Không tự tạo `.newera/`, self-evidence, self-report hoặc machine state trong NewEra kernel.
-7. Nếu thiếu dữ liệu, ghi `OPEN`, `ASSUMED` hoặc `BLOCKED`; không tự biến giả định thành fact.
+5. Trước mọi mutation, chạy process preflight và chọn một route: `READ_ONLY`, `MICRO_CHANGE` hoặc `NORMAL_OR_SCOPE_CHANGE`.
+6. Thay mọi placeholder `<...>` bằng ID/context của project adopter.
+7. Không tự tạo `.newera/`, self-evidence, self-report hoặc machine state trong NewEra kernel.
+8. Nếu thiếu dữ liệu, ghi `OPEN`, `ASSUMED` hoặc `BLOCKED`; không tự biến giả định thành fact.
+
+### 0.1 Process preflight
+
+Preflight là một bước ngắn trước hành động, không phải một bộ tài liệu mới. Tối thiểu phải xác định:
+
+```text
+Request type:
+Route: READ_ONLY | MICRO_CHANGE | NORMAL_OR_SCOPE_CHANGE
+Project/repository:
+ROADMAP/M/Phase/task hoặc CR binding:
+Scope boundary / planned files:
+Expected output:
+Verification plan:
+Gate: ALLOW | BLOCKED
+Blocker/next action:
+```
+
+- `READ_ONLY`: không sửa artifact.
+- `MICRO_CHANGE`: bind vào task/request hiện có, kiểm tra path boundary và không đổi requirement, acceptance, API, data, security, deployment hoặc architecture. Chỉ cần targeted test và evidence ngắn; không tạo full foundation/Phase report vì một thay đổi nhỏ.
+- `NORMAL_OR_SCOPE_CHANGE`: dùng workflow Phase hiện tại; nếu có scope/product/architecture change thì tạo CR/decision trước khi triển khai.
+
+Không được sửa khi project/repository, binding, scope boundary hoặc verification plan còn thiếu; ghi `OPEN`/`BLOCKED` và hỏi đúng phần tối thiểu còn thiếu. Nếu trong lúc làm `MICRO_CHANGE` phát sinh scope/design change, dừng và chuyển route bình thường.
 
 ### 1. Thứ tự vận hành chuẩn
 
@@ -32,6 +55,7 @@ Các prompt phụ trợ `research-item`, `change-scope` và `resume-work` đư�
 
 | Bước | Prompt section | Khi dùng | Output chính |
 |---|---|---|---|
+| Preflight | [Process preflight](#01-process-preflight) | Trước mọi prompt có khả năng mutation | Route, binding, scope boundary, verification plan và gate |
 | Khởi động | [Start project](#1-start-project) | Project chưa có intake rõ | Intake, charter, assumptions, research questions |
 | Tài liệu nền | [Prepare foundation](#2-prepare-foundation) | Intake đủ để lập baseline | Registry, ROADMAP, SRS, Architecture, environment |
 | Triển khai M | [Execute milestone](#3-execute-milestone) | Muốn chạy trọn một M | Phase artifacts, task, report, residual/debt |
@@ -48,7 +72,7 @@ Các prompt phụ trợ `research-item`, `change-scope` và `resume-work` đư�
 ### 3. Quy tắc chuyển bước
 
 - Không chạy `execute-*` nếu ROADMAP/requirements/dependency chưa đủ hoặc còn blocker chưa ghi.
-- `task.md` là file canonical cho task, test plan, evidence và checkpoint của Phase.
+- `task.md` là file canonical cho task, test plan, evidence và checkpoint của Phase; `MICRO_CHANGE` được ghi gọn vào task/request binding hiện có.
 - `VERIFIED` chỉ là technical verification; `CHECKPOINT_PENDING` chưa phải acceptance; chỉ role có thẩm quyền mới tạo `ACCEPTED`.
 - Scope/product/architecture change phải đi qua `docs/00-governance/change-control.md` trước khi triển khai.
 - Report là summary; không dùng report để thay thế evidence, task hoặc source requirement.

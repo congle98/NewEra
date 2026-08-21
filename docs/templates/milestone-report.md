@@ -9,7 +9,7 @@
 - Report status: DRAFT | FINAL
 - Verification status: VERIFIED | PARTIAL | FAILED | BLOCKED
 - Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
-- Acceptance status: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Acceptance status: PENDING | ACCEPTED | REJECTED | DEFERRED
 - Decision/CR references:
 
 ## Outcome và scope result

@@ -2,6 +2,24 @@
 
 NewEra có thể được áp dụng với tài liệu Markdown thuần hoặc kết hợp machine-readable state/evidence tùy theo nhu cầu của project sử dụng. File này mô tả nguyên tắc, không phải state của repository NewEra.
 
+## Process entry contract
+
+Mọi user request đi vào một process preflight trước khi agent thực hiện mutation. Đây là lớp ràng buộc nhẹ, không thay thế workflow hiện tại và không yêu cầu tạo cả bộ tài liệu cho một thay đổi nhỏ.
+
+### Request routes
+
+| Route | Dùng cho | Tối thiểu trước mutation | Đầu ra tối thiểu |
+|---|---|---|---|
+| `READ_ONLY` | Đọc, giải thích, status query, research chưa sửa artifact | Không mutation | Câu trả lời hoặc research handoff nếu có |
+| `MICRO_CHANGE` | Sửa cục bộ, không đổi requirement/acceptance/API/data/security/deployment/architecture | Request/task binding, path boundary, scope check, targeted verification | Task note, evidence ngắn, trạng thái kỹ thuật |
+| `NORMAL_OR_SCOPE_CHANGE` | Task Phase bình thường hoặc thay đổi scope/design | ROADMAP, requirement/task; CR/decision trước nếu ngoài scope | Workflow Phase hiện tại hoặc CR → decision → task |
+
+Preflight tối thiểu ghi rõ: request type, project/repository, M/Phase hoặc task binding, scope route, planned files/boundary, expected output, verification plan, gate `ALLOW`/`BLOCKED` và blocker/next action nếu có. Preflight có thể nằm trong `task.md` hoặc adapter của project adopter; không tạo request state cho NewEra kernel.
+
+### Micro-change rule
+
+`MICRO_CHANGE` chỉ giảm ceremony. Nếu project đã có `task.md`, ghi vào task đó; không tạo SRS, Architecture hoặc Phase report mới chỉ vì một sửa đổi nhỏ. Tuy nhiên vẫn phải kiểm tra không có scope/design change, chạy check phù hợp, ghi evidence và giữ traceability. Nếu phát sinh requirement, acceptance, API, data, security, deployment hoặc architecture change thì chuyển ngay sang `NORMAL_OR_SCOPE_CHANGE` và change control.
+
 ## Source ownership
 
 | Nội dung | Owner mặc định | Vai trò của Markdown |
