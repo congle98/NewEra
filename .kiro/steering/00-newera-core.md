@@ -4,15 +4,12 @@ inclusion: always
 
 # NewEra Core Steering
 
-Đọc và tuân thủ `AGENTS.md` trước mọi công việc.
+Runtime rule: đọc `AGENTS.md` trước mọi công việc và chạy process preflight trước bất kỳ mutation nào. Tham chiếu các canonical policy sau:
 
-- ROADMAP là nguồn sự thật về phạm vi.
-- Mọi artifact phải có trạng thái và ID truy nguyên.
-- `VERIFIED`, `CHECKPOINT_PENDING`, `ACCEPTED` không được đánh đồng.
-- Checkpoint chưa hoàn thành không phải evidence nghiệm thu.
-- Test pass chỉ là verification kỹ thuật.
-- Không tự ý mở rộng phạm vi.
-- Không lưu secret.
-- Chính sách quyền và an toàn của model/Kiro nằm ngoài NewEra; không lặp lại hoặc thay thế chính sách đó.
+- Process entry/automation: `docs/00-governance/automation-contract.md`
+- Scope/source: `docs/02-roadmap/roadmap.md`
+- Status/transition: `docs/00-governance/status-model.md`
+- Acceptance authority: `docs/03-requirements/acceptance-policy.md`
+- End-of-task report: thay đổi, test, commit, evidence, blocker, residual và acceptance status.
 
-Khi kết thúc phải báo cáo thay đổi, test, commit, evidence, blocker, residual và acceptance status.
+Preflight phải chọn `READ_ONLY`, `MICRO_CHANGE` hoặc `NORMAL_OR_SCOPE_CHANGE`. Không sửa artifact khi project/repository, scope boundary, task/request binding hoặc verification plan còn thiếu; ghi `OPEN`/`BLOCKED` và next action thay vì tự đoán.

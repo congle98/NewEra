@@ -27,7 +27,7 @@ Hướng dẫn vận hành NewEra từ ý tưởng đến nghiệm thu. Tài li�
 Bốn điều quyết định chất lượng của cả quy trình:
 
 - **ROADMAP là nguồn sự thật.** Mọi M, Phase, task và code phải truy về được ROADMAP.
-- **Ba trạng thái không được đánh đồng.** `VERIFIED` là đã kiểm chứng kỹ thuật. `CHECKPOINT_PENDING` là chờ xem xét và chưa hoàn thành. `ACCEPTED` là đã nghiệm thu.
+- **Status và acceptance:** xem `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`; GUIDE chỉ mô tả workflow.
 - **Không có bằng chứng thì không có kết luận.** Mỗi verification phải có command, kết quả, commit và giới hạn.
 - **Phần còn thiếu phải được ghi lại.** Không im lặng bỏ qua; đưa vào residual work, technical debt hoặc blocker.
 
@@ -55,7 +55,7 @@ NewEra không định nghĩa quyền hạn của AI. Quyền thực thi và chí
 | Bằng chứng kiểm chứng | `docs/07-evidence/` |
 | Việc còn nợ | `docs/templates/residual-work.md` và bản project trong `docs/08-reports/` |
 | Template mọi loại | `docs/templates/` |
-| Prompt gốc | `docs/prompts/` |
+| Prompt gốc | `docs/prompts/README.md` |
 
 ---
 
@@ -94,7 +94,7 @@ Gõ skill:
 /newera-intake
 ```
 
-Hoặc dùng prompt trong [11.1](#111-khởi-động-dự-án).
+Hoặc dùng prompt tương ứng trong `docs/prompts/README.md`.
 
 ### AI sẽ hỏi hai vòng
 
@@ -129,12 +129,12 @@ Mục tiêu: chốt định hướng để AI có thể chạy dài mà không l
 3. srs.md                 (requirement có ID và acceptance criteria)
 4. architecture.md        (thành phần, dữ liệu, bảo mật, triển khai)
 5. environment-manifest.md
-6. requirements-traceability.md
+6. SRS §11 traceability matrix
 ```
 
 ### Cách chạy
 
-Dùng prompt [11.2](#112-tạo-tài-liệu-nền). Sau khi AI tạo xong, bạn chỉ cần đọc kỹ hai file: `roadmap.md` và `srs.md`. Sai ở hai file này sẽ lan ra toàn bộ dự án.
+Dùng section **2. Prepare foundation** trong `docs/prompts/README.md`. Sau khi AI tạo xong, bạn chỉ cần đọc kỹ hai file: `roadmap.md` và `srs.md`. Sai ở hai file này sẽ lan ra toàn bộ dự án.
 
 ### Quy tắc chia M
 
@@ -186,7 +186,7 @@ Mục tiêu: chạy liên tục nhưng luôn để lại dấu vết.
 
 ### Cách chạy
 
-Toàn bộ một M dùng prompt [11.3](#113-triển-khai-trọn-một-m). Một Phase riêng dùng [11.4](#114-triển-khai-một-phase).
+Toàn bộ một M dùng section **3. Execute milestone**; một Phase riêng dùng section **4. Execute phase** trong `docs/prompts/README.md`.
 
 ### Vòng lặp của AI
 
@@ -212,7 +212,7 @@ docs/06-execution/<M>/<P>/task.md
 docs/06-execution/<M>/<P>/report.md
 ```
 
-Nếu giữa Phase phát sinh yêu cầu mới: không làm luôn. Tạo change request theo `change-control.md`, cập nhật ROADMAP nếu được chấp thuận, rồi mới triển khai.
+Nếu giữa Phase phát sinh yêu cầu mới: phân loại trước. Nếu là `MICRO_CHANGE` cục bộ, không đổi requirement, acceptance, API, data, security, deployment hoặc architecture, bind vào task/request hiện có, ghi path boundary, chạy targeted test và evidence ngắn; không tạo full Phase artifact chỉ vì thay đổi nhỏ. Nếu là `NORMAL_OR_SCOPE_CHANGE`, không làm luôn: tạo change request theo `change-control.md`, cập nhật ROADMAP nếu được chấp thuận, rồi mới triển khai.
 
 ---
 
@@ -233,7 +233,7 @@ Lớp 4  Acceptance  bạn xem sản phẩm và quyết định
 /newera-verification
 ```
 
-Hoặc prompt [11.5](#115-kiểm-chứng-một-phase). Hook `Run NewEra Verification Review` cũng chạy được thủ công từ UI.
+Hoặc dùng section **5. Verify phase** trong `docs/prompts/README.md`. Hook `Run NewEra Verification Review` cũng chạy được thủ công từ UI.
 
 ### Đầu ra
 
@@ -251,7 +251,7 @@ Kết quả verification chỉ được ghi `VERIFIED`, `FAILED`, `PARTIAL` ho�
 /newera-reporting
 ```
 
-Hoặc prompt [11.6](#116-tạo-report-cho-phase-hoặc-m).
+Hoặc dùng section **6. Report phase** hoặc **7. Report milestone** trong `docs/prompts/README.md`.
 
 ### Phase report phải trả lời
 
@@ -267,7 +267,7 @@ REJECTED  <M-P>  - không đạt, kèm lý do
 DEFERRED  <M-P>  - dời lại
 ```
 
-AI cập nhật trạng thái và Decision Log theo quyết định đó. Trước khi bạn trả lời, trạng thái vẫn là `CHECKPOINT_PENDING`.
+AI cập nhật trạng thái và Decision Log theo `docs/03-requirements/acceptance-policy.md`; trước quyết định, giữ trạng thái chờ xem xét.
 
 ---
 
@@ -287,179 +287,20 @@ Không dùng `<M-ID>.1` để lén thêm tính năng mới. Tính năng mới ph
 
 ### Cách chạy
 
-Prompt [11.7](#117-tạo-m-bồi-hoàn).
+Dùng section **8. Plan M.x repayment** trong `docs/prompts/README.md`.
 
 ---
 
 ## 11. Thư viện prompt
 
-Copy nguyên khối, thay `<...>` bằng giá trị thật.
+Prompt canonical duy nhất: [`docs/prompts/README.md`](docs/prompts/README.md). File này chứa cách dùng theo quy trình và toàn bộ prompt từ intake tới acceptance.
 
-### 11.1 Khởi động dự án
-
-```text
-Hãy khởi động một dự án mới theo NewEra.
-
-1. Đọc AGENTS.md và các steering NewEra.
-2. Kích hoạt skill newera-intake.
-3. Hỏi tôi Vòng 1 về sản phẩm, mỗi lần một nhóm câu hỏi ngắn.
-4. Sau Vòng 1, hỏi Vòng 2 để làm rõ kỹ thuật.
-5. Ghi câu trả lời vào project-intake.md, project-charter.md, assumptions.md.
-6. Những gì tôi trả lời "chưa rõ" thì ghi thành RES item với mức ảnh hưởng.
-
-Chưa viết code. Kết thúc bằng danh sách câu hỏi còn mở và blocker.
-```
-
-### 11.2 Tạo tài liệu nền
-
-```text
-Dựa trên intake đã ghi, hãy tạo tài liệu nền theo NewEra.
-
-1. Cập nhật document-registry.md: tài liệu nào Required, Conditional, Not applicable, kèm lý do.
-2. Tạo ROADMAP: các M, Phase trong từng M, thứ tự, dependency, rủi ro, tiêu chí hoàn thành.
-3. Tạo SRS: requirement có ID, acceptance criteria kiểm chứng được, ưu tiên, thuộc M/Phase nào.
-4. Tạo Architecture: thành phần, luồng dữ liệu, lưu trữ, bảo mật, logging, triển khai, quyết định lớn.
-5. Cập nhật environment-manifest.md và requirements-traceability.md.
-6. Ghi quyết định lớn vào decision-log.md.
-
-Chỗ nào chưa đủ thông tin thì ghi ASSUMED hoặc OPEN, không tự nhận là sự thật.
-Cuối cùng cho tôi biết có thể bắt đầu `<M-ID>` hay chưa và vì sao.
-```
-
-### 11.3 Triển khai trọn một M
-
-```text
-Bạn là NewEra Orchestrator. Hãy triển khai <M-ID> theo ROADMAP.
-
-Chuẩn bị:
-- Đọc AGENTS.md, status-model, git-policy, ROADMAP, SRS, Architecture, research liên quan.
-- Kiểm tra environment-manifest và dependency. Thiếu gì tự xử lý được thì xử lý,
-  còn lại ghi BLOCKED kèm hướng dẫn cho tôi.
-- Tạo milestone-brief cho <M-ID>.
-
-Với từng Phase theo đúng thứ tự dependency:
-- Tạo requirements.md và task.md từ template; task.md đã bao gồm test plan, evidence và checkpoint.
-- Triển khai từng task, chạy test liên quan, tự sửa lỗi trong phạm vi.
-- Cập nhật task status và tài liệu bị ảnh hưởng.
-- Commit theo git-policy sau mỗi nhóm task logic.
-- Tạo verification evidence, checkpoint, report, residual work, technical debt.
-
-Kết thúc M:
-- Tạo milestone report và cập nhật ROADMAP, milestone-index, traceability.
-- Đề xuất có cần <M-ID>.1 hay không.
-
-Ràng buộc:
-- Không mở rộng phạm vi ngoài ROADMAP; phát sinh thì tạo change request.
-- Không đánh dấu ACCEPTED. Dùng CHECKPOINT_PENDING và chờ tôi nghiệm thu.
-- Báo cáo cuối: thay đổi, test đã chạy, commit, evidence, phần còn thiếu,
-  blocker, quyết định cần tôi, trạng thái từng Phase.
-```
-
-### 11.4 Triển khai một Phase
-
-```text
-Hãy triển khai <M-ID>-<P-ID> theo NewEra bằng skill newera-phase-execution.
-
-- Đọc ROADMAP, SRS, architecture và requirements của Phase này.
-- Tạo hoặc cập nhật requirements.md và task.md; dùng các section test plan, evidence, checkpoint trong task.md.
-- Làm từng task, chạy test, cập nhật tài liệu, commit theo git-policy.
-- Hoàn thiện task.md và phase report.
-- Ghi mọi phần chưa xong vào residual-work.md.
-
-Dừng và báo cho tôi nếu gặp blocker cần quyết định của tôi.
-Không tự đánh dấu ACCEPTED.
-```
-
-### 11.5 Kiểm chứng một Phase
-
-```text
-Bạn là NewEra Verifier. Hãy kiểm chứng <M-ID>-<P-ID>.
-
-- Đọc requirements và phần test plan trong task.md của Phase.
-- Đối chiếu từng acceptance criteria với implementation và test.
-- Chạy test, build, lint, typecheck nếu dự án có; không có thì ghi NOT_APPLICABLE.
-- Tạo evidence gồm command, expected, actual, commit, environment, limitations.
-- Cập nhật traceability, checkpoint và phase report.
-
-Lỗi trong phạm vi thì sửa rồi chạy lại. Ngoài phạm vi thì ghi blocker hoặc residual.
-Kết luận chỉ được là VERIFIED, PARTIAL, FAILED hoặc BLOCKED.
-```
-
-### 11.6 Tạo report cho Phase hoặc M
-
-```text
-Hãy tạo report cho <M-ID hoặc M-ID-P-ID> theo NewEra.
-
-- Tổng hợp task status, test đã chạy, evidence và commit history.
-- Ghi rõ: đã hoàn thành, đã kiểm chứng, chưa hoàn thành, residual work,
-  technical debt, blocker, risk, quyết định cần tôi.
-- Cập nhật residual-work.md, technical-debt.md và CHANGELOG nếu có thay đổi đáng kể.
-- Ghi trạng thái ba lớp: verification, checkpoint, acceptance.
-
-Không che giấu phần chưa xong. Không gọi checkpoint là nghiệm thu.
-```
-
-### 11.7 Tạo M bồi hoàn
-
-```text
-Hãy rà soát <M-ID> và lập kế hoạch bồi hoàn theo NewEra.
-
-- Đọc milestone report, residual-work.md, technical-debt.md và các blocker.
-- Nhóm các hạng mục còn nợ theo mức ảnh hưởng.
-- Tạo <M-ID>.1 gồm các Phase cần thiết để đóng phần còn nợ.
-- Cập nhật ROADMAP và milestone-index.
-- Nếu có hạng mục thực chất là tính năng mới, tạo change request thay vì nhét vào <M-ID>.1.
-
-Cho tôi biết cái gì trả nợ ngay, cái gì nên dời và vì sao.
-```
-
-### 11.8 Nghiên cứu một vấn đề
-
-```text
-Hãy nghiên cứu vấn đề sau theo NewEra: <vấn đề>.
-
-- Tạo RES item với câu hỏi cụ thể và mức ảnh hưởng.
-- Tìm nguồn đáng tin, ưu tiên tài liệu chính thức, ghi ngày kiểm tra.
-- Tóm tắt thay vì sao chép dài, kèm link.
-- So sánh phương án theo tiêu chí của dự án này.
-- Kết luận kèm độ tin cậy và phần chưa chắc chắn.
-- Nếu là quyết định lớn, ghi vào decision-log.md.
-```
-
-### 11.9 Đổi phạm vi giữa dự án
-
-```text
-Tôi muốn thay đổi: <mô tả thay đổi>.
-
-Theo NewEra:
-- Tạo change request trong change-control.md.
-- Đánh giá ảnh hưởng tới ROADMAP, SRS, Architecture, timeline và các M đang mở.
-- Đề xuất phương án: thêm Phase, thêm M, hay dời việc khác.
-- Chưa triển khai cho đến khi tôi xác nhận phương án.
-```
-
-### 11.10 Tiếp tục sau khi ngắt
-
-```text
-Hãy tiếp tục công việc NewEra đang dở.
-
-- Đọc git log gần nhất, task.md (bao gồm checkpoint), và report.md của Phase đang mở.
-- Xác định chính xác task nào dở, cái gì đã kiểm chứng, cái gì chưa.
-- Báo cho tôi trạng thái hiện tại trước khi làm tiếp.
-- Sau đó tiếp tục theo đúng thứ tự task còn lại.
-```
-
-### 11.11 Nghiệm thu
-
-```text
-<ACCEPTED | REJECTED | DEFERRED> <M-ID hoặc M-ID-P-ID>
-Lý do: <lý do>
-
-Hãy cập nhật acceptance status, checkpoint, report, decision-log
-và ROADMAP theo quyết định này, rồi commit.
-```
-
----
+| Giai đoạn | Section trong prompt guide |
+|---|---|
+| Intake → foundation | 1–2 |
+| M/Phase execution | 3–4 |
+| Verification → reports | 5–7 |
+| Repayment/research/change/resume/acceptance | 8–12 |
 
 ## 12. Agent và Skill dùng khi nào
 
@@ -537,7 +378,7 @@ Tài liệu nền, mỗi nhóm task logic, Phase đã verification, evidence và
 - [ ] Mọi Phase có report
 - [ ] Milestone report đã tạo
 - [ ] Residual work đã tổng hợp
-- [ ] ROADMAP và milestone-index đã cập nhật
+- [ ] ROADMAP §3 milestone index đã cập nhật
 - [ ] Đã quyết định có cần `M.x` hay không
 - [ ] Đã có nghiệm thu của bạn
 
@@ -553,6 +394,6 @@ Tài liệu nền, mỗi nhóm task logic, Phase đã verification, evidence và
 
 **AI kẹt vì thiếu secret hoặc quyền.** Đúng quy trình là AI ghi `BLOCKED` và nói rõ cần gì. Bạn đưa secret vào `.env` hoặc secret manager rồi cho biết tên biến.
 
-**Chạy dài nhiều giờ rồi mất mạch.** Dùng prompt [11.10](#1110-tiếp-tục-sau-khi-ngắt); AI dựng lại trạng thái từ git log, task và checkpoint.
+**Chạy dài nhiều giờ rồi mất mạch.** Dùng section **11. Resume work** trong `docs/prompts/README.md`; AI dựng lại trạng thái từ git log, task và checkpoint.
 
 **Tài liệu phình to không cần thiết.** Rà `document-registry.md`, đánh dấu `NOT_APPLICABLE` kèm lý do. NewEra không yêu cầu tạo tài liệu chỉ để cho đủ bộ.

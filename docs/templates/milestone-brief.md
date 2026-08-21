@@ -7,7 +7,7 @@
 - Owner/sponsor/reviewer:
 - ROADMAP reference/version:
 - Ngày lập/cập nhật:
-- Trạng thái: DRAFT | READY | IN_PROGRESS | BLOCKED | COMPLETE
+- Trạng thái: DRAFT | READY | IN_PROGRESS | BLOCKED | CLOSED
 - Related SRS/Architecture/decision/CR:
 
 ## Mục tiêu và outcome
@@ -47,9 +47,9 @@
 
 | ID | Type | Description/impact | Owner | Mitigation/next action | Due | Status |
 |---|---|---|---|---|---|---|
-| DEP-XXX | Dependency | | | | | OPEN |
-| RISK-XXX | Risk | | | | | OPEN |
-| ASM-XXX | Assumption | | | | | OPEN |
+| DEP-<DEP-ID> | Dependency | | | | | OPEN |
+| RISK-<RISK-ID> | Risk | | | | | OPEN |
+| ASM-<ASM-ID> | Assumption | | | | | OPEN |
 
 - Capacity/budget/window:
 - Critical path:
@@ -73,11 +73,11 @@
 - [ ] Traceability, phase report, residual/debt và milestone report đồng bộ.
 - [ ] Outcome được đối chiếu với success criteria.
 - [ ] Verification limitation và acceptance decision được ghi rõ.
-- [ ] Chỉ người/role có thẩm quyền chuyển acceptance; test pass/checkpoint không tự là `ACCEPTED`.
+- [ ] Acceptance status và decision tuân thủ `docs/03-requirements/acceptance-policy.md`.
 
 ## Artifact/checklist plan
 
-- [ ] ROADMAP / milestone-index
+- [ ] ROADMAP §3 milestone index
 - [ ] SRS / requirements / acceptance policy
 - [ ] Architecture / registry / environment
 - [ ] Phase `task.md` (task + test + evidence + checkpoint)

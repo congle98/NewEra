@@ -9,7 +9,7 @@
 - Report status: DRAFT | FINAL
 - Verification status: VERIFIED | PARTIAL | FAILED | BLOCKED
 - Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
-- Acceptance status: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Acceptance status: PENDING | ACCEPTED | REJECTED | DEFERRED
 - Decision/CR references:
 
 ## Outcome và scope result
@@ -48,7 +48,7 @@
 
 | ID | Type | Description | Impact/priority | Owner | Close condition/next action | Proposed M/Phase | Status |
 |---|---|---|---|---|---|---|---|
-| RESID/DEBT/RISK-XXX | | | | | | | OPEN |
+| RESID/DEBT/RISK-<ID> | | | | | | | OPEN |
 
 Feature mới phải đi qua change control/ROADMAP; residual không được dùng để che scope drift.
 
@@ -68,7 +68,7 @@ Feature mới phải đi qua change control/ROADMAP; residual không được d�
 - Điều kiện chuyển acceptance:
 - Người quyết định/ngày:
 
-Report phải phản ánh đúng bằng chứng; test pass hoặc checkpoint không tự tạo `ACCEPTED`.
+Report phải phản ánh đúng evidence và tham chiếu `docs/03-requirements/acceptance-policy.md`; report không tự tạo acceptance.
 ## Final review checklist
 
 - [ ] Outcome, scope deviation and success measure have actual evidence.

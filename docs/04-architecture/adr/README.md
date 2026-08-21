@@ -17,11 +17,11 @@ ADR ghi một quyết định kỹ thuật có ảnh hưởng dài hạn, khác 
 ## Template
 
 ```markdown
-# ADR-XXX: Tên quyết định
+# ADR-<ADR-ID>: Tên quyết định
 
 - Ngày:
 - Owner/reviewer:
-- Liên kết: CR-/DEC-/RES-/REQ-
+- Liên kết: CR-<CR-ID>/DEC-<DEC-ID>/RES-<RES-ID>/REQ-<REQ-ID>
 - Trạng thái: PROPOSED | ACCEPTED | SUPERSEDED
 
 ## Bối cảnh

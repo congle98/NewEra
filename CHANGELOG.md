@@ -2,13 +2,15 @@
 
 ## Unreleased
 
+- Gộp toàn bộ prompt vào `docs/prompts/README.md` theo thứ tự quy trình từ intake đến acceptance.
+
 ## NewEra v0.2 - 2026-08-21
 
-- Nông cấp toàn bộ template trong `docs/templates/` với checklist, owner, status, quality gate và traceability chi tiết hơn.
-- Mô rộng `task.md` thành artifact hợp nhất cho task, test plan, verification evidence và checkpoint.
+- Nâng cấp toàn bộ template trong `docs/templates/` với checklist, owner, status, quality gate và traceability chi tiết hơn.
+- Mở rộng `task.md` thành artifact hợp nhất cho task, test plan, verification evidence và checkpoint.
 - Nâng cấp SRS và ROADMAP thành template project-neutral có readiness, DoR/DoD, acceptance, dependency, risk và change-control gates.
 - Cập nhật milestone index, governance, agents, skills, prompts và acceptance guidance theo canonical artifact model.
-- Giᯯ nguyên kernel boundary: không tạo self-execution artifacts, self-evidence, self-report hoặc machine state cho NewEra.
+- Giữ nguyên kernel boundary: không tạo self-execution artifacts, self-evidence, self-report hoặc machine state cho NewEra.
 
 - Làm rõ NewEra repository là documentation/process kernel, không phải project tự chạy quy trình của chính nó.
 - Tách template/guidance khỏi project-specific M/Phase, evidence, report, residual và technical-debt artifacts.

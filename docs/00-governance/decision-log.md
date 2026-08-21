@@ -4,12 +4,12 @@ Decision Log là lịch sử quyết định có ảnh hưởng đến scope, ar
 
 | ID | Ngày | Quyết định | Bối cảnh | Ảnh hưởng | Người/role | Trạng thái |
 |---|---|---|---|---|---|---|
-| DEC-XXX | | | | | | PROPOSED |
+| DEC-<DEC-ID> | | | | | | PROPOSED |
 
 The NewEra repository provides the decision-log format. A project adopting NewEra owns the actual decision records and acceptance decisions in its own workspace.
 ## Quy tắc
 
-1. ID tăng dần `DEC-XXX`, `DEC-YYY` và không tái sử dụng.
+1. ID tăng dần `DEC-<DEC-ID>`, `DEC-YYY` và không tái sử dụng.
 2. Quyết định lớn phải liên kết tới CR, ADR, requirement hoặc research liên quan.
 3. `ACCEPTED` ở Decision Log nghĩa là quyết định đã được thông qua, không đồng nghĩa M/Phase đã nghiệm thu.
 4. Khi quyết định bị thay thế, giữ bản cũ ở `SUPERSEDED`, ghi ID quyết định thay thế và không xóa lịch sử.
@@ -18,9 +18,9 @@ The NewEra repository provides the decision-log format. A project adopting NewEr
 ## Mẫu
 
 ```markdown
-## DEC-XXX: Tên quyết định
+## DEC-<DEC-ID>: Tên quyết định
 - Bối cảnh:
-- Nguồn/ID liên quan: CR-/RES-/RISK-/REQ-/ADR-
+- Nguồn/ID liên quan: CR-<CR-ID>/RES-<RES-ID>/RISK-<RISK-ID>/REQ-<REQ-ID>/ADR-<ADR-ID>
 - Các phương án:
 - Quyết định:
 - Lý do:

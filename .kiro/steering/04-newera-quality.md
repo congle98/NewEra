@@ -4,6 +4,8 @@ inclusion: always
 
 # NewEra Quality Steering
 
-Verification tối thiểu theo dự án gồm test phù hợp, build/lint/typecheck nếu có, traceability và evidence.
+Runtime rule: dùng `docs/03-requirements/acceptance-policy.md` cho gate và `docs/00-governance/status-model.md` cho status.
 
-Mọi lỗi phải được sửa, ghi nhận hoặc chuyển thành residual/blocker. Không dùng report hoặc checkpoint chưa hoàn thành làm bằng chứng nghiệm thu.
+- Chạy test/build/lint/typecheck/security/operational checks phù hợp.
+- Ghi expected, actual, environment, commit và limitation trong `task.md`.
+- Lỗi phải sửa, ghi nhận hoặc chuyển residual/blocker; không tự tạo acceptance.

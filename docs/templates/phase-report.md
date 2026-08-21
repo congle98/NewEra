@@ -10,7 +10,7 @@
 - Report status: DRAFT | FINAL
 - Trạng thái kỹ thuật: IN_PROGRESS | VERIFIED | PARTIAL | FAILED | BLOCKED
 - Trạng thái checkpoint: INCOMPLETE | CHECKPOINT_PENDING
-- Trạng thái nghiệm thu: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Trạng thái nghiệm thu: PENDING | ACCEPTED | REJECTED | DEFERRED
 
 ## Tóm tắt và boundary
 
@@ -25,7 +25,7 @@
 
 | Task | Requirement/AC | Output | Verification/evidence trong task.md | Status |
 |---|---|---|---|---|
-| TASK-XXX | REQ-/AC- | | TEST-/EVD- | PASS |
+| TASK-<TASK-ID> | REQ-<REQ-ID>/AC-<AC-ID> | | TEST-<TEST-ID>/EVD-<EVD-ID> | PASS |
 
 ## Test, verification và evidence summary
 
@@ -49,7 +49,7 @@
 
 | ID | Type | Description | Priority/risk | Owner | Close condition/next action | Status |
 |---|---|---|---|---|---|---|
-| RESID/DEBT-XXX | | | | | | OPEN |
+| RESID/DEBT-<ID> | | | | | | OPEN |
 
 ## Blocker/risk và quyết định
 
@@ -65,7 +65,7 @@
 - Có cần <M-ID>.<n> không và vì sao:
 - ROADMAP update cần thiết:
 
-Report là bản tóm tắt có truy nguyên; không xóa phần chưa hoàn thành và không gọi checkpoint là nghiệm thu.
+Report là bản tóm tắt có truy nguyên; không xóa phần chưa hoàn thành và áp dụng `docs/03-requirements/acceptance-policy.md` cho checkpoint/acceptance.
 ## Final review checklist
 
 - [ ] Planned outcome and delivered outcome are compared.
@@ -73,4 +73,4 @@ Report là bản tóm tắt có truy nguyên; không xóa phần chưa hoàn th�
 - [ ] Test/evidence/checkpoint references point to sections in task.md.
 - [ ] Environment, commit, limitations and NOT_RUN/BLOCKED results are recorded.
 - [ ] Residual/debt/blocker/risk items have owner and next action.
-- [ ] Acceptance remains NOT_ACCEPTED until an authorized decision is recorded.
+- [ ] Acceptance remains PENDING until an authorized decision is recorded.

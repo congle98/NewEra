@@ -37,7 +37,7 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 
 | ID | Goal/outcome | Baseline | Target | Measurement/source | Owner | Due/release |
 |---|---|---|---|---|---|---|
-| OBJ-XXX | | | | | | |
+| OBJ-<OBJ-ID> | | | | | | |
 
 ### Non-goals
 
@@ -56,12 +56,12 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 
 | ID | Actor/stakeholder | Need/concern | Decision/usage | Acceptance role | Owner/contact |
 |---|---|---|---|---|---|
-| STAKE-XXX | | | | | |
-| USER-XXX | | | | | |
+| STAKEHOLDER-<STAKEHOLDER-ID> | | | | | |
+| USER-<USER-ID> | | | | | |
 
 ### Use case template
 
-#### UC-XXX - <Tên use case>
+#### UC-<UC-ID> - <Tên use case>
 
 - Actor:
 - Goal:
@@ -80,8 +80,8 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 |---|---|---|---|
 | | | | |
 
-- BR-XXX:
-- DATA-XXX:
+- BR-<BR-ID>:
+- DATA-<DATA-ID>:
 - Glossary decisions/unknowns:
 
 ## 5. Scope và boundary
@@ -103,11 +103,11 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 
 | ID | System/actor | Direction | Contract/input/output | Owner | Availability/security constraint |
 |---|---|---|---|---|---|
-| INT-XXX | | | | | |
+| INT-<INT-ID> | | | | | |
 
 ## 6. Functional requirements
 
-### REQ-XXX - <Tên requirement nguyên tử>
+### REQ-<REQ-ID> - <Tên requirement nguyên tử>
 
 - Tên ngắn:
 - Mục tiêu/outcome:
@@ -128,7 +128,8 @@ Mỗi requirement phải có ID ổn định, priority, source, owner, dependenc
 - Related use cases/glossary:
 - Architecture/ADR reference:
 - Task/test/evidence references:
-- Trạng thái: DRAFT | READY | IN_PROGRESS | VERIFIED | BLOCKED | DEFERRED
+- Lifecycle status: DRAFT | READY | IN_PROGRESS | BLOCKED | CLOSED | DEFERRED | CANCELLED
+- Verification status: NOT_RUN | PARTIAL | VERIFIED | FAILED | BLOCKED | NOT_APPLICABLE
 
 #### Acceptance criteria
 
@@ -136,8 +137,8 @@ Acceptance criteria phải độc lập, observable và testable. Dùng Given/Wh
 
 | ID | Given/precondition | When/action | Then/expected result | Measurement/tolerance | Test/evidence reference | Status |
 |---|---|---|---|---|---|---|
-| AC-XXX-001 | | | | | | NOT_RUN |
-| AC-XXX-002 | | | | | | NOT_RUN |
+| AC-<AC-ID>-001 | | | | | | NOT_RUN |
+| AC-<AC-ID>-002 | | | | | | NOT_RUN |
 
 #### Requirement review checklist
 
@@ -156,12 +157,12 @@ Mỗi NFR phải có baseline, target, threshold/tolerance, measurement method, 
 
 | ID | Category | Requirement | Baseline | Target/threshold | Measurement/test | Environment | Owner | Status |
 |---|---|---|---|---|---|---|---|---|
-| NFR-XXX | Performance/scale | | | | | | | DRAFT |
-| SEC-XXX | Security/privacy | | | | | | | DRAFT |
-| OPS-XXX | Availability/operations | | | | | | | DRAFT |
-| DATA-XXX | Integrity/retention | | | | | | | DRAFT |
-| UX-XXX | Usability/accessibility | | | | | | | DRAFT |
-| COMP-XXX | Compatibility/compliance | | | | | | | DRAFT |
+| NFR-<NFR-ID> | Performance/scale | | | | | | | DRAFT |
+| SEC-<SEC-ID> | Security/privacy | | | | | | | DRAFT |
+| OPS-<OPS-ID> | Availability/operations | | | | | | | DRAFT |
+| DATA-<DATA-ID> | Integrity/retention | | | | | | | DRAFT |
+| UX-<UX-ID> | Usability/accessibility | | | | | | | DRAFT |
+| COMP-<COMP-ID> | Compatibility/compliance | | | | | | | DRAFT |
 
 Categories có thể gồm performance, availability, scalability, security, privacy, accessibility, compatibility, observability, operations, data integrity, cost và compliance.
 
@@ -182,10 +183,10 @@ Categories có thể gồm performance, availability, scalability, security, pri
 
 | ID | Type | Statement | Owner | Validation/expiry | Impact if false | Status |
 |---|---|---|---|---|---|---|
-| ASM-XXX | Assumption | | | | | OPEN |
-| CON-XXX | Constraint | | | | | OPEN |
-| DEP-XXX | Dependency | | | | | OPEN |
-| RISK-XXX | Risk | | | | | OPEN |
+| ASM-<ASM-ID> | Assumption | | | | | OPEN |
+| CON-<CON-ID> | Constraint | | | | | OPEN |
+| DEP-<DEP-ID> | Dependency | | | | | OPEN |
+| RISK-<RISK-ID> | Risk | | | | | OPEN |
 
 Open questions phải có owner, next action và due/review date; không biến assumption thành fact nếu chưa kiểm chứng.
 
@@ -203,11 +204,19 @@ Open questions phải có owner, next action và due/review date; không biến 
 
 ## 11. Traceability matrix
 
-| Requirement | ROADMAP/M/Phase | Architecture/ADR | Task | Test | Evidence in task.md | Phase report | Acceptance |
-|---|---|---|---|---|---|---|---|
-| REQ-XXX | | | TASK-XXX | TEST-XXX | EVD-XXX | RPT-XXX | NOT_ACCEPTED |
+SRS là canonical source cho traceability cấp product requirement. Phase-level execution traceability nằm trong `task.md`; không tạo file traceability độc lập.
 
-Không để orphan requirement, task, test hoặc evidence. Nếu một quan hệ không áp dụng, ghi `NOT_APPLICABLE` và lý do.
+| Requirement | ROADMAP/M/Phase | Architecture/ADR | Task | Test | Evidence in task.md | Phase report | Acceptance | Status |
+|---|---|---|---|---|---|---|---|---|
+| REQ-<REQ-ID> | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | PENDING | DRAFT |
+
+### Phase traceability view
+
+| Requirement | ROADMAP | Phase | Task | Test | Evidence | Status |
+|---|---|---|---|---|---|
+| REQ-<REQ-ID> | <M-ID> | <M-ID>-<P-ID> | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | DRAFT |
+
+Không đánh dấu requirement là `VERIFIED` nếu chưa có test/evidence hoặc lý do `NOT_APPLICABLE` rõ ràng. Không đánh dấu `ACCEPTED` dựa chỉ trên ma trận này; áp dụng `docs/03-requirements/acceptance-policy.md`.
 
 ## 12. SRS readiness và change checklist
 
@@ -233,4 +242,4 @@ Không để orphan requirement, task, test hoặc evidence. Nếu một quan h�
 
 Không sửa requirement/acceptance criteria/scope âm thầm. Mọi thay đổi phải ghi CR, impact tới ROADMAP/Architecture/task/test/evidence, người quyết định, ngày hiệu lực và requirement/version history.
 
-SRS không tự tạo `ACCEPTED`; verification và checkpoint chỉ là đầu vào cho acceptance policy.
+SRS không tự tạo acceptance; áp dụng `docs/03-requirements/acceptance-policy.md` cho verification, checkpoint và acceptance authority.

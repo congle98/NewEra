@@ -6,7 +6,7 @@ Repository này là **process/documentation kernel**, không phải một projec
 
 ## Bắt đầu
 
-Đọc `GUIDE.md` trước; đó là hướng dẫn vận hành đầy đủ kèm thư viện prompt.
+Đọc `AGENTS.md` trước để biết luật bắt buộc, sau đó đọc `GUIDE.md` để xem workflow và prompt index.
 
 Đường ngắn nhất để bắt đầu một dự án:
 
@@ -25,14 +25,15 @@ Sau đó theo trình tự:
 
 ## Nguyên tắc trạng thái
 
-`VERIFIED` chỉ có nghĩa là đã kiểm chứng theo tiêu chí kỹ thuật. `CHECKPOINT_PENDING` là đang chờ xem xét và chưa hoàn thành. Chỉ `ACCEPTED` mới là nghiệm thu.
+Xem `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md` để biết status, checkpoint và acceptance; README chỉ tóm tắt boundary.
 
 ## Cấu trúc chính
 
 - `AGENTS.md`: hiến pháp dự án.
-- `GUIDE.md`: quy trình vận hành và thư viện prompt.
+- `GUIDE.md`: quy trình vận hành và prompt index.
+- `docs/prompts/README.md`: thư viện prompt canonical theo quy trình.
 - `.kiro/`: Steering, agents, skills và hooks.
-- `docs/`: governance, discovery, planning, requirements, architecture, environment, templates, prompts và guidance.
+- `docs/`: governance, discovery, planning, requirements, architecture, environment, templates, prompt guide và guidance.
 - `docs/06-execution/`, `docs/07-evidence/`, `docs/08-reports/`: chỉ chứa index/guidance trong kernel; project sử dụng kernel tạo artifact cụ thể ở workspace riêng.
 - `src/`, `tests/`, `scripts/`: không thuộc kernel baseline; chỉ xuất hiện khi project adopter cần triển khai hoặc tích hợp adapter.
 

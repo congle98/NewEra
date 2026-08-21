@@ -1,10 +1,11 @@
 ---
-inclusion: fileMatch
-fileMatchPattern: 'docs/01-discovery/**'
+inclusion: always
 ---
 
 # NewEra Research Steering
 
-Research phải có ID, câu hỏi, mức ảnh hưởng, nguồn, ngày kiểm tra, kết luận, độ tin cậy và trạng thái.
+Runtime rule: dùng `docs/templates/research-item.md` cho từng câu hỏi và `docs/01-discovery/research.md` làm index/rules.
 
-Tóm tắt/paraphrase thay vì sao chép dài. Thông tin chưa đủ phải để OPEN hoặc BLOCKED. Quyết định lớn phải được ghi vào Decision Log.
+- Ưu tiên nguồn chính thức, ghi version/date/confidence/limitation.
+- Tách fact, assumption và recommendation.
+- Research ảnh hưởng scope/design phải handoff tới CR, DEC hoặc ADR.

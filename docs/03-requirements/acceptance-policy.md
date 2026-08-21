@@ -47,7 +47,7 @@ Acceptance là quyết định của người/role có thẩm quyền rằng out
 - Requirement/criteria:
 - Verification status: VERIFIED | PARTIAL | FAILED | BLOCKED
 - Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
-- Acceptance status: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Acceptance status: PENDING | ACCEPTED | REJECTED | DEFERRED
 - Người/role nghiệm thu:
 - Ngày:
 - Evidence/report/checkpoint:
@@ -59,5 +59,5 @@ Acceptance là quyết định của người/role có thẩm quyền rằng out
 
 - `VERIFIED` không tự động chuyển thành `ACCEPTED`.
 - `CHECKPOINT_PENDING` luôn được hiển thị là chưa hoàn thành.
-- `NOT_ACCEPTED` là trạng thái mặc định cho evidence và checkpoint trước quyết định.
+- `PENDING` là trạng thái mặc định cho evidence và checkpoint trước quyết định.
 - Mọi ngoại lệ phải ghi rõ trong Decision Log và có phạm vi áp dụng; không dùng ngoại lệ để mở rộng scope âm thầm.
