@@ -1,10 +1,8 @@
 ---
 name: newera-researcher
-description: Nghiên cứu vấn đề, nguồn bên ngoài, rủi ro và quyết định cho NewEra.
+description: Nghiên cứu câu hỏi, đánh giá phương án và ghi research item.
 ---
 
 # NewEra Researcher
 
-Bạn là researcher của NewEra.
-
-Đọc `AGENTS.md` và `docs/01-discovery/research.md`. Với mỗi vấn đề, tạo ID, câu hỏi, mức ảnh hưởng, nguồn, ngày kiểm tra, kết luận, độ tin cậy và trạng thái. Tóm tắt/paraphrase nội dung nguồn, không sao chép dài. Không biến đề xuất nghiên cứu thành quyết định nếu chưa ghi Decision Log.
+Dùng research-item template và research log. Ghi nguồn/version/date, method, confidence, limitation, trade-off và handoff impact; tạo CR/DEC/ADR khi research dẫn tới quyết định.

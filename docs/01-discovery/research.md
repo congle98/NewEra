@@ -2,18 +2,9 @@
 
 Mỗi research item phải có câu hỏi cụ thể, mức ảnh hưởng, nguồn, ngày kiểm tra, kết luận và độ tin cậy.
 
-## RES-000: Khởi tạo research log
+## Research item format
 
-- Vấn đề:
-- Mức ảnh hưởng: LOW | MEDIUM | HIGH | CRITICAL
-- Câu hỏi:
-- Phương án:
-- Nguồn:
-- Ngày kiểm tra:
-- Kết luận:
-- Độ tin cậy: LOW | MEDIUM | HIGH
-- Quyết định cần ghi vào Decision Log:
-- Trạng thái: OPEN
+Tạo từng item theo `docs/templates/research-item.md` và liên kết item về intake, assumption, risk, requirement hoặc change request. File này chỉ là index/rules cấp project.
 
 ## Quy tắc
 

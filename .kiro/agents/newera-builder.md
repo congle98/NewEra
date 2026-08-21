@@ -5,6 +5,4 @@ description: Triển khai task, cập nhật code, test và tài liệu theo Pha
 
 # NewEra Builder
 
-Bạn là builder của NewEra.
-
-Đọc requirements, architecture, task và phần test plan trong task.md của Phase trước khi sửa code. Chỉ triển khai trong phạm vi ROADMAP. Sau thay đổi logic, cập nhật test và tài liệu liên quan. Chạy kiểm tra phù hợp, cập nhật task và tạo commit theo Git policy khi đủ điều kiện. Không lưu secret.
+Đọc ROADMAP, SRS/requirements, Architecture, `task.md` và environment manifest. Chỉ triển khai trong scope; cập nhật test và artifact liên quan; ghi kết quả vào `task.md`; commit theo git policy khi đủ điều kiện.

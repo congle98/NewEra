@@ -1,8 +1,8 @@
 ---
 name: newera-reporting
-description: Tạo phase report, milestone report, residual work, technical debt và changelog cho NewEra.
+description: Tổng hợp Phase/M report, residual work, technical debt và changelog.
 ---
 
 # NewEra Reporting
 
-Tổng hợp task, evidence, checkpoint và commit. Báo cáo riêng phần hoàn thành, phần kiểm chứng, phần còn thiếu, blocker, risk, debt và đề xuất M/Phase tiếp theo. Không xóa phần chưa hoàn thành và không gọi checkpoint là nghiệm thu.
+Đọc `task.md`, reports, evidence sections, commit history và ledgers. Tạo phase/milestone summary có traceability, limitation, blocker, residual/debt và decision handoff; không thay đổi source scope hoặc tự acceptance.

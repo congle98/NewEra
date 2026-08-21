@@ -8,13 +8,13 @@ Residual là phần scope đã được xác định nhưng chưa hoàn tất, b
 |---|---|---|---|---|---|---|---|---|---|---|
 | RESID-<PROJECT>-001 | | | INCOMPLETE/BLOCKER/ACCEPTANCE_GAP | | | | | | | OPEN |
 
-Status: `OPEN` → `IN_PROGRESS` → `READY_TO_VERIFY` → `CLOSED`, hoặc `DEFERRED`/`CANCELLED` với decision reference.
+Status: `OPEN` → `IN_PROGRESS` → `READY` → `CLOSED`, hoặc `DEFERRED`/`CANCELLED` với decision reference.
 
 ## Closure record
 
 | ID | Resolution/actual result | Evidence/commit | Verification date/result | Acceptance/decision | Closed by/date |
 |---|---|---|---|---|---|
-| RESID-XXX | | | | | |
+| RESID-<RESID-ID> | | | | | |
 
 ## Review checklist
 

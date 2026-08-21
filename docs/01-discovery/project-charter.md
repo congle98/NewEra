@@ -22,9 +22,9 @@ Chưa xác định.
 
 - RISK-001:
 
-## Giả định
+## Assumptions reference
 
-- ASM-001:
+Assumption ledger canonical: `docs/01-discovery/assumptions.md`.
 
 ## Tiêu chí thành công
 

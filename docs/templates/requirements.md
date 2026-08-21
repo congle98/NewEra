@@ -1,4 +1,4 @@
-# MXX-PXX - Phase Requirements
+# <M-ID>-<P-ID> - Phase Requirements
 
 - Phase ID:
 - M / ROADMAP reference:
@@ -33,7 +33,7 @@ Mỗi requirement phải:
 
 ## 3. Functional requirements
 
-### REQ-MXX-PXX-001 - <Tên requirement>
+### REQ-<M-ID>-<P-ID>-001 - <Tên requirement>
 
 - Tên ngắn:
 - Mục tiêu/outcome:
@@ -59,8 +59,8 @@ Mỗi requirement phải:
 
 | ID | Given/precondition | When/action | Then/expected result | Measurement/evidence | Status |
 |---|---|---|---|---|---|
-| AC-MXX-PXX-001 | | | | | NOT_RUN |
-| AC-MXX-PXX-002 | | | | | NOT_RUN |
+| AC-<M-ID>-<P-ID>-001 | | | | | NOT_RUN |
+| AC-<M-ID>-<P-ID>-002 | | | | | NOT_RUN |
 
 #### Requirement review checklist
 
@@ -79,10 +79,10 @@ Mỗi NFR phải có metric, baseline, target, threshold, measurement method và
 
 | ID | Category | Requirement | Metric/baseline | Target/threshold | Measurement | Owner | Status |
 |---|---|---|---|---|---|---|---|
-| NFR-MXX-PXX-001 | Performance | | | | | | DRAFT |
-| SEC-MXX-PXX-001 | Security/privacy | | | | | | DRAFT |
-| OPS-MXX-PXX-001 | Operability | | | | | | DRAFT |
-| DATA-MXX-PXX-001 | Data/integrity | | | | | | DRAFT |
+| NFR-<M-ID>-<P-ID>-001 | Performance | | | | | | DRAFT |
+| SEC-<M-ID>-<P-ID>-001 | Security/privacy | | | | | | DRAFT |
+| OPS-<M-ID>-<P-ID>-001 | Operability | | | | | | DRAFT |
+| DATA-<M-ID>-<P-ID>-001 | Data/integrity | | | | | | DRAFT |
 
 Các category có thể gồm performance, availability, security, privacy, accessibility, compatibility, observability, operations, data integrity, cost và compliance.
 
@@ -101,7 +101,7 @@ Các category có thể gồm performance, availability, security, privacy, acce
 
 | Requirement | ROADMAP/M/Phase | Architecture/ADR | Task | Test | Evidence | Report | Status |
 |---|---|---|---|---|---|---|---|
-| REQ-MXX-PXX-001 | | | TASK- | TEST- | EVD- | RPT- | DRAFT |
+| REQ-<M-ID>-<P-ID>-001 | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | DRAFT |
 
 - SRS/ROADMAP:
 - Architecture/ADR:
@@ -127,6 +127,6 @@ Các category có thể gồm performance, availability, security, privacy, acce
 - [ ] Test/evidence/checkpoint đã cập nhật trong `task.md`.
 - [ ] Traceability và report đã đồng bộ.
 - [ ] Residual/debt/blocker/risk có ID và owner/điều kiện đóng.
-- [ ] Chỉ chuyển `CHECKPOINT_PENDING` khi đủ hồ sơ; không tự chuyển `ACCEPTED`.
+- [ ] Chuyển status theo `docs/00-governance/status-model.md` và acceptance theo `docs/03-requirements/acceptance-policy.md`.
 
 Không thêm requirement mới trong lúc thực hiện mà không tạo CR và cập nhật ROADMAP/SRS nguồn trước.

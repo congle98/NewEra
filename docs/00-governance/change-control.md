@@ -11,7 +11,7 @@ Không thay đổi mục tiêu, phạm vi, thứ tự M/Phase, timeline, kiến 
 
 ## Quy trình
 
-1. Tạo ID tăng dần `CR-XXX`, `CR-YYY` trong Change Request Register; không tái sử dụng ID.
+1. Tạo ID tăng dần `CR-<CR-ID>`, `CR-YYY` trong Change Request Register; không tái sử dụng ID.
 2. Ghi nguồn phát sinh, vấn đề, đề xuất, lý do, phạm vi bị tác động và trạng thái ban đầu `PROPOSED`.
 3. Đánh giá impact theo checklist: ROADMAP/M/Phase, SRS/acceptance, Architecture/ADR, registry, dependency, chi phí, timeline, security/data, test/evidence và residual/debt.
 4. Ghi phương án thay thế và rủi ro của phương án không làm. Nếu thiếu dữ liệu, ghi `OPEN`, không tự đoán.
@@ -25,7 +25,7 @@ The register starts empty for a new project. Add one row per approved or pending
 
 | ID | Mô tả ngắn | Nguồn | Artifact ảnh hưởng | Trạng thái | Decision | Ngày |
 |---|---|---|---|---|---|---|
-| CR-XXX | | | | PROPOSED | | |
+| CR-<CR-ID> | | | | PROPOSED | | |
 
 ## Quy tắc source ownership
 
@@ -33,7 +33,7 @@ The NewEra repository defines the change-control method. A project adopting NewE
 ## Mẫu change request
 
 ```markdown
-## CR-XXX: Tên thay đổi
+## CR-<CR-ID>: Tên thay đổi
 - Phát sinh từ: RES-/RISK-/feedback-/issue-
 - Loại: EDITORIAL | TRACEABILITY | SCOPE | ARCHITECTURE/OPERATION
 - Mô tả hiện trạng:

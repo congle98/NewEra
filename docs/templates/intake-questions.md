@@ -35,7 +35,7 @@ Dùng hai vòng để thu thập đủ context trước khi lập ROADMAP. Khôn
 
 | ID | Question/decision | Answer/fact | Confidence | Source | Owner | Next action/due | Status |
 |---|---|---|---|---|---|---|---|
-| INQ-XXX | | | LOW/MEDIUM/HIGH | | | | OPEN |
+| INQ-<INQ-ID> | | | LOW/MEDIUM/HIGH | | | | OPEN |
 
 Mỗi câu trả lời phải đánh dấu `CONFIRMED`, `ASSUMED`, `OPEN` hoặc `BLOCKED`. Không dùng `ASSUMED` làm acceptance fact nếu chưa có kế hoạch kiểm chứng.
 

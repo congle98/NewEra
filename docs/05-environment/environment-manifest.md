@@ -25,3 +25,25 @@ Run: chưa xác định
 ## Notes
 
 AI cập nhật phần phát hiện được và ghi phần không thể tự kiểm tra vào `setup-report.md`.
+## Setup procedure
+
+### Prerequisites
+
+- Tool/runtime/service theo bảng Runtime và Services.
+- Quyền truy cập, account, secret/config phải được cấp qua environment/secret manager; không ghi secret vào repository.
+
+### Setup
+
+1. Kiểm tra manifest và version các tool.
+2. Cài dependency theo lockfile nếu có.
+3. Tạo `.env` từ `.env.example` nếu dự án cần.
+4. Khởi động service local cần thiết.
+5. Chạy smoke test.
+
+### Verification và troubleshooting
+
+- Lệnh/kịch bản:
+- Kết quả mong đợi:
+- Lỗi và cách xử lý:
+
+Ghi kết quả thực tế, issue và action vào `setup-report.md`; không xóa lịch sử phát hiện.

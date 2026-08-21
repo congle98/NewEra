@@ -1,13 +1,13 @@
-# RES-XXX - Research Item
+# RES-<RES-ID> - Research Item
 
 ## Document control
 
-- Research ID: RES-XXX
-- Phát sinh từ: INTAKE-/ASM-/RISK-/REQ-/CR-
+- Research ID: RES-<RES-ID>
+- Phát sinh từ: INTAKE-<INTAKE-ID>/ASM-<ASM-ID>/RISK-<RISK-ID>/REQ-<REQ-ID>/CR-<CR-ID>
 - Owner/reviewer:
 - Ngày mở / ngày kiểm tra gần nhất / ngày hết hạn:
 - Mức ảnh hưởng: LOW | MEDIUM | HIGH | CRITICAL
-- Trạng thái: OPEN | IN_PROGRESS | RESOLVED | INVALIDATED
+- Trạng thái: OPEN | IN_PROGRESS | RESOLVED | CANCELLED
 - Decision/ADR/ROADMAP/SRS references:
 
 ## Câu hỏi và phạm vi

@@ -1,4 +1,4 @@
-# MXX-PXX - Task, Test, Evidence và Checkpoint
+# <M-ID>-<P-ID> - Task, Test, Evidence và Checkpoint
 
 - Phase:
 - Requirement scope:
@@ -15,18 +15,18 @@ Task chỉ được `READY` khi có một output kiểm tra được, dependency
 
 | ID | Mô tả | Requirement | Dependency | Output/changed artifact | Verification | Status |
 |---|---|---|---|---|---|---|
-| TASK-MXX-PXX-001 | Kiểm tra dependency | REQ- | — | Dependency/status note | TEST- | DRAFT |
-| TASK-MXX-PXX-002 | Triển khai phần chính | REQ- | TASK-001 | Code/config/documentation | TEST- | DRAFT |
-| TASK-MXX-PXX-003 | Viết/cập nhật test | REQ- | TASK-002 | Test artifact | TEST- | DRAFT |
-| TASK-MXX-PXX-004 | Cập nhật tài liệu và traceability | REQ- | TASK-002/003 | Docs/traceability | TEST- | DRAFT |
-| TASK-MXX-PXX-005 | Chạy verification | REQ- | TASK-001..004 | Verification result | TEST- | DRAFT |
-| TASK-MXX-PXX-006 | Hoàn thiện evidence và checkpoint | REQ- | TASK-005 | Evidence/checkpoint record | Review | DRAFT |
+| TASK-<M-ID>-<P-ID>-001 | Kiểm tra dependency | REQ-<REQ-ID> | — | Dependency/status note | TEST-<TEST-ID> | DRAFT |
+| TASK-<M-ID>-<P-ID>-002 | Triển khai phần chính | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-001 | Code/config/documentation | TEST-<TEST-ID> | DRAFT |
+| TASK-<M-ID>-<P-ID>-003 | Viết/cập nhật test | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-002 | Test artifact | TEST-<TEST-ID> | DRAFT |
+| TASK-<M-ID>-<P-ID>-004 | Cập nhật tài liệu và traceability | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-002/003 | Docs/traceability | TEST-<TEST-ID> | DRAFT |
+| TASK-<M-ID>-<P-ID>-005 | Chạy verification | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-001..004 | Verification result | TEST-<TEST-ID> | DRAFT |
+| TASK-<M-ID>-<P-ID>-006 | Hoàn thiện evidence và checkpoint | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-005 | Evidence/checkpoint record | Review | DRAFT |
 
 ### Checklist bắt buộc cho từng task
 
 Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật. Không chuyển task sang `VERIFIED` nếu còn checkbox bắt buộc chưa hoàn thành.
 
-#### TASK-MXX-PXX-XXX - <Tên task>
+#### TASK-<M-ID>-<P-ID>-<TASK-ID> - <Tên task>
 
 - [ ] Có requirement/acceptance criteria liên quan.
 - [ ] Có owner và trạng thái hiện tại.
@@ -59,11 +59,11 @@ Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật
 
 | ID | Loại | Requirement/criteria | Lệnh/kịch bản | Kết quả mong đợi | Kết quả thực tế | Artifact/output | Status |
 |---|---|---|---|---|---|---|---|
-| TEST-MXX-PXX-001 | Static/format | REQ-/AC- | Chưa xác định | Không lỗi | | | NOT_RUN |
-| TEST-MXX-PXX-002 | Unit/integration | REQ-/AC- | Chưa xác định | Pass | | | NOT_RUN |
-| TEST-MXX-PXX-003 | Build/lint/type | REQ-/AC- | Chưa xác định hoặc N/A | Pass hoặc lý do N/A | | | NOT_RUN |
-| TEST-MXX-PXX-004 | Product/acceptance mapping | REQ-/AC- | Đối chiếu từng criteria | Có evidence tương ứng | | | NOT_RUN |
-| TEST-MXX-PXX-005 | Secret/dependency audit | REQ-/SEC- | Theo tool khả dụng | Không phát hiện secret/risk ngoài ngưỡng | | | NOT_RUN |
+| TEST-<M-ID>-<P-ID>-001 | Static/format | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Không lỗi | | | NOT_RUN |
+| TEST-<M-ID>-<P-ID>-002 | Unit/integration | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Pass | | | NOT_RUN |
+| TEST-<M-ID>-<P-ID>-003 | Build/lint/type | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định hoặc N/A | Pass hoặc lý do N/A | | | NOT_RUN |
+| TEST-<M-ID>-<P-ID>-004 | Product/acceptance mapping | REQ-<REQ-ID>/AC-<AC-ID> | Đối chiếu từng criteria | Có evidence tương ứng | | | NOT_RUN |
+| TEST-<M-ID>-<P-ID>-005 | Secret/dependency audit | REQ-<REQ-ID>/SEC-<SEC-ID> | Theo tool khả dụng | Không phát hiện secret/risk ngoài ngưỡng | | | NOT_RUN |
 
 ### Quy tắc kết quả
 
@@ -87,7 +87,7 @@ Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task v
 
 ## 4. Verification evidence
 
-- Evidence ID: EVD-MXX-PXX
+- Evidence ID: EVD-<M-ID>-<P-ID>
 - M/Phase:
 - Requirement IDs / acceptance criteria:
 - Task IDs:
@@ -109,7 +109,7 @@ Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task v
 
 | Check ID | Expected | Actual/output summary | Artifact/link | Status |
 |---|---|---|---|---|
-| TEST- | | | | |
+| TEST-<TEST-ID> | | | | |
 
 ### Traceability và artifacts
 
@@ -128,11 +128,11 @@ Mỗi check phải liên kết một hoặc nhiều requirement/criteria, task v
 - Blocker IDs:
 - Reproduction/next step:
 
-Evidence là bằng chứng verification kỹ thuật, không phải nghiệm thu sản phẩm. Test pass không chuyển acceptance status.
+Evidence là bằng chứng verification kỹ thuật; acceptance status áp dụng `docs/03-requirements/acceptance-policy.md`.
 
 ## 5. Checkpoint và review
 
-- Checkpoint ID: CHK-MXX-PXX
+- Checkpoint ID: CHK-<M-ID>-<P-ID>
 - M:
 - Ngày:
 - Reviewer/acceptor:
@@ -173,7 +173,7 @@ Evidence là bằng chứng verification kỹ thuật, không phải nghiệm th
 - Decision Log:
 - Lý do/điều kiện:
 
-Checkpoint này ghi nhận điểm xem xét; nếu chưa có quyết định, giữ `CHECKPOINT_PENDING` và `NOT_ACCEPTED`. Checkpoint chưa hoàn thành không được dùng làm bằng chứng nghiệm thu.
+Checkpoint này ghi nhận điểm xem xét; giữ status và acceptance theo `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`.
 
 ## 6. Definition of Done
 

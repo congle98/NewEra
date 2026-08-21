@@ -29,7 +29,7 @@ Schema, validator, profile và script tích hợp phải thuộc project sử d�
 ## Invariants
 
 - ROADMAP vẫn sở hữu M/Phase/scope/order.
-- `VERIFIED`, `CHECKPOINT_PENDING` và `ACCEPTED` không được đánh đồng.
+- Status và acceptance phải tuân thủ `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`.
 - Gate/check chỉ báo technical result; không tự tạo acceptance.
 - Reference phải resolve hoặc được ghi rõ là external/OPEN/BLOCKED.
 - Machine projection không được tạo nguồn sự thật kép với Markdown.

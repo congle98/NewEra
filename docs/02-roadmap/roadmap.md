@@ -38,16 +38,16 @@
 
 | Scope ID | Included/excluded | Description | Source/decision | M/Phase | Status |
 |---|---|---|---|---|---|
-| SCOPE-XXX | IN | | | | DRAFT |
-| SCOPE-YYY | OUT | | | | DRAFT |
+| SCOPE-<SCOPE-ID> | IN | | | | DRAFT |
+| SCOPE-<SCOPE-ID-OUT> | OUT | | | | DRAFT |
 
 ## 3. Milestone index
 
-| M ID | Tên/outcome | Priority | Phase order | Dependency | Target window | Owner | Status | Readiness gap |
-|---|---|---|---|---|---|---|---|---|
-| <M-ID> | | MUST/SHOULD/COULD | <P-ID> → <P-ID> | | | | DRAFT | |
+| M ID | Tên/outcome | Priority | Phase order | Dependency | Target window | Owner | Readiness gap | Next action/due | Verification | Checkpoint | Acceptance | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| <M-ID> | | MUST/SHOULD/COULD | <P-ID> → <P-ID> | | | | | | NOT_RUN | INCOMPLETE | NOT_ACCEPTED | DRAFT |
 
-Status chỉ là lifecycle planning; `VERIFIED`, `CHECKPOINT_PENDING` và `ACCEPTED` phải theo status model, không suy ra từ việc có row trong bảng.
+Status và transition theo `docs/00-governance/status-model.md` và `docs/03-requirements/acceptance-policy.md`; không suy ra acceptance từ việc có row trong bảng.
 
 ## 4. Milestone definition template
 
@@ -135,7 +135,7 @@ Status chỉ là lifecycle planning; `VERIFIED`, `CHECKPOINT_PENDING` và `ACCEP
 
 | Dependency ID | From | To | Type | Owner | Required by | Status | Mitigation if late |
 |---|---|---|---|---|---|---|---|
-| DEP-XXX | | | Product/technical/access/data | | | OPEN | |
+| DEP-<DEP-ID> | | | Product/technical/access/data | | | OPEN | |
 
 - Critical path:
 - Parallelizable phases/tasks:
@@ -147,9 +147,9 @@ Status chỉ là lifecycle planning; `VERIFIED`, `CHECKPOINT_PENDING` và `ACCEP
 
 | ID | Type | Statement/impact | Probability | Impact | Owner | Mitigation/response | Trigger/review date | Status |
 |---|---|---|---|---|---|---|---|---|
-| RISK-XXX | Risk | | | | | | | OPEN |
-| ASM-XXX | Assumption | | | | | | | OPEN |
-| DEC-XXX | Decision needed | | | | | | | OPEN |
+| RISK-<RISK-ID> | Risk | | | | | | | OPEN |
+| ASM-<ASM-ID> | Assumption | | | | | | | OPEN |
+| DEC-<DEC-ID> | Decision needed | | | | | | | OPEN |
 
 Không đóng risk/assumption chỉ bằng cách đổi wording; cần evidence, decision hoặc điều kiện đóng.
 
@@ -157,7 +157,7 @@ Không đóng risk/assumption chỉ bằng cách đổi wording; cần evidence,
 
 | Slice/release | M/Phase | Outcome | Required capacity | Dependency | Target date/window | Go/no-go criteria | Status |
 |---|---|---|---|---|---|---|---|
-| <SLICE-XXX> | | | | | | | DRAFT |
+| <SLICE-ID> | | | | | | | DRAFT |
 
 - Capacity assumption:
 - Resource/skill constraint:

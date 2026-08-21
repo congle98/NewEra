@@ -1,12 +1,12 @@
 ---
-inclusion: fileMatch
-fileMatchPattern: 'docs/06-execution/**'
+inclusion: always
 ---
 
 # NewEra Execution Steering
 
-Trước Phase: đọc ROADMAP, requirements, architecture, environment manifest và dependency.
+Runtime rule: thực hiện đúng thứ tự trong ROADMAP và dùng `task.md` làm working file canonical.
 
-Trong Phase: thực hiện task theo thứ tự, cập nhật task, chạy test phù hợp, cập nhật tài liệu và commit thay đổi logic đạt điều kiện.
-
-Sau Phase: hoàn thiện test/evidence/checkpoint trong `task.md`, tạo phase report và ghi residual work. Không đánh dấu ACCEPTED nếu chưa có quyết định nghiệm thu.
+- Đọc dependency/environment trước task.
+- Ghi test, evidence và checkpoint trong `task.md`; report chỉ là summary.
+- Scope change đi qua `docs/00-governance/change-control.md`.
+- Sau Phase cập nhật report, residual/debt và traceability.

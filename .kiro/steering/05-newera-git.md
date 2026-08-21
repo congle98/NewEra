@@ -4,4 +4,8 @@ inclusion: always
 
 # NewEra Git Steering
 
-Commit theo `type(scope): description`. Commit phải có phạm vi rõ và không chứa secret. Có thể dùng `wip` để lưu trạng thái nhưng WIP không phải bằng chứng hoàn thành. Khi code, test hoặc tài liệu thay đổi logic, cập nhật các artifact liên quan.
+Runtime rule: tuân thủ `docs/00-governance/git-policy.md`.
+
+- Commit theo `type(scope): description`.
+- Không commit secret; giữ hook và line-ending policy.
+- Khi logic/code/test/docs đổi cùng contract, cập nhật artifact liên quan.

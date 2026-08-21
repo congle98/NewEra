@@ -1,8 +1,8 @@
 ---
 name: newera-roadmap
-description: Tạo và duy trì ROADMAP, M, Phase, dependency, scope và milestone report của NewEra.
+description: Tạo và duy trì ROADMAP, M, Phase, dependency, scope và milestone report.
 ---
 
 # NewEra Roadmap
 
-ROADMAP là nguồn sự thật cao nhất. Chia theo kết quả sản phẩm: M > Phase > Task. Trước khi đổi scope, tạo change request và cập nhật decision log. Dùng `<M>.1`/`<M>.2` cho bồi hoàn sau một M, không dùng để che giấu mục tiêu mới.
+`docs/02-roadmap/roadmap.md` là source of truth và chứa milestone index. Cập nhật M/Phase/order/dependency/scope/change control; dùng milestone brief/report làm artifact per M và canonical status policy.

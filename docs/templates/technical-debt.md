@@ -8,7 +8,7 @@ Debt là trade-off kỹ thuật có chủ đích, được chấp nhận với r
 |---|---|---|---|---|---|---|---|---|---|---|
 | DEBT-<PROJECT>-001 | | | | | | | | | | OPEN |
 
-Status: `OPEN` → `PLANNED` → `IN_PROGRESS` → `READY_TO_VERIFY` → `CLOSED`, hoặc `ACCEPTED_LONG_TERM` với review date và decision owner.
+Status: `OPEN` → `READY` → `IN_PROGRESS` → `VERIFIED` → `CLOSED`, hoặc `DEFERRED` với review date và decision owner.
 
 ## Debt acceptance record
 
@@ -22,7 +22,7 @@ Status: `OPEN` → `PLANNED` → `IN_PROGRESS` → `READY_TO_VERIFY` → `CLOSED
 
 | ID | Work/commit | Verification/evidence | Actual risk after repayment | Decision/date | Status |
 |---|---|---|---|---|---|
-| DEBT-XXX | | | | | |
+| DEBT-<DEBT-ID> | | | | | |
 
 ## Review checklist
 
