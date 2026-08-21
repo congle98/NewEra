@@ -1,54 +1,79 @@
-# MXX - Milestone Report
+# <M-ID> - Milestone Report
+
+## Document control
 
 - M:
-- Scope/ROADMAP reference:
+- Scope/ROADMAP reference/version:
 - Thời gian:
-- Owner:
+- Owner/reviewer:
+- Report status: DRAFT | FINAL
 - Verification status: VERIFIED | PARTIAL | FAILED | BLOCKED
 - Checkpoint status: INCOMPLETE | CHECKPOINT_PENDING
 - Acceptance status: NOT_ACCEPTED | ACCEPTED | REJECTED | DEFERRED
+- Decision/CR references:
+
+## Outcome và scope result
+
+- Planned outcome:
+- Delivered outcome:
+- Success measure/baseline/actual/threshold:
+- In-scope result:
+- Scope change/deviation:
+- Acceptance authority/decision date:
 
 ## Kết quả theo Phase
 
-| Phase | Outcome | Requirements | Verification evidence | Checkpoint | Acceptance | Residual |
-|---|---|---|---|---|---|---|
-| MXX-PXX | | | | | | |
+| Phase | Outcome | Requirements | Consolidated task.md | Verification/evidence | Checkpoint | Acceptance | Residual/blocker |
+|---|---|---|---|---|---|---|---|
+| <M-ID>-<P-ID> | | | | | | | |
 
-## Kết quả đạt được
+## Verification summary
+
+- Checks run:
+- Build/lint/typecheck/security/operational checks:
+- Environment/commit/worktree:
+- Limitations/NOT_RUN/BLOCKED:
+- Technical conclusion:
+- Product acceptance conclusion:
+
+## Kết quả đạt được và chưa đạt
 
 - Đã làm:
 - Outcome đã chứng minh:
-- Quyết định/CR đã áp dụng:
-
-## Phần còn thiếu
-
 - Chưa làm:
+- Acceptance criteria chưa đạt/chưa chạy:
 - Phần chỉ mới kiểm chứng kỹ thuật:
-- Phần chưa thể đánh giá vì thiếu dữ liệu/quyền:
 
-## Residual work và MXX.1
+## Residual work / technical debt / risk
 
-- ID/mô tả/ưu tiên/điều kiện đóng:
-- Đề xuất MXX.1 (chỉ trả nợ mục tiêu cũ):
-- Hạng mục là feature mới cần CR/ROADMAP:
+| ID | Type | Description | Impact/priority | Owner | Close condition/next action | Proposed M/Phase | Status |
+|---|---|---|---|---|---|---|---|
+| RESID/DEBT/RISK-XXX | | | | | | | OPEN |
 
-## Technical debt, risk và blocker
+Feature mới phải đi qua change control/ROADMAP; residual không được dùng để che scope drift.
 
-- Debt IDs:
-- Risk IDs/mitigation:
-- Blocker IDs/owner/next action:
-
-## Commit/evidence liên quan
+## Commit/evidence/traceability
 
 - Commit/worktree:
-- Evidence:
-- Checkpoint:
-- Traceability:
+- Evidence references trong `task.md`:
+- Requirement/task/test traceability:
+- Report/checkpoint references:
+- Known evidence limitation:
 
-## Đề xuất cập nhật ROADMAP
+## Đề xuất cập nhật ROADMAP và handoff
 
 - Thay đổi cần CR:
 - Phase/M tiếp theo và dependency:
-- Điều kiện để chuyển acceptance:
+- Điều kiện mở tiếp:
+- Điều kiện chuyển acceptance:
+- Người quyết định/ngày:
 
 Report phải phản ánh đúng bằng chứng; test pass hoặc checkpoint không tự tạo `ACCEPTED`.
+## Final review checklist
+
+- [ ] Outcome, scope deviation and success measure have actual evidence.
+- [ ] Every Phase has requirements, consolidated task.md, report and status.
+- [ ] Verification, checkpoint and acceptance statuses are independent and supported.
+- [ ] NOT_RUN/PARTIAL/FAILED/BLOCKED checks and limitations are explicit.
+- [ ] Residual/debt/risk items have IDs, owners and close conditions.
+- [ ] ROADMAP changes and next handoff are recorded through change control.

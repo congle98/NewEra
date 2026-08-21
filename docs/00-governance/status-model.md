@@ -35,7 +35,7 @@ Các giá trị sau không thay thế trạng thái vòng đời:
 1. Artifact mới bắt đầu ở `DRAFT`, trừ khi template quy định rõ trạng thái kết quả khác.
 2. Chỉ chuyển `DRAFT -> READY` khi đã có owner/role, phạm vi, dependency, output và tiêu chí kiểm chứng.
 3. Chỉ chuyển `IN_PROGRESS -> VERIFIED` khi evidence có command/kịch bản, expected, actual, environment, thời điểm và limitation.
-4. Chỉ chuyển sang `CHECKPOINT_PENDING` khi Phase/M có đủ requirements, task status, test-plan, evidence, checkpoint, report và residual/debt đã rà soát.
+4. Chỉ chuyển sang `CHECKPOINT_PENDING` khi Phase/M có đủ requirements, task status, test plan, evidence, checkpoint, report và residual/debt đã rà soát.
 5. Chỉ người/role nghiệm thu mới chuyển `CHECKPOINT_PENDING -> ACCEPTED`, `REJECTED` hoặc `DEFERRED`; phải ghi ngày, lý do và Decision Log nếu cần.
 6. `VERIFIED` không tự động dẫn tới `ACCEPTED`; `CHECKPOINT_PENDING` luôn được hiển thị là chưa hoàn thành.
 7. `BLOCKED`, `DEFERRED`, `REJECTED` và `CANCELLED` phải giữ nguyên lịch sử; không xóa hoặc ghi đè lý do.

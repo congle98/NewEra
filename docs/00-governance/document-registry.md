@@ -16,7 +16,7 @@ Registry là khung hướng dẫn để **project sử dụng NewEra** quyết �
 | Architecture | `docs/04-architecture/architecture.md` | Yes | Boundary, data flow và quyết định kỹ thuật | DRAFT |
 | Environment Manifest | `docs/05-environment/environment-manifest.md` | Yes | Tool/runtime/service cần kiểm chứng | DRAFT |
 | Setup Report | `docs/05-environment/setup-report.md` | Per M/Phase | Kết quả kiểm tra môi trường | NOT_STARTED |
-| M/Phase artifacts | `docs/06-execution/<M>/` | Per M/Phase | Brief, requirements, task, test-plan, checkpoint, report | NOT_STARTED |
+| M/Phase artifacts | `docs/06-execution/<M>/` | Per M/Phase | Brief, requirements, consolidated task/test/evidence/checkpoint, report | NOT_STARTED |
 | Evidence | `docs/07-evidence/` | Per verification | Bằng chứng kiểm chứng kỹ thuật | NOT_STARTED |
 | Reports/ledgers | `docs/08-reports/` | Per project | Report, residual và technical debt | NOT_STARTED |
 | Operations | `docs/09-operations/` | Conditional | Deployment, monitoring, backup, incident, release | NOT_APPLICABLE |

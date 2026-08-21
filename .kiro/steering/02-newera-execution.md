@@ -9,4 +9,4 @@ Trước Phase: đọc ROADMAP, requirements, architecture, environment manifest
 
 Trong Phase: thực hiện task theo thứ tự, cập nhật task, chạy test phù hợp, cập nhật tài liệu và commit thay đổi logic đạt điều kiện.
 
-Sau Phase: tạo verification evidence, phase report, residual work và checkpoint. Không đánh dấu ACCEPTED nếu chưa có quyết định nghiệm thu.
+Sau Phase: hoàn thiện test/evidence/checkpoint trong `task.md`, tạo phase report và ghi residual work. Không đánh dấu ACCEPTED nếu chưa có quyết định nghiệm thu.

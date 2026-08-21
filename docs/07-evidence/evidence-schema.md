@@ -31,21 +31,8 @@ Hai lớp dùng cùng ID nhưng không copy mù nội dung. Machine envelope s�
 
 `PASS`/`FAIL` là kết quả của một check; `result` là kết luận evidence-level. `VERIFIED` không tạo `ACCEPTED`. `NOT_RUN` không được dùng làm cơ sở chuyển `VERIFIED`.
 
-## Template narrative
+## Evidence section trong task.md
 
-```markdown
-# EVD-<PROJECT>-<M>-<P>
-- Scope:
-- Requirement IDs:
-- Test IDs:
-- Commit/worktree:
-- Verification status: NOT_RUN
-- Acceptance status: NOT_ACCEPTED
+Dùng phần **Verification evidence** của `docs/templates/task.md` làm template mặc định. Phần này phải ghi scope, requirement/task/test IDs, command, expected, actual, commit/worktree, environment, timestamp, result, acceptance status và limitations.
 
-## Command and expected result
-## Actual output and artifacts
-## Interpretation
-## Limitations / residual / blocker
-```
-
-Evidence cũ không sửa để thay đổi lịch sử. Khi scope hoặc commit thay đổi, tạo revision/evidence mới theo policy của project.
+Nếu project có nhu cầu tách narrative evidence riêng, file đó phải được registry của project kích hoạt và vẫn liên kết ngược về `task.md`; không tạo template evidence độc lập trong kernel.
