@@ -22,6 +22,34 @@ Task chỉ được `READY` khi có một output kiểm tra được, dependency
 | TASK-MXX-PXX-005 | Chạy verification | REQ- | TASK-001..004 | Verification result | TEST- | DRAFT |
 | TASK-MXX-PXX-006 | Hoàn thiện evidence và checkpoint | REQ- | TASK-005 | Evidence/checkpoint record | Review | DRAFT |
 
+### Checklist bắt buộc cho từng task
+
+Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật. Không chuyển task sang `VERIFIED` nếu còn checkbox bắt buộc chưa hoàn thành.
+
+#### TASK-MXX-PXX-XXX - <Tên task>
+
+- [ ] Có requirement/acceptance criteria liên quan.
+- [ ] Có owner và trạng thái hiện tại.
+- [ ] Dependency đã được kiểm tra và không còn blocker chưa ghi nhận.
+- [ ] Phạm vi task và artifact/output đã rõ.
+- [ ] Đã triển khai hoặc cập nhật artifact trong phạm vi.
+- [ ] Đã cập nhật test/verification liên quan.
+- [ ] Test result và actual output đã ghi trong verification matrix.
+- [ ] Evidence section có command, expected, actual, environment, commit/worktree và limitation.
+- [ ] Traceability đã nối requirement → task → test → evidence.
+- [ ] Tài liệu bị ảnh hưởng đã cập nhật.
+- [ ] Residual/blocker/risk đã có ID hoặc ghi `NONE` kèm lý do.
+- [ ] Reviewer/owner đã xác nhận điều kiện hoàn tất.
+- [ ] Task status được cập nhật đúng bằng chứng.
+
+**Task completion note:**
+
+- Output thực tế:
+- Files/artifacts:
+- Verification IDs:
+- Residual/blocker/risk:
+- Ghi chú reviewer:
+
 ## 3. Test plan và verification matrix
 
 - Requirement scope:

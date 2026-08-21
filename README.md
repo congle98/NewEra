@@ -1,4 +1,4 @@
-# NewEra v0.1
+# NewEra v0.2
 
 NewEra là baseline quy trình phát triển phần mềm tự động hóa cho Kiro. Nó không khóa công nghệ; mỗi dự án có thể bật hoặc bỏ các tài liệu kỹ thuật theo `document-registry.md`.
 
@@ -38,4 +38,4 @@ Sau đó theo trình tự:
 
 ## Phiên bản
 
-NewEra v0.1 là kernel ban đầu, ưu tiên tính dễ hiểu và có thể mở rộng.
+NewEra v0.2 là kernel tài liệu quy trình và documentation, ưu tiên tính dễ hiểu và có thể mở rộng.

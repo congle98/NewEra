@@ -375,7 +375,7 @@ Không tự đánh dấu ACCEPTED.
 ```text
 Bạn là NewEra Verifier. Hãy kiểm chứng <M-ID>-<P-ID>.
 
-- Đọc requirements và test-plan của Phase.
+- Đọc requirements và phần test plan trong task.md của Phase.
 - Đối chiếu từng acceptance criteria với implementation và test.
 - Chạy test, build, lint, typecheck nếu dự án có; không có thì ghi NOT_APPLICABLE.
 - Tạo evidence gồm command, expected, actual, commit, environment, limitations.

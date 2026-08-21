@@ -1,20 +1,26 @@
-# MXX - Milestone Brief
+# <M-ID> - Milestone Brief
+
+## Document control
 
 - M:
-- Tên/kết quả sản phẩm:
-- Owner/sponsor:
-- ROADMAP reference:
-- Ngày lập:
-- Trạng thái: DRAFT
+- Tên/outcome sản phẩm:
+- Owner/sponsor/reviewer:
+- ROADMAP reference/version:
+- Ngày lập/cập nhật:
+- Trạng thái: DRAFT | READY | IN_PROGRESS | BLOCKED | COMPLETE
+- Related SRS/Architecture/decision/CR:
 
 ## Mục tiêu và outcome
 
+- Problem/user outcome:
 - Mục tiêu:
 - Outcome quan sát/đo được:
+- Baseline/target/threshold:
 - Success criteria:
+- Failure/stop criteria:
 - Requirement/OBJ liên quan:
 
-## Phạm vi
+## Phạm vi và boundary
 
 ### In scope
 
@@ -24,39 +30,67 @@
 
 -
 
-### Phase và thứ tự
+### Acceptance boundary
 
-| Phase | Mục tiêu độc lập | Dependency | Requirements | Status |
-|---|---|---|---|---|
-| MXX-PXX | | | | DRAFT |
+- Release slice:
+- Included Phase:
+- Known exclusions/residual policy:
+- Acceptance owner:
 
-## Dependency và risk
+## Phase và thứ tự
 
-- Dependency ngoài M:
-- Dependency trong M:
-- Risk/owner/mitigation:
-- Assumption/research/decision:
-- Blocker trước khi bắt đầu:
+| Phase | Mục tiêu độc lập | Requirements | Dependency | Entry/exit criteria | Owner | Status |
+|---|---|---|---|---|---|---|
+| <M-ID>-<P-ID> | | | | | | DRAFT |
+
+## Dependency, risk và capacity
+
+| ID | Type | Description/impact | Owner | Mitigation/next action | Due | Status |
+|---|---|---|---|---|---|---|
+| DEP-XXX | Dependency | | | | | OPEN |
+| RISK-XXX | Risk | | | | | OPEN |
+| ASM-XXX | Assumption | | | | | OPEN |
+
+- Capacity/budget/window:
+- Critical path:
+- Access/environment prerequisite:
 
 ## Definition of Ready / Done
 
-**DoR:** ROADMAP có scope và acceptance criteria; dependency/owner/environment rõ; registry đã biết tài liệu cần có; Phase có requirements/task/test-plan.
+### DoR
 
-**DoD:** mọi Phase có evidence, checkpoint, report và residual/debt; traceability đồng bộ; verification kết luận rõ; milestone report hoàn tất; acceptance chờ người/role có thẩm quyền.
+- [ ] ROADMAP có outcome, scope, priority, acceptance boundary và order.
+- [ ] SRS/requirements và acceptance criteria có ID.
+- [ ] Dependency, owner, reviewer, environment và capacity rõ.
+- [ ] Architecture/registry impact đã xác định.
+- [ ] Risk/assumption/open question có owner và next action.
+- [ ] Mỗi Phase có `requirements.md` và consolidated `task.md` plan.
 
-## Tài liệu cần tạo/cập nhật
+### DoD
 
-- [ ] `docs/02-roadmap/roadmap.md` / `milestone-index.md`
-- [ ] SRS / traceability / acceptance policy
+- [ ] Mọi Phase exit criteria đạt hoặc residual/blocker có ID và close condition.
+- [ ] `task.md` của mỗi Phase chứa task, test plan, evidence và checkpoint đã cập nhật.
+- [ ] Traceability, phase report, residual/debt và milestone report đồng bộ.
+- [ ] Outcome được đối chiếu với success criteria.
+- [ ] Verification limitation và acceptance decision được ghi rõ.
+- [ ] Chỉ người/role có thẩm quyền chuyển acceptance; test pass/checkpoint không tự là `ACCEPTED`.
+
+## Artifact/checklist plan
+
+- [ ] ROADMAP / milestone-index
+- [ ] SRS / requirements / acceptance policy
 - [ ] Architecture / registry / environment
-- [ ] Phase requirements / task / test-plan
-- [ ] Evidence / checkpoint / reports / residual
+- [ ] Phase `task.md` (task + test + evidence + checkpoint)
+- [ ] Phase report
+- [ ] Residual work / technical debt
+- [ ] Milestone report
 
-## Kế hoạch báo cáo
+## Kế hoạch báo cáo và handoff
 
 - Phase report sau mỗi Phase:
 - Milestone report:
 - Quyết định cần người dùng:
-- <M-ID>.x cần thiết nếu có residual:
+- Residual/debt handoff:
+- Đề xuất M.<n> nếu có:
 
 M không được chuyển `READY` chỉ vì brief đã tạo; phải kiểm tra các gap và status trong ROADMAP.

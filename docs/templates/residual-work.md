@@ -1,12 +1,26 @@
 # Residual Work
 
-| ID | Source M/Phase | Description | Impact | Proposed M/Phase | Priority | Close condition | Status |
-|---|---|---|---|---|---|---|---|
-| RESID-<PROJECT>-001 | | | | | | | OPEN |
+Residual là phần scope đã được xác định nhưng chưa hoàn tất, blocker hoặc acceptance gap của M/Phase. Không dùng residual để hợp thức hóa scope mới.
 
-## Rules
+## Register
 
-- Ghi phần chưa hoàn thành, blocker hoặc dữ liệu còn thiếu; không dùng để che scope drift.
-- Mỗi dòng phải có điều kiện đóng và link tới artifact/evidence/decision khi đóng.
-- Không xóa lịch sử; chuyển status và ghi evidence/commit liên quan.
-- Feature mới phải đi qua change control và ROADMAP của project.
+| ID | Source M/Phase/REQ | Description | Type | Impact | Priority | Owner | Proposed M/Phase | Close condition | Next action/due | Status |
+|---|---|---|---|---|---|---|---|---|---|---|
+| RESID-<PROJECT>-001 | | | INCOMPLETE/BLOCKER/ACCEPTANCE_GAP | | | | | | | OPEN |
+
+Status: `OPEN` → `IN_PROGRESS` → `READY_TO_VERIFY` → `CLOSED`, hoặc `DEFERRED`/`CANCELLED` với decision reference.
+
+## Closure record
+
+| ID | Resolution/actual result | Evidence/commit | Verification date/result | Acceptance/decision | Closed by/date |
+|---|---|---|---|---|---|
+| RESID-XXX | | | | | |
+
+## Review checklist
+
+- [ ] Mỗi item có source, impact, priority, owner và next action.
+- [ ] Close condition observable/testable.
+- [ ] Blocker có dependency hoặc escalation path.
+- [ ] Feature/scope mới đã đi qua CR và ROADMAP, không ghi như residual.
+- [ ] Khi đóng có evidence, commit và verification result.
+- [ ] Không xóa lịch sử hoặc chuyển CLOSED khi chỉ có giả định.

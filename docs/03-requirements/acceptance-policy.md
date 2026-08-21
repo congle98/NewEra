@@ -6,7 +6,7 @@ Acceptance là quyết định của người/role có thẩm quyền rằng out
 
 | Lớp | Ai/điều gì tạo | Ý nghĩa | Không được suy ra |
 |---|---|---|---|
-| Verification | Agent/operator theo test plan | Check kỹ thuật và đối chiếu criteria đã chạy; kết quả có thể `VERIFIED`, `PARTIAL`, `FAILED`, `BLOCKED` | Không tự là nghiệm thu |
+| Verification | Agent/operator theo phần test plan trong task.md | Check kỹ thuật và đối chiếu criteria đã chạy; kết quả có thể `VERIFIED`, `PARTIAL`, `FAILED`, `BLOCKED` | Không tự là nghiệm thu |
 | Checkpoint | Artifact review của Phase/M | Hồ sơ đủ để người xem xét, hoặc ghi rõ còn thiếu | Không phải `ACCEPTED` |
 | Acceptance | Người/role được chỉ định | Quyết định `ACCEPTED`, `REJECTED` hoặc `DEFERRED` dựa trên evidence và product judgment | Không do test pass/hook/report tự tạo |
 
@@ -15,14 +15,14 @@ Acceptance là quyết định của người/role có thẩm quyền rằng out
 ### Để ghi `VERIFIED`
 
 - Requirement và acceptance criteria đã có ID.
-- Test plan xác định check, expected, environment và fail criteria.
+- Phần test plan trong `task.md` xác định check, expected, environment và fail criteria.
 - Command/kịch bản đã chạy; actual result và artifact được lưu trong evidence.
 - Lỗi đã sửa, ghi nhận hoặc chuyển thành residual/blocker.
 - Traceability, limitation và commit/worktree reference đã cập nhật.
 
 ### Để ghi `CHECKPOINT_PENDING`
 
-- M/Phase có đủ requirements, task, test plan, evidence, checkpoint và report theo registry.
+- M/Phase có đủ requirements, task.md (bao gồm test plan, evidence và checkpoint) và report theo registry.
 - Phạm vi đối chiếu ROADMAP; thay đổi ngoài scope có CR/Decision.
 - Residual, technical debt, blocker và risk được liệt kê có ID.
 - Chưa có quyết định acceptance hoặc người dùng còn cần xem xét.

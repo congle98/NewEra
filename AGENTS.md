@@ -11,7 +11,7 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 5. Checkpoint chưa hoàn thành không được dùng làm bằng chứng nghiệm thu.
 6. Test pass là bằng chứng kiểm chứng kỹ thuật, không tự động là nghiệm thu sản phẩm.
 7. Khi thiếu dữ liệu quan trọng, ghi rõ `BLOCKED`, `OPEN` hoặc `ASSUMED`; không trình bày giả định như sự thật.
-8. Mỗi Phase phải có requirements, một task file bao gồm test-plan, verification evidence và checkpoint, cùng phase report.
+8. Mỗi Phase phải có requirements, một `task.md` bao gồm test plan, verification evidence và checkpoint, cùng phase report.
 9. Mỗi M phải có milestone brief, milestone report và danh sách residual work.
 10. Repository NewEra chỉ giữ kernel, guidance và templates; không tự tạo M/Phase/evidence/report/status của chính kernel nếu chưa có project scope riêng.
 11. Sau thay đổi logic, phải cập nhật test và tài liệu liên quan.
