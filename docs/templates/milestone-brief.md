@@ -43,6 +43,29 @@
 |---|---|---|---|---|---|---|
 | <M-ID>-<P-ID> | | | | | | DRAFT |
 
+## M readiness and test capability profile
+
+M phải xác định capability môi trường và lớp kiểm chứng trước khi chuyển `READY`. Không gán cứng tool/framework; project adopter điền adapter/tool đã chọn trong environment manifest.
+
+| Capability/test layer | Applies | M/Phase | Expected evidence | Selected adapter/tool | Owner |
+|---|---:|---|---|---|---|
+| Static/quality | Yes/No | | | | |
+| Unit/component | Yes/No | | | | |
+| Integration/real dependency | Yes/No | | | | |
+| API/contract | Yes/No | | | | |
+| UI/client journey | Yes/No | | | | |
+| Accessibility/usability | Yes/No | | | | |
+| Visual behavior | Yes/No | | | | |
+| Performance/load | Yes/No | | | | |
+| Security/operations | Yes/No | | | | |
+
+- Environment Manifest reference/version:
+- Setup Report reference:
+- Environment gate: ALLOW | BLOCKED
+- Required human setup actions:
+- Non-blocking limitations:
+- Re-check triggers:
+
 ## Dependency, risk và capacity
 
 | ID | Type | Description/impact | Owner | Mitigation/next action | Due | Status |
@@ -79,7 +102,9 @@
 
 - [ ] ROADMAP §3 milestone index
 - [ ] SRS / requirements / acceptance policy
-- [ ] Architecture / registry / environment
+- [ ] Architecture / registry / environment manifest / setup report
+- [ ] M test capability profile and selected project adapters
+- [ ] Human setup actions and environment gate
 - [ ] Phase `task.md` (task + test + evidence + checkpoint)
 - [ ] Phase report
 - [ ] Residual work / technical debt

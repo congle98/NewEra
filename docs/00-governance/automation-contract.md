@@ -20,7 +20,40 @@ Preflight tối thiểu ghi rõ: request type, project/repository, M/Phase hoặ
 
 `MICRO_CHANGE` chỉ giảm ceremony. Nếu project đã có `task.md`, ghi vào task đó; không tạo SRS, Architecture hoặc Phase report mới chỉ vì một sửa đổi nhỏ. Tuy nhiên vẫn phải kiểm tra không có scope/design change, chạy check phù hợp, ghi evidence và giữ traceability. Nếu phát sinh requirement, acceptance, API, data, security, deployment hoặc architecture change thì chuyển ngay sang `NORMAL_OR_SCOPE_CHANGE` và change control.
 
-## Source ownership
+## Environment and testing capability contract
+
+NewEra yêu cầu project chuẩn bị **capability**, không yêu cầu một thương hiệu framework hoặc tool cụ thể. Project adopter chọn adapter/tool theo product type, M risk, requirement, acceptance criteria, environment, repeatability và evidence quality.
+
+### M readiness pack
+
+Trước M/Phase mutation, project cần có:
+
+- M test capability profile: lớp kiểm chứng áp dụng và lý do lớp không áp dụng.
+- Environment capability matrix: capability, required/conditional, owner, selected adapter/tool, version/constraint, setup và evidence.
+- Human setup action list: account, access, secret/config, device, network, billing, approval hoặc dữ liệu mà AI không được tự cấp.
+- Setup report và smoke/health result.
+- Gate `ALLOW` hoặc `BLOCKED`; `PARTIAL` chỉ được allow khi limitation và phạm vi được phép đã ghi.
+
+Environment readiness là gate trước mutation, không phải một status product mới và không phải acceptance. Nếu setup được dùng lại giữa Phase, chỉ cần ghi reference và delta khi capability/environment không đổi.
+
+### Test capability layers
+
+M có thể chọn các lớp sau theo risk và acceptance criteria:
+
+- static/quality;
+- unit/component;
+- integration với dependency thật hoặc môi trường tương đương;
+- API/contract;
+- UI/client journey;
+- accessibility/usability;
+- visual behavior;
+- performance/load;
+- security/operations;
+- human product review.
+
+Mỗi lớp phải có selected adapter/tool ở project adopter, expected/actual, command hoặc kịch bản tái chạy, environment reference và evidence. Agent interaction hoặc interactive diagnostic tool có thể hỗ trợ khám phá/debug; regression verification phải có cách chạy lặp lại phù hợp với project.
+
+Không coi `tool selected` là bằng chứng đạt. Gate/check chỉ báo technical result; acceptance vẫn theo acceptance policy.
 
 | Nội dung | Owner mặc định | Vai trò của Markdown |
 |---|---|---|
