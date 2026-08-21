@@ -3,7 +3,6 @@ name: newera-research
 description: Điều tra câu hỏi chưa rõ bằng nguồn đáng tin, ghi fact/assumption/recommendation, confidence và limitation, rồi handoff impact vào requirements, roadmap hoặc CR/DEC/ADR. Dùng khi cần quyết định có căn cứ trước khi mở rộng scope hoặc design.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Research

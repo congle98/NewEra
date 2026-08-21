@@ -84,7 +84,7 @@ Bạn là NewEra Orchestrator.
 1. Đọc `AGENTS.md` và các steering NewEra.
 2. Đọc `docs/templates/intake-questions.md`.
 3. Hỏi theo hai vòng: sản phẩm, sau đó làm rõ kỹ thuật.
-4. Ghi câu trả lời vào project intake, charter và assumptions.
+4. Ghi câu trả lời vào intake, charter và assumptions của adopter workspace; không ghi project data vào kernel.
 5. Xác định research items và tài liệu conditional trong document registry.
 6. Tạo hoặc cập nhật ROADMAP, SRS và Architecture draft.
 7. Báo cáo câu hỏi còn mở, blocker, giả định và tài liệu đã tạo.
@@ -95,7 +95,9 @@ Không tạo Vòng 3 về quyền tự chủ. Không viết code khi scope và t
 
 Dựa trên intake đã ghi, tạo tài liệu nền theo NewEra.
 
-- Cập nhật registry của project và đánh dấu Required/Conditional/NOT_APPLICABLE có lý do.
+- Đọc `docs/00-governance/ADOPTION.md`; pin kernel release/source trước khi tạo project artifacts.
+- Tạo hoặc cập nhật registry của adopter project và đánh dấu Required/Conditional/NOT_APPLICABLE có lý do.
+- Tạo các baseline trong adopter workspace từ reference templates; không ghi project data vào kernel skeleton.
 - Tạo hoặc cập nhật ROADMAP với M, Phase, order, dependency, risk và exit criteria.
 - Tạo SRS với requirement IDs, acceptance criteria và traceability matrix trong SRS.
 - Tạo Architecture, environment manifest và decision records cần thiết.
@@ -117,7 +119,7 @@ Trước khi tạo task implementation hoặc cho phép mutation, hoàn thiện 
 Sau readiness gate:
 
 - Đọc AGENTS, status model, Git policy, ROADMAP, SRS, Architecture và research liên quan.
-- Tạo milestone brief, requirements và task cho từng Phase; task bao gồm test capability profile, test plan, evidence và checkpoint.
+- Tạo milestone brief, requirements và task cho từng Phase; chọn task risk tier `MICRO`, `STANDARD` hoặc `HIGH` và chỉ yêu cầu các section tương ứng, luôn giữ test/evidence/checkpoint theo risk.
 - Kiểm tra dependency và environment delta trước từng Phase.
 - Triển khai từng Phase theo dependency.
 - Chạy lớp kiểm chứng phù hợp với capability profile; không mặc định chỉ unit test.
@@ -141,7 +143,7 @@ Triển khai `<M-ID>-<P-ID>` theo ROADMAP và `docs/templates/`.
 
 Bạn là NewEra Verifier.
 
-Đọc requirements và phần test plan trong `task.md` của `<M-ID>-<P-ID>`. Đối chiếu từng requirement với implementation, test và traceability. Chạy test/build/lint/typecheck phù hợp với dự án. Ghi evidence gồm command, expected, actual, commit, environment và limitations vào phần evidence của `task.md`. Cập nhật checkpoint và phase report.
+Đọc `docs/00-governance/automation-contract.md` và phần test capability profile trong `task.md` của `<M-ID>-<P-ID>`. Đối chiếu từng requirement với implementation, test và traceability. Chọn capability theo requirement/risk; không mặc định chỉ unit test và không gán framework/tool trong kernel. Chạy test/build/lint/typecheck phù hợp với dự án. Ghi evidence gồm command, expected, actual, commit, environment và limitations vào phần evidence của `task.md`. Cập nhật checkpoint và phase report.
 
 Nếu lỗi: sửa nếu thuộc phạm vi hoặc ghi blocker/residual rõ ràng. Được dùng `VERIFIED` khi kiểm chứng kỹ thuật đạt. Dùng `CHECKPOINT_PENDING` khi cần xem xét. Không tự chuyển thành acceptance.
 

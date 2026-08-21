@@ -1,6 +1,15 @@
-# Project Intake
+# Project Intake Reference Template
 
-> Điền tài liệu này trước khi lập ROADMAP. Đây là nơi ghi ý tưởng gốc, không phải nơi tự suy đoán yêu cầu.
+> Sao chép skeleton này vào adopter workspace trước khi điền. Không ghi project data vào NewEra kernel.
+
+## Document control
+
+- Document status: DRAFT
+- Owner/role: `<OWNER>`
+- Kernel release: `NEWERA_VERSION`
+- Kernel source commit: `SOURCE_COMMIT`
+- Project registry reference: `<REGISTRY-REF>`
+- Created/updated: `<DATE>`
 
 ## Thông tin cơ bản
 
@@ -28,15 +37,15 @@
 
 ### Bắt buộc
 
-- [ ] Chưa xác định
+- `<OPEN-QUESTION-OR-REQUIREMENT>`
 
 ### Có thể làm sau
 
-- [ ] Chưa xác định
+- `<DEFERRED-ITEM>`
 
 ### Ngoài phạm vi
 
-- [ ] Chưa xác định
+- `<EXCLUSION>`
 
 ## Ràng buộc đã biết
 
@@ -49,8 +58,10 @@
 
 ## Câu hỏi còn mở
 
-- INTAKE-001:
+- `INQ-<INQ-ID>`:
 
 ## Trạng thái
 
 `DRAFT`
+
+Câu hỏi mở ảnh hưởng scope/design phải được handoff thành research item hoặc decision; không trình bày assumption như fact.

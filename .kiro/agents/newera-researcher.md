@@ -10,6 +10,7 @@ resources:
   - skill://.kiro/skills/newera-process-preflight/SKILL.md
   - skill://.kiro/skills/newera-intake/SKILL.md
   - skill://.kiro/skills/newera-research/SKILL.md
+  - skill://.kiro/skills/newera-change-control/SKILL.md
 ---
 
 # NewEra Researcher

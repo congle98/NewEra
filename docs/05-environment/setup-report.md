@@ -1,4 +1,17 @@
-# Setup Report
+# Setup Report Reference Template
+
+> Sao chép report này vào adopter workspace cho M/Phase thực tế. Không tạo setup evidence cho NewEra kernel nếu chưa có project scope riêng được phê duyệt.
+
+## Document control
+
+- Document status: DRAFT
+- Owner/role: `<OWNER>`
+- Kernel release: `NEWERA_VERSION`
+- Kernel source commit: `SOURCE_COMMIT`
+- Project registry reference: `<REGISTRY-REF>`
+- Created/updated: `<DATE>`
+
+## Setup context
 
 - Project:
 - M/Phase:

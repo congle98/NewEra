@@ -3,7 +3,6 @@ name: newera-environment-readiness
 description: Chuẩn bị và đánh giá environment readiness trước M hoặc Phase bằng capability matrix, setup report, human/AI action boundary và gate ALLOW/BLOCKED. Dùng khi bắt đầu hoặc thay đổi môi trường kiểm chứng, tích hợp, vận hành hoặc release.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Environment Readiness

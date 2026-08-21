@@ -4,6 +4,8 @@
 - Requirement scope:
 - Owner/role:
 - Trạng thái: DRAFT
+- Task tier: ghi `MICRO`, `STANDARD` hoặc `HIGH` cho từng task trong bảng.
+- Required profile: dùng đúng các section tối thiểu theo tier; tăng tier khi risk/scope thay đổi.
 
 Template này gom toàn bộ công việc thực thi và kiểm chứng của một Phase vào một file. `requirements.md` giữ requirement/acceptance criteria; `report.md` giữ tổng kết sau Phase.
 
@@ -29,34 +31,53 @@ Task chỉ được `READY` khi có một output kiểm tra được, dependency
 
 ## 2. Task list
 
-| ID | Mô tả | Requirement | Dependency | Output/changed artifact | Verification | Status |
-|---|---|---|---|---|---|---|
-| TASK-<M-ID>-<P-ID>-001 | Kiểm tra dependency | REQ-<REQ-ID> | — | Dependency/status note | TEST-<TEST-ID> | DRAFT |
-| TASK-<M-ID>-<P-ID>-002 | Triển khai phần chính | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-001 | Code/config/documentation | TEST-<TEST-ID> | DRAFT |
-| TASK-<M-ID>-<P-ID>-003 | Viết/cập nhật test | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-002 | Test artifact | TEST-<TEST-ID> | DRAFT |
-| TASK-<M-ID>-<P-ID>-004 | Cập nhật tài liệu và traceability | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-002/003 | Docs/traceability | TEST-<TEST-ID> | DRAFT |
-| TASK-<M-ID>-<P-ID>-005 | Chạy verification | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-001..004 | Verification result | TEST-<TEST-ID> | DRAFT |
-| TASK-<M-ID>-<P-ID>-006 | Hoàn thiện evidence và checkpoint | REQ-<REQ-ID> | TASK-<M-ID>-<P-ID>-005 | Evidence/checkpoint record | Review | DRAFT |
+| ID | Tier | Mô tả | Requirement | Dependency | Output/changed artifact | Verification | Status |
+|---|---|---|---|---|---|---|---|
+| `TASK-<M-ID>-<P-ID>-<TASK-DEP-ID>` | STANDARD | Kiểm tra dependency | REQ-<REQ-ID> | — | Dependency/status note | TEST-<TEST-ID> | DRAFT |
+| `TASK-<M-ID>-<P-ID>-<TASK-IMPL-ID>` | STANDARD | Triển khai phần chính | REQ-<REQ-ID> | `TASK-<M-ID>-<P-ID>-<TASK-DEP-ID>` | Code/config/documentation | TEST-<TEST-ID> | DRAFT |
+| `TASK-<M-ID>-<P-ID>-<TASK-TEST-ID>` | STANDARD | Viết/cập nhật test | REQ-<REQ-ID> | `TASK-<M-ID>-<P-ID>-<TASK-IMPL-ID>` | Test artifact | TEST-<TEST-ID> | DRAFT |
+| `TASK-<M-ID>-<P-ID>-<TASK-DOC-ID>` | STANDARD | Cập nhật tài liệu và traceability | REQ-<REQ-ID> | `TASK-<M-ID>-<P-ID>-<TASK-IMPL-ID>` / `TASK-<M-ID>-<P-ID>-<TASK-TEST-ID>` | Docs/traceability | TEST-<TEST-ID> | DRAFT |
+| `TASK-<M-ID>-<P-ID>-<TASK-VERIFY-ID>` | HIGH | Chạy verification | REQ-<REQ-ID> | `TASK-<M-ID>-<P-ID>-<TASK-DEP-ID>` .. `TASK-<M-ID>-<P-ID>-<TASK-DOC-ID>` | Verification result | TEST-<TEST-ID> | DRAFT |
+| `TASK-<M-ID>-<P-ID>-<TASK-EVIDENCE-ID>` | HIGH | Hoàn thiện evidence và checkpoint | REQ-<REQ-ID> | `TASK-<M-ID>-<P-ID>-<TASK-VERIFY-ID>` | Evidence/checkpoint record | Review | DRAFT |
 
-### Checklist bắt buộc cho từng task
+### Tiered completion profile
 
-Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật. Không chuyển task sang `VERIFIED` nếu còn checkbox bắt buộc chưa hoàn thành.
+Mọi task phải có các điều kiện tối thiểu sau:
 
-#### TASK-<M-ID>-<P-ID>-<TASK-ID> - <Tên task>
+- [ ] Có requirement/request binding, owner, path/scope boundary và output kiểm tra được.
+- [ ] Dependency, blocker và status hiện tại đã được ghi.
+- [ ] Artifact/output đã được cập nhật trong phạm vi.
+- [ ] Verification result và residual/blocker/limitation đã được ghi đúng scope.
 
-- [ ] Có requirement/acceptance criteria liên quan.
-- [ ] Có owner và trạng thái hiện tại.
-- [ ] Dependency đã được kiểm tra và không còn blocker chưa ghi nhận.
-- [ ] Phạm vi task và artifact/output đã rõ.
-- [ ] Đã triển khai hoặc cập nhật artifact trong phạm vi.
-- [ ] Đã cập nhật test/verification liên quan.
-- [ ] Test result và actual output đã ghi trong verification matrix.
-- [ ] Evidence section có command, expected, actual, environment, commit/worktree và limitation.
-- [ ] Traceability đã nối requirement → task → test → evidence.
-- [ ] Tài liệu bị ảnh hưởng đã cập nhật.
-- [ ] Residual/blocker/risk đã có ID hoặc ghi `NONE` kèm lý do.
-- [ ] Reviewer/owner đã xác nhận điều kiện hoàn tất.
-- [ ] Task status được cập nhật đúng bằng chứng.
+#### `MICRO` tier
+
+Dùng khi preflight chọn `MICRO_CHANGE` và không đổi requirement, acceptance, API, data, security, deployment hoặc architecture.
+
+- [ ] Có targeted verification.
+- [ ] Có evidence ngắn: expected, actual, command/kịch bản, limitation và worktree/commit reference.
+- [ ] Không tạo full Phase report/checkpoint chỉ vì thay đổi nhỏ.
+
+#### `STANDARD` tier
+
+Dùng cho task Phase thông thường hoặc task có nhiều artifact liên quan.
+
+- [ ] Requirement/acceptance criteria và dependency đã map.
+- [ ] Test/verification plan đã cập nhật.
+- [ ] Evidence có environment, command/kịch bản tái chạy, expected, actual, artifact và limitation.
+- [ ] Traceability nối requirement → task → test → evidence.
+- [ ] Tài liệu bị ảnh hưởng, residual/risk/blocker và reviewer condition đã cập nhật.
+
+#### `HIGH` tier
+
+Dùng khi task có risk cao, security/data/deployment/architecture impact, external dependency quan trọng hoặc human/product review bắt buộc.
+
+- [ ] M readiness pack và environment gate đã được kiểm tra.
+- [ ] Capability profile đầy đủ, gồm lớp áp dụng và lý do `NOT_APPLICABLE`.
+- [ ] Evidence/reproducibility và human-only action đã có owner.
+- [ ] Checkpoint/reviewer/decision handoff đã được chuẩn bị.
+- [ ] CR/DEC/ADR được liên kết nếu có scope/design impact.
+
+Không đánh dấu task `VERIFIED` chỉ vì checklist đã tick; phải có output và evidence tương ứng. Khi risk/scope tăng, chuyển tier và ghi lý do.
 
 **Task completion note:**
 
@@ -68,10 +89,12 @@ Copy block này cho mỗi task trong bảng và thay `TASK-...` bằng ID thật
 
 ## 3. Test capability profile
 
+Dùng vocabulary capability và gate canonical trong `docs/00-governance/automation-contract.md`; section này chỉ ghi lựa chọn của project/task, không tạo policy mới.
+
 - M/Phase capability profile reference:
 - Environment Manifest/Setup Report reference:
 - Environment gate: `ALLOW` | `BLOCKED`
-- Applied verification layers: static/quality | unit/component | integration | API/contract | UI/client | accessibility/usability | visual | performance/load | security/operations | human review
+- Applied verification layers: static/quality | unit/component | integration | API/contract | UI/client journey | accessibility/usability | visual | performance/load | security/operations | human review
 - Not applicable layers and reason:
 - Selected adapters/tools and versions: project-specific; do not assume a NewEra default.
 - Human setup actions/blockers:
@@ -87,11 +110,11 @@ Mỗi lớp được chọn phải có requirement/acceptance mapping, expected 
 
 | ID | Loại | Requirement/criteria | Lệnh/kịch bản | Kết quả mong đợi | Kết quả thực tế | Artifact/output | Status |
 |---|---|---|---|---|---|---|---|
-| TEST-<M-ID>-<P-ID>-001 | Static/format | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Không lỗi | | | NOT_RUN |
-| TEST-<M-ID>-<P-ID>-002 | Unit/integration | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Pass | | | NOT_RUN |
-| TEST-<M-ID>-<P-ID>-003 | Build/lint/type | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định hoặc N/A | Pass hoặc lý do N/A | | | NOT_RUN |
-| TEST-<M-ID>-<P-ID>-004 | Product/acceptance mapping | REQ-<REQ-ID>/AC-<AC-ID> | Đối chiếu từng criteria | Có evidence tương ứng | | | NOT_RUN |
-| TEST-<M-ID>-<P-ID>-005 | Secret/dependency audit | REQ-<REQ-ID>/SEC-<SEC-ID> | Theo tool khả dụng | Không phát hiện secret/risk ngoài ngưỡng | | | NOT_RUN |
+| `TEST-<M-ID>-<P-ID>-<TEST-STATIC-ID>` | Static/format | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Không lỗi | | | NOT_RUN |
+| `TEST-<M-ID>-<P-ID>-<TEST-UNIT-ID>` | Unit/integration | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định | Pass | | | NOT_RUN |
+| `TEST-<M-ID>-<P-ID>-<TEST-BUILD-ID>` | Build/lint/type | REQ-<REQ-ID>/AC-<AC-ID> | Chưa xác định hoặc N/A | Pass hoặc lý do N/A | | | NOT_RUN |
+| `TEST-<M-ID>-<P-ID>-<TEST-PRODUCT-ID>` | Product/acceptance mapping | REQ-<REQ-ID>/AC-<AC-ID> | Đối chiếu từng criteria | Có evidence tương ứng | | | NOT_RUN |
+| `TEST-<M-ID>-<P-ID>-<TEST-SECURITY-ID>` | Secret/dependency audit | REQ-<REQ-ID>/SEC-<SEC-ID> | Theo tool khả dụng | Không phát hiện secret/risk ngoài ngưỡng | | | NOT_RUN |
 
 ### Quy tắc kết quả
 

@@ -4,9 +4,9 @@ inclusion: always
 
 # NewEra Quality Steering
 
-Runtime rule: dùng `docs/03-requirements/acceptance-policy.md` cho gate và `docs/00-governance/status-model.md` cho status. Trước mỗi M/Phase, dùng M test capability profile và environment readiness gate; không gán cứng framework/tool vào mọi project.
+Runtime rule: dùng `docs/03-requirements/acceptance-policy.md` cho gate, `docs/00-governance/status-model.md` cho status và `docs/00-governance/automation-contract.md` cho canonical capability vocabulary. Trước mỗi M/Phase, dùng M test capability profile và environment readiness gate; không gán cứng framework/tool vào mọi project.
 
-- Chọn lớp kiểm chứng theo requirement, risk và acceptance criteria: static/quality, unit/component, integration, API/contract, UI/client, accessibility/usability, visual, performance/load, security/operations và human review khi áp dụng.
+- Chọn capability verification theo requirement, risk và acceptance criteria; dùng vocabulary canonical trong `docs/00-governance/automation-contract.md`, gồm technical checks, product criteria review và human review khi áp dụng.
 - Dùng adapter/tool do project adopter chọn; ghi version/config, environment, expected, actual, command/kịch bản và limitation.
 - Với M/Phase có UI/client boundary, kiểm tra user journey thực tế bằng capability phù hợp; không chỉ kiểm tra function phía dưới.
 - Với integration boundary, ưu tiên dependency thật hoặc môi trường tương đương có thể tái tạo; ghi rõ mock/emulator limitation nếu dùng.

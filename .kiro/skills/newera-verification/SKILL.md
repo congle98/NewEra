@@ -3,7 +3,6 @@ name: newera-verification
 description: Chạy kiểm chứng kỹ thuật cho Phase hoặc M theo capability profile, environment readiness, test plan và acceptance criteria; ghi evidence/traceability/checkpoint mà không biến technical result thành acceptance. Dùng khi verify, test hoặc review evidence.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Verification

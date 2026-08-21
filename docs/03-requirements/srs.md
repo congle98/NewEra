@@ -1,10 +1,12 @@
 # Software Requirements Specification (SRS)
 
-SRS là contract yêu cầu của **project sử dụng NewEra**. Đây là template: không điền scope của repository NewEra vào file này. ROADMAP sở hữu M/Phase/scope/order; SRS sở hữu ý nghĩa requirement và acceptance criteria; Architecture sở hữu solution/boundary; `task.md` sở hữu execution/test/evidence/checkpoint.
+SRS là contract yêu cầu của **project sử dụng NewEra**. Đây là reference template: không điền scope của repository NewEra vào file này; adopter tạo bản sở hữu trong workspace theo `docs/00-governance/ADOPTION.md`. ROADMAP sở hữu M/Phase/scope/order; SRS sở hữu ý nghĩa requirement và acceptance criteria; Architecture sở hữu solution/boundary; `task.md` sở hữu execution/test/evidence/checkpoint.
 
 ## Document control
 
 - SRS ID:
+- Kernel release/source: `NEWERA_VERSION` / `SOURCE_COMMIT`
+- Project registry reference:
 - Project/product:
 - Version:
 - Owner:
@@ -137,8 +139,8 @@ Acceptance criteria phải độc lập, observable và testable. Dùng Given/Wh
 
 | ID | Given/precondition | When/action | Then/expected result | Measurement/tolerance | Test/evidence reference | Status |
 |---|---|---|---|---|---|---|
-| AC-<AC-ID>-001 | | | | | | NOT_RUN |
-| AC-<AC-ID>-002 | | | | | | NOT_RUN |
+| AC-<AC-PRIMARY-ID> | | | | | | NOT_RUN |
+| AC-<AC-SECONDARY-ID> | | | | | | NOT_RUN |
 
 #### Requirement review checklist
 

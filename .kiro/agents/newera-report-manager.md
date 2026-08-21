@@ -10,6 +10,8 @@ resources:
   - skill://.kiro/skills/newera-process-preflight/SKILL.md
   - skill://.kiro/skills/newera-reporting/SKILL.md
   - skill://.kiro/skills/newera-verification/SKILL.md
+  - skill://.kiro/skills/newera-acceptance-handoff/SKILL.md
+  - skill://.kiro/skills/newera-resume-work/SKILL.md
 ---
 
 # NewEra Report Manager

@@ -6,7 +6,7 @@ Residual là phần scope đã được xác định nhưng chưa hoàn tất, b
 
 | ID | Source M/Phase/REQ | Description | Type | Impact | Priority | Owner | Proposed M/Phase | Close condition | Next action/due | Status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| RESID-<PROJECT>-001 | | | INCOMPLETE/BLOCKER/ACCEPTANCE_GAP | | | | | | | OPEN |
+| `RESID-<PROJECT>-<RESID-ID>` | | | INCOMPLETE/BLOCKER/ACCEPTANCE_GAP | | | | | | | OPEN |
 
 Status: `OPEN` → `IN_PROGRESS` → `READY` → `CLOSED`, hoặc `DEFERRED`/`CANCELLED` với decision reference.
 

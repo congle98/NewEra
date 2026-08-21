@@ -3,7 +3,6 @@ name: newera-process-preflight
 description: Phân loại mọi request trước mutation thành READ_ONLY, MICRO_CHANGE hoặc NORMAL_OR_SCOPE_CHANGE; kiểm tra binding, scope, verification plan và gate ALLOW/BLOCKED. Dùng khi bắt đầu task, thay đổi tài liệu, code, cấu hình hoặc workflow NewEra.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Process Preflight

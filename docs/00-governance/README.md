@@ -4,11 +4,15 @@ NewEra là baseline quy trình phát triển phần mềm tự động hóa cho 
 
 Repository này là **process/documentation kernel**, không phải một project sản phẩm đang chạy NewEra. M/Phase, evidence, report, residual và machine state chỉ được tạo trong workspace của project sử dụng kernel.
 
+Các file dưới `docs/01-discovery/` tới `docs/05-environment/` trong repository này là reference skeleton/template target. Không điền dữ liệu project vào chúng; hãy đọc [Adoption Guide](ADOPTION.md) để copy/pin chúng vào adopter workspace và quản lý version/upgrade.
+
 ## Bắt đầu
 
 Đọc `AGENTS.md` trước để biết luật bắt buộc, sau đó đọc `docs/00-governance/GUIDE.md` để xem workflow và prompt index.
 
-Đường ngắn nhất để bắt đầu một dự án:
+Trước khi bắt đầu project thật, đọc [Adoption Guide](ADOPTION.md) để xác định kernel release, workspace boundary, ownership và upgrade path.
+
+Đường ngắn nhất để bắt đầu một dự án sau khi adopt:
 
 ```text
 /newera-intake
@@ -17,11 +21,10 @@ Repository này là **process/documentation kernel**, không phải một projec
 Sau đó theo trình tự:
 
 1. Đọc `AGENTS.md`.
-2. Điền `docs/01-discovery/project-intake.md`.
-3. Hoàn thiện `docs/02-roadmap/roadmap.md`.
-4. Hoàn thiện SRS và Architecture.
-5. Chọn M đầu tiên và dùng template trong `docs/templates/`.
-6. Chạy verification trước khi chuyển Phase sang `CHECKPOINT_PENDING`.
+2. Tạo/cập nhật `project-intake.md` trong adopter workspace từ reference template.
+3. Hoàn thiện `roadmap.md`, SRS, Architecture và environment manifest trong adopter workspace.
+4. Chọn M đầu tiên và dùng template trong `docs/templates/`.
+5. Chạy verification trước khi chuyển Phase sang `CHECKPOINT_PENDING`.
 
 ## Nguyên tắc trạng thái
 
