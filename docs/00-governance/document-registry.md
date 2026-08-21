@@ -2,13 +2,16 @@
 
 Registry là khung hướng dẫn để **project sử dụng NewEra** quyết định tài liệu nào bắt buộc, có điều kiện hoặc không áp dụng. Các trạng thái trong bảng là trạng thái khởi tạo/template; không phải trạng thái của repository NewEra.
 
+Registry không biến các path baseline bên dưới thành project state của kernel. `Canonical path` trong bảng là path mà adopter workspace có thể sở hữu sau khi adopt; bản tương ứng trong kernel chỉ là reference skeleton/template target. Cơ chế copy/pin/upgrade nằm trong `docs/00-governance/ADOPTION.md`.
+
 ## Registry và canonical ownership
 
-| Document/concern | Canonical path | Required | Ownership |
+| Document/concern | Adopter canonical path / kernel reference | Required | Ownership |
 |---|---|---:|---|
 | Kernel overview | `docs/00-governance/README.md` | Yes | NewEra kernel boundary and navigation |
 | Kernel guide | `docs/00-governance/GUIDE.md` | Yes | NewEra kernel workflow and prompt index |
 | Kernel changelog | `docs/00-governance/CHANGELOG.md` | Yes | NewEra kernel release history; not adopter product history |
+| Adoption Guide | `docs/00-governance/ADOPTION.md` | Yes | Copy/pin/upgrade mechanism and kernel/adopter boundary |
 | Project README/changelog | Adopter project workspace | Per project | Product/project documentation and release history; never kernel state |
 | Governance baseline | `docs/00-governance/` | Yes | Status, git, change, decision và registry policy |
 | Project Intake | `docs/01-discovery/project-intake.md` | Yes | Ý tưởng, bối cảnh và câu trả lời intake |
@@ -42,6 +45,7 @@ Registry là khung hướng dẫn để **project sử dụng NewEra** quyết �
 ## Templates và runtime guidance
 
 - `docs/templates/` chứa template; không điền dữ liệu project vào kernel.
+- Các baseline skeleton dưới `docs/01-discovery/` tới `docs/05-environment/` chỉ minh họa contract và path target; adopter phải copy/pin bản sở hữu riêng theo `ADOPTION.md`.
 - `docs/00-governance/GUIDE.md` là kernel workflow và prompt index; `docs/prompts/README.md` là prompt source canonical duy nhất.
 - `.kiro/steering/`, `.kiro/skills/` và `.kiro/agents/` chỉ giữ instruction runtime-specific và dẫn về canonical docs.
 - Machine state/evidence là optional contract; chỉ bật khi registry của project ghi rõ nhu cầu.

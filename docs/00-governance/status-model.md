@@ -74,19 +74,19 @@ Một artifact chỉ dùng những nhóm áp dụng cho nó:
 
 | Loại artifact | Prefix | Ví dụ |
 |---|---|---|
-| Objective/user/stakeholder/success/exit | `OBJ`, `USER`, `STAKEHOLDER`, `SUCCESS`, `EXIT` | `OBJ-001`, `STAKEHOLDER-001` |
-| Intake/question/charter/SRS/setup | `INTAKE`, `INQ`, `CHARTER`, `SRS`, `SETUP` | `INTAKE-001`, `INQ-001` |
-| Use case/acceptance/security/performance/operations | `UC`, `AC`, `SEC`, `PERF`, `OPS` | `UC-001`, `AC-001` |
-| Requirement/business/data/integration/NFR | `REQ`, `BR`, `DATA`, `INT`, `NFR` | `REQ-001`, `NFR-001` |
-| Assumption/constraint/risk | `ASM`, `CON`, `RISK` | `ASM-001` |
-| Research/question | `RES` | `RES-001` |
-| Milestone/Phase/task/test | `M`, `P`, `TASK`, `TEST` | `<M-ID>-<P-ID>`, `TASK-<M-ID>-<P-ID>-001` |
+| Objective/user/stakeholder/success/exit | `OBJ`, `USER`, `STAKEHOLDER`, `SUCCESS`, `EXIT` | `OBJ-<OBJ-ID>`, `STAKEHOLDER-<STAKEHOLDER-ID>` |
+| Intake/question/charter/SRS/setup | `INTAKE`, `INQ`, `CHARTER`, `SRS`, `SETUP` | `INTAKE-<INTAKE-ID>`, `INQ-<INQ-ID>` |
+| Use case/acceptance/security/performance/operations | `UC`, `AC`, `SEC`, `PERF`, `OPS` | `UC-<UC-ID>`, `AC-<AC-ID>` |
+| Requirement/business/data/integration/NFR | `REQ`, `BR`, `DATA`, `INT`, `NFR` | `REQ-<REQ-ID>`, `NFR-<NFR-ID>` |
+| Assumption/constraint/risk | `ASM`, `CON`, `RISK` | `ASM-<ASM-ID>` |
+| Research/question | `RES` | `RES-<RES-ID>` |
+| Milestone/Phase/task/test | `M`, `P`, `TASK`, `TEST` | `<M-ID>-<P-ID>`, `TASK-<M-ID>-<P-ID>-<TASK-ID>` |
 | Evidence/checkpoint/report | `EVD`, `CHK`, `RPT` | `EVD-<M-ID>-<P-ID>`, `CHK-<M-ID>-<P-ID>` |
-| Blocker/environment/action/capability | `BLOCKER`, `ENV-ISSUE`, `ENV-SVC`, `ENV-DEP`, `ENV-CAP`, `ACTION` | `BLOCKER-<M-ID>-<P-ID>-001`, `ENV-CAP-001` |
-| Change/decision/architecture | `CR`, `DEC`, `ADR` | `CR-001`, `DEC-001`, `ADR-001` |
-| Component/residual/debt | `C`, `RESID`, `DEBT` | `C-001`, `RESID-<PROJECT>-001`, `DEBT-<PROJECT>-001` |
+| Blocker/environment/action/capability | `BLOCKER`, `ENV-ISSUE`, `ENV-SVC`, `ENV-DEP`, `ENV-CAP`, `ACTION` | `BLOCKER-<M-ID>-<P-ID>-<BLOCKER-ID>`, `ENV-CAP-<CAP-ID>` |
+| Change/decision/architecture | `CR`, `DEC`, `ADR` | `CR-<CR-ID>`, `DEC-<DEC-ID>`, `ADR-<ADR-ID>` |
+| Component/residual/debt | `C`, `RESID`, `DEBT` | `C-<C-ID>`, `RESID-<PROJECT>-<RESID-ID>`, `DEBT-<PROJECT>-<DEBT-ID>` |
 
-ID là bất biến sau khi phát hành. Placeholder dùng thống nhất dạng `<M-ID>`, `<P-ID>`, `<M-ID>-<P-ID>`, `<PROJECT>`; phải thay bằng ID thật trước khi artifact chuyển `READY`. Không dùng `XXX`, `MXX`, `PXX` hoặc `001` chung chung trong artifact project đã phát hành.
+ID là bất biến sau khi phát hành. Placeholder dùng dạng `<TYPE-ID>` cho một thành phần và ghép theo contract artifact, ví dụ `<M-ID>`, `<P-ID>`, `<M-ID>-<P-ID>`, `TASK-<M-ID>-<P-ID>-<TASK-ID>` hoặc `RESID-<PROJECT>-<RESID-ID>`. Các field placeholder không phải ID như `<OWNER>`, `<DATE>`, `<VISION>` và `<REGISTRY-REF>` phải được thay bằng giá trị project trước `READY`; không dùng chúng làm status/evidence giả. `NEWERA_VERSION` và `SOURCE_COMMIT` là token canonical của document-control field để adopter điền release/source tương ứng, không phải ID placeholder dạng `<...>`. Placeholder phải được thay bằng ID thật trước khi artifact chuyển `READY`. Không dùng `XXX`, `MXX`, `PXX` hoặc `001` chung chung trong artifact project đã phát hành.
 
 ## Luật nghiêm ngặt
 

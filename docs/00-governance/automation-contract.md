@@ -22,6 +22,17 @@ Preflight tối thiểu ghi rõ: request type, project/repository, M/Phase hoặ
 
 ## Environment and testing capability contract
 
+Phần này sở hữu capability vocabulary canonical của NewEra. GUIDE, template, steering và skill có thể dùng view rút gọn hoặc field workflow, nhưng không được tạo capability layer mới hay ngụ ý mọi capability đều tự động hóa.
+
+View rút gọn được phép dùng trong tài liệu hướng dẫn:
+
+| View | Mapping canonical | Authority |
+|---|---|---|
+| Technical checks | static/quality, unit/component, integration, API/contract, UI/client và capability kỹ thuật liên quan | AI/operator theo test plan |
+| Product criteria review | đối chiếu requirement/acceptance criteria và user outcome bằng capability phù hợp | AI hỗ trợ, human product judgment khi áp dụng |
+| Human review | usability, visual intent, accessibility manual assessment, operational/product judgment khi cần | Human/role được chỉ định |
+| Acceptance decision | quyết định cuối dựa trên evidence, checkpoint và product judgment | Acceptance authority |
+
 NewEra yêu cầu project chuẩn bị **capability**, không yêu cầu một thương hiệu framework hoặc tool cụ thể. Project adopter chọn adapter/tool theo product type, M risk, requirement, acceptance criteria, environment, repeatability và evidence quality.
 
 ### M readiness pack
@@ -64,6 +75,21 @@ Không coi `tool selected` là bằng chứng đạt. Gate/check chỉ báo tech
 | Acceptance decision | Acceptance policy + Decision Log của project | Human decision record |
 
 Nếu project không bật structured mode, Markdown và Git vẫn là nguồn chính theo registry của project. Không tạo `.newera/` hoặc machine state chỉ để làm đầy cấu trúc.
+
+## Enforcement levels and adapter boundary
+
+Kernel NewEra định nghĩa process contract và có thể cung cấp runtime reminder dạng advisory; prose hoặc hook `askAgent` không được mặc định xem là conformance gate có khả năng block. Project adopter chọn enforcement level phù hợp:
+
+| Level | Cơ chế | Owner | Ý nghĩa |
+|---|---|---|---|
+| `L0_ADVISORY` | AGENTS, governance, steering, skills và human review | Kernel/adopter | Agent được hướng dẫn và reviewer được nhắc; không có machine block |
+| `L1_RUNTIME` | Workspace hook hoặc tool-event adapter | Adopter runtime | Event được chọn có thể warn hoặc block theo contract của Kiro/harness đang cài |
+| `L2_VALIDATOR` | Validator deterministic cho link/ID/status/evidence | Adopter project hoặc adapter đã khai báo | Invariant máy kiểm được đánh giá bằng exit status và report |
+| `L3_CI_GATE` | CI/release policy gọi validator | Adopter project | Merge/release bị chặn khi conformance check bắt buộc fail |
+
+Kernel phải dùng được ở `L0_ADVISORY`. Adopter cần enforcement phải ghi level, validator/profile, event schema được hỗ trợ và human exception path trong registry/ROADMAP của project. Validator không được tạo source of truth thứ hai hoặc quyết định product acceptance; nó chỉ có thể block record không hợp lệ và báo evidence/authority còn thiếu.
+
+Các check có thể tự động hóa gồm local link/resource, placeholder ID trước `READY`, orphan requirement, status transition, field bắt buộc của `ACCEPTED`, tính nhất quán `NOT_RUN`/`VERIFIED` và lý do `NOT_APPLICABLE`. Script/tool cụ thể thuộc adopter hoặc adapter đã khai báo, không thuộc product-specific kernel baseline.
 
 ## Optional structured mode
 

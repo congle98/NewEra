@@ -1,7 +1,14 @@
 # Environment Manifest
 
-Environment Manifest là contract về **năng lực môi trường**, không phải danh sách công cụ cố định của NewEra. Project adopter chọn runtime, framework, service, adapter và tool phù hợp với sản phẩm; kernel chỉ yêu cầu capability, owner, setup, evidence và blocking condition.
+Environment Manifest là contract về **năng lực môi trường** của project adopter, không phải danh sách công cụ cố định của NewEra. Đây là reference template; adopter tạo bản sở hữu và pin version/source theo `docs/00-governance/ADOPTION.md`. Project adopter chọn runtime, framework, service, adapter và tool phù hợp với sản phẩm; kernel chỉ yêu cầu capability, owner, setup, evidence và blocking condition.
 
+## Document control
+
+- Document status: DRAFT
+- Owner/role: `<OWNER>`
+- Kernel release: `NEWERA_VERSION`
+- Kernel source commit: `SOURCE_COMMIT`
+- Project registry reference: `<REGISTRY-REF>`
 ## Runtime and capability matrix
 
 | ID | Capability | Required | Owner | Selected adapter/tool | Version/constraint | Detection/setup | Required evidence | Blocking condition |

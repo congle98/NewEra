@@ -3,7 +3,6 @@ name: newera-reporting
 description: Tổng hợp Phase/M report, evidence, checkpoint, residual work, technical debt, limitation và changelog có traceability. Dùng khi kết thúc task/Phase/M hoặc chuẩn bị handoff review; không tự đổi scope hay acceptance.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Reporting

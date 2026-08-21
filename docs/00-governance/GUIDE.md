@@ -41,7 +41,7 @@ NewEra không định nghĩa quyền hạn của AI. Quyền thực thi và chí
 |---|---|
 | Luật bắt buộc | `AGENTS.md` |
 | Ý nghĩa từng trạng thái | `docs/00-governance/status-model.md` |
-| Tài liệu nào cần cho dự án này | `docs/00-governance/document-registry.md` |
+| Tài liệu nào cần cho dự án này | `docs/00-governance/document-registry.md` và [`ADOPTION.md`](ADOPTION.md) |
 | Ghi quyết định lớn | `docs/00-governance/decision-log.md` |
 | Đổi phạm vi | `docs/00-governance/change-control.md` |
 | Quy tắc commit | `docs/00-governance/git-policy.md` |
@@ -51,9 +51,9 @@ NewEra không định nghĩa quyền hạn của AI. Quyền thực thi và chí
 | Quy tắc nghiệm thu | `docs/03-requirements/acceptance-policy.md` |
 | Thiết kế hệ thống | `docs/04-architecture/architecture.md` |
 | Môi trường và lệnh | `docs/05-environment/environment-manifest.md` |
-| Hồ sơ M/Phase đang làm | `docs/06-execution/<M>/` |
-| Bằng chứng kiểm chứng | `docs/07-evidence/` |
-| Việc còn nợ | `docs/templates/residual-work.md` và bản project trong `docs/08-reports/` |
+| Hồ sơ M/Phase đang làm | `<adopter-project>/docs/06-execution/<M>/` |
+| Bằng chứng kiểm chứng | `docs/07-evidence/README.md` (contract); evidence project trong `<adopter-project>/docs/06-execution/` |
+| Việc còn nợ | `docs/templates/residual-work.md` và bản project trong `<adopter-project>/docs/08-reports/` |
 | Template mọi loại | `docs/templates/` |
 | Prompt gốc | `docs/prompts/README.md` |
 
@@ -102,18 +102,18 @@ Vòng 1 về sản phẩm: vấn đề, người dùng, kết quả thành công
 
 Vòng 2 làm rõ: tài sản hiện có, yêu cầu hiệu năng/bảo mật/pháp lý/vận hành, migration, backup, monitoring, rollback, và những điều chưa biết có thể ảnh hưởng ROADMAP.
 
-### Đầu ra
+Đầu ra thuộc adopter workspace:
 
 ```text
-docs/01-discovery/project-intake.md
-docs/01-discovery/project-charter.md
-docs/01-discovery/assumptions.md
-docs/01-discovery/research.md
+<adopter-project>/docs/01-discovery/project-intake.md
+<adopter-project>/docs/01-discovery/project-charter.md
+<adopter-project>/docs/01-discovery/assumptions.md
+<adopter-project>/docs/01-discovery/research.md
 ```
 
 ### Điều kiện chuyển giai đoạn
 
-Câu hỏi ảnh hưởng phạm vi hoặc kiến trúc đã có câu trả lời, hoặc đã được ghi thành `ASM-xxx` và `RES-xxx` với mức ảnh hưởng rõ ràng. Nếu bạn chưa biết câu trả lời, cứ nói "chưa rõ" để AI ghi vào research thay vì tự đoán.
+Câu hỏi ảnh hưởng phạm vi hoặc kiến trúc đã có câu trả lời, hoặc đã được ghi thành `ASM-<ASM-ID>` và `RES-<RES-ID>` với mức ảnh hưởng rõ ràng. Nếu bạn chưa biết câu trả lời, cứ nói "chưa rõ" để AI ghi vào research thay vì tự đoán.
 
 ---
 
@@ -124,12 +124,10 @@ Mục tiêu: chốt định hướng để AI có thể chạy dài mà không l
 ### Thứ tự tạo
 
 ```text
-1. document-registry.md   (dự án này cần những tài liệu nào)
-2. roadmap.md             (M, Phase, thứ tự, tiêu chí hoàn thành)
-3. srs.md                 (requirement có ID và acceptance criteria)
-4. architecture.md        (thành phần, dữ liệu, bảo mật, triển khai)
-5. environment-manifest.md
-6. SRS §11 traceability matrix
+1. Tạo/cập nhật document-registry.md trong adopter workspace.
+2. Tạo roadmap.md, srs.md, architecture.md và environment-manifest.md trong adopter workspace từ reference skeleton.
+3. Ghi NEWERA_VERSION/source commit và adoption contract reference trong project registry.
+4. Tạo SRS traceability matrix sau khi requirement IDs ổn định.
 ```
 
 ### Cách chạy
@@ -191,10 +189,10 @@ Mỗi M không cần dùng mọi capability hoặc mọi adapter. `NOT_APPLICABL
 ### Đầu ra
 
 ```text
-docs/06-execution/<M>/milestone-brief.md
-docs/05-environment/environment-manifest.md
-docs/05-environment/setup-report.md
-docs/06-execution/<M>/<P>/task.md  (test capability profile + evidence)
+<adopter-project>/docs/06-execution/<M>/milestone-brief.md
+<adopter-project>/docs/05-environment/environment-manifest.md
+<adopter-project>/docs/05-environment/setup-report.md
+<adopter-project>/docs/06-execution/<M>/<P>/task.md  (test capability profile + evidence)
 ```
 
 ---
@@ -222,13 +220,13 @@ Toàn bộ một M dùng section **3. Execute milestone**; một Phase riêng d�
 ### Mỗi Phase phải có
 
 ```text
-docs/06-execution/<M>/<P>/requirements.md
-docs/06-execution/<M>/<P>/task.md
+<adopter-project>/docs/06-execution/<M>/<P>/requirements.md
+<adopter-project>/docs/06-execution/<M>/<P>/task.md
   ├── task list
   ├── test plan and verification matrix
   ├── verification evidence
   └── checkpoint and review
-docs/06-execution/<M>/<P>/report.md
+<adopter-project>/docs/06-execution/<M>/<P>/report.md
 ```
 
 Nếu giữa Phase phát sinh yêu cầu mới: phân loại trước. Nếu là `MICRO_CHANGE` cục bộ, không đổi requirement, acceptance, API, data, security, deployment hoặc architecture, bind vào task/request hiện có, ghi path boundary, chạy targeted test và evidence ngắn; không tạo full Phase artifact chỉ vì thay đổi nhỏ. Nếu là `NORMAL_OR_SCOPE_CHANGE`, không làm luôn: tạo change request theo `change-control.md`, cập nhật ROADMAP nếu được chấp thuận, rồi mới triển khai.
@@ -237,14 +235,26 @@ Nếu giữa Phase phát sinh yêu cầu mới: phân loại trước. Nếu là
 
 ## 8. Giai đoạn 5: Verification
 
-Bốn lớp, AI tự động ba lớp đầu.
+Capability-first là vocabulary canonical của NewEra; chi tiết đầy đủ nằm ở `docs/00-governance/automation-contract.md` và `docs/05-environment/environment-manifest.md`.
+
+Mỗi M/Phase chọn capability theo requirement, risk, acceptance criteria, environment và evidence quality. Các capability có thể gồm:
 
 ```text
-Lớp 1  Static      format, lint, typecheck, dependency audit, secret scan
-Lớp 2  Test        unit, integration, contract, e2e nếu có
-Lớp 3  Product     đối chiếu từng acceptance criteria trong SRS
-Lớp 4  Acceptance  bạn xem sản phẩm và quyết định
+static/quality | unit/component | integration | API/contract |
+UI/client journey | accessibility/usability | visual |
+performance/load | security/operations | human review
 ```
+
+Để dễ đọc, có thể xem verification theo ba lớp kỹ thuật/sản phẩm và một lớp quyết định:
+
+| View rút gọn | Mapping | Authority |
+|---|---|---|
+| Technical checks | static/quality, unit/component, integration, API/contract, UI/client và capability kỹ thuật liên quan | AI/operator theo test plan |
+| Product criteria review | đối chiếu requirement/acceptance criteria và user outcome bằng capability phù hợp | AI hỗ trợ, human product judgment khi áp dụng |
+| Human review | usability, visual intent, accessibility manual assessment, operational/product judgment khi cần | Human/role được chỉ định |
+| Acceptance decision | quyết định cuối dựa trên evidence, checkpoint và product judgment | Acceptance authority |
+
+Không có capability mặc định nào tự động áp dụng cho mọi M. Selected adapter/tool, automation boundary và human review phải được ghi trong capability profile theo requirement, risk và evidence quality.
 
 ### Cách chạy
 
@@ -252,7 +262,7 @@ Lớp 4  Acceptance  bạn xem sản phẩm và quyết định
 /newera-verification
 ```
 
-Hoặc dùng section **5. Verify phase** trong `docs/prompts/README.md`. Hook `Run NewEra Verification Review` cũng chạy được thủ công từ UI.
+Hoặc dùng section **5. Verify phase** trong `docs/prompts/README.md`. Hook `Run NewEra Verification Review` cũng chạy được thủ công từ UI. Hook `Review NewEra Task Completion` chỉ review task sau `postTaskExecution`; nó không kết luận Phase hoàn tất.
 
 ### Đầu ra
 
@@ -292,7 +302,7 @@ AI cập nhật trạng thái và Decision Log theo `docs/03-requirements/accept
 
 ## 10. Giai đoạn 7: Bồi hoàn M.x
 
-Sau mỗi M, project adopter đọc bản residual work trong `docs/08-reports/` được tạo từ `docs/templates/residual-work.md`, cùng với milestone report.
+Sau mỗi M, project adopter đọc bản residual work trong `<adopter-project>/docs/08-reports/` được tạo từ `docs/templates/residual-work.md`, cùng với milestone report.
 
 ### Quy tắc đặt tên
 
@@ -333,6 +343,13 @@ Prompt canonical duy nhất: [`docs/prompts/README.md`](../prompts/README.md). F
 | Bắt đầu dự án mới | `/newera-intake` |
 | Dựng hoặc sửa ROADMAP | `/newera-roadmap` |
 | Chạy một Phase từ đầu đến report | `/newera-phase-execution` |
+| Preflight trước mutation | `/newera-process-preflight` |
+| Thực hiện thay đổi nhỏ | `/newera-micro-change` |
+| Chuẩn bị environment readiness | `/newera-environment-readiness` |
+| Phát hiện scope/design impact | `/newera-change-control` |
+| Chuẩn bị hồ sơ nghiệm thu | `/newera-acceptance-handoff` |
+| Khôi phục công việc bị gián đoạn | `/newera-resume-work` |
+| Lập kế hoạch trả residual/debt bằng M.x | `/newera-milestone-repayment` |
 
 Skill nạp theo ngữ cảnh nên gọi đúng skill giúp tiết kiệm context hơn là dán cả quy trình vào chat.
 

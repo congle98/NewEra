@@ -1,10 +1,12 @@
 # ROADMAP
 
-> ROADMAP là nguồn sự thật cao nhất của **project sử dụng NewEra** cho M, Phase, scope, dependency, thứ tự và điều kiện chuyển tiếp. Đây là template; repository NewEra không tự điền roadmap của chính nó.
+> ROADMAP là nguồn sự thật cao nhất của **project sử dụng NewEra** cho M, Phase, scope, dependency, thứ tự và điều kiện chuyển tiếp. Đây là reference template; repository NewEra không tự điền roadmap của chính nó và adopter phải tạo bản sở hữu riêng theo `docs/00-governance/ADOPTION.md`.
 
 ## Document control
 
 - Project/product:
+- Kernel release/source: `NEWERA_VERSION` / `SOURCE_COMMIT`
+- Project registry reference:
 - ROADMAP ID/version:
 - Owner:
 - Product decision maker:

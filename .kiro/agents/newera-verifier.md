@@ -10,6 +10,7 @@ resources:
   - skill://.kiro/skills/newera-process-preflight/SKILL.md
   - skill://.kiro/skills/newera-environment-readiness/SKILL.md
   - skill://.kiro/skills/newera-verification/SKILL.md
+  - skill://.kiro/skills/newera-acceptance-handoff/SKILL.md
 ---
 
 # NewEra Verifier

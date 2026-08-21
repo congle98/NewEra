@@ -6,7 +6,7 @@ Debt là trade-off kỹ thuật có chủ đích, được chấp nhận với r
 
 | ID | Source M/Phase/REQ/ADR | Description | Reason accepted | Risk/impact | Probability | Owner | Repayment plan | Target/due | Priority | Status |
 |---|---|---|---|---|---|---|---|---|---|---|
-| DEBT-<PROJECT>-001 | | | | | | | | | | OPEN |
+| `DEBT-<PROJECT>-<DEBT-ID>` | | | | | | | | | | OPEN |
 
 Status: `OPEN` → `READY` → `IN_PROGRESS` → `VERIFIED` → `CLOSED`, hoặc `DEFERRED` với review date và decision owner.
 

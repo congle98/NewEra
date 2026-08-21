@@ -3,7 +3,6 @@ name: newera-roadmap
 description: Tạo và duy trì ROADMAP, M, Phase, dependency, scope, milestone brief/report và change-control traceability. Dùng khi lập kế hoạch, sắp xếp thứ tự hoặc thay đổi phạm vi triển khai của adopter project.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Roadmap

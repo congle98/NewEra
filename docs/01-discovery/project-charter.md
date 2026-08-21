@@ -1,17 +1,29 @@
-# Project Charter
+# Project Charter Reference Template
+
+> Sao chép skeleton này vào adopter workspace. Kernel không sở hữu charter hoặc project IDs của adopter.
+
+## Document control
+
+- Document status: DRAFT
+- Owner/role: `<OWNER>`
+- Kernel release: `NEWERA_VERSION`
+- Kernel source commit: `SOURCE_COMMIT`
+- Project registry reference: `<REGISTRY-REF>`
+- Created/updated: `<DATE>`
+- Related intake/research/decision: `<REFERENCE>`
 
 ## Tầm nhìn
 
-Chưa xác định.
+`<VISION>`
 
 ## Mục tiêu
 
-- OBJ-001:
+- `OBJ-<OBJ-ID>`:
 
 ## Người dùng và bên liên quan
 
-- USER-001:
-- STAKEHOLDER-001:
+- `USER-<USER-ID>`:
+- `STAKEHOLDER-<STAKEHOLDER-ID>`:
 
 ## Phạm vi
 
@@ -20,19 +32,27 @@ Chưa xác định.
 
 ## Rủi ro ban đầu
 
-- RISK-001:
+- `RISK-<RISK-ID>`:
 
 ## Assumptions reference
 
-Assumption ledger canonical: `docs/01-discovery/assumptions.md`.
+Assumption ledger canonical: adopter workspace `docs/01-discovery/assumptions.md`.
 
 ## Tiêu chí thành công
 
-- SUCCESS-001:
+- `SUCCESS-<SUCCESS-ID>`:
 
 ## Tiêu chí kết thúc dự án
 
-- EXIT-001:
+- `EXIT-<EXIT-ID>`:
+
+## Readiness and review
+
+- [ ] Scope, owner, stakeholder và decision authority đã rõ.
+- [ ] Objective/success/exit có ID và mapping tới ROADMAP/SRS.
+- [ ] Assumption/risk/open question có owner và next action.
+- [ ] Architecture/requirement impact đã handoff đúng source document.
+- [ ] Charter review được ghi trong project registry.
 
 ## Trạng thái
 

@@ -3,6 +3,9 @@
 ## Unreleased
 
 - Gộp toàn bộ prompt vào `docs/prompts/README.md` theo thứ tự quy trình từ intake đến acceptance.
+- Làm rõ adoption workspace, boundary copy/pin/upgrade và đánh dấu discovery/architecture skeleton là reference template.
+- Chuẩn hóa document control và placeholder ID của baseline; đồng bộ verification guidance theo capability-first vocabulary canonical.
+- Bổ sung enforcement-level contract, decision-path skills, task risk tiers và semantics của runtime hook; loại bỏ version metadata lặp trong skill.
 
 ## NewEra v0.2 - 2026-08-21
 

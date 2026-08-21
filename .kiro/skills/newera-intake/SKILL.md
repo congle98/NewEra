@@ -3,7 +3,6 @@ name: newera-intake
 description: Thu thập request và context ban đầu, chuyển câu hỏi mở thành intake, charter, assumptions và research handoff có ID. Dùng khi bắt đầu project, tiếp nhận yêu cầu mới hoặc khi scope chưa đủ rõ để lập ROADMAP.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Intake

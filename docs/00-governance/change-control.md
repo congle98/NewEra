@@ -15,7 +15,7 @@ Không thay đổi mục tiêu, phạm vi, thứ tự M/Phase, timeline, kiến 
 2. Ghi nguồn phát sinh, vấn đề, đề xuất, lý do, phạm vi bị tác động và trạng thái ban đầu `PROPOSED`.
 3. Đánh giá impact theo checklist: ROADMAP/M/Phase, SRS/acceptance, Architecture/ADR, registry, dependency, chi phí, timeline, security/data, test/evidence và residual/debt.
 4. Ghi phương án thay thế và rủi ro của phương án không làm. Nếu thiếu dữ liệu, ghi `OPEN`, không tự đoán.
-5. Người có thẩm quyền quyết định `ACCEPTED`, `REJECTED` hoặc `DEFERRED`; liên kết `DEC-xxx` nếu là quyết định lớn.
+5. Người có thẩm quyền quyết định `ACCEPTED`, `REJECTED` hoặc `DEFERRED`; liên kết `DEC-<DEC-ID>` nếu là quyết định lớn.
 6. Chỉ sau khi được chấp thuận mới cập nhật ROADMAP và các tài liệu nguồn, sau đó tạo/điều chỉnh Phase/Task có truy nguyên.
 7. Kiểm tra lại traceability và report; change không được làm mất lịch sử status hoặc evidence cũ.
 

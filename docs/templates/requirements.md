@@ -33,7 +33,7 @@ Mỗi requirement phải:
 
 ## 3. Functional requirements
 
-### REQ-<M-ID>-<P-ID>-001 - <Tên requirement>
+### REQ-<M-ID>-<P-ID>-<REQ-ID> - <Tên requirement>
 
 - Tên ngắn:
 - Mục tiêu/outcome:
@@ -59,8 +59,8 @@ Mỗi requirement phải:
 
 | ID | Given/precondition | When/action | Then/expected result | Measurement/evidence | Status |
 |---|---|---|---|---|---|
-| AC-<M-ID>-<P-ID>-001 | | | | | NOT_RUN |
-| AC-<M-ID>-<P-ID>-002 | | | | | NOT_RUN |
+| AC-<M-ID>-<P-ID>-<AC-PRIMARY-ID> | | | | | NOT_RUN |
+| AC-<M-ID>-<P-ID>-<AC-SECONDARY-ID> | | | | | NOT_RUN |
 
 #### Requirement review checklist
 
@@ -79,10 +79,10 @@ Mỗi NFR phải có metric, baseline, target, threshold, measurement method và
 
 | ID | Category | Requirement | Metric/baseline | Target/threshold | Measurement | Owner | Status |
 |---|---|---|---|---|---|---|---|
-| NFR-<M-ID>-<P-ID>-001 | Performance | | | | | | DRAFT |
-| SEC-<M-ID>-<P-ID>-001 | Security/privacy | | | | | | DRAFT |
-| OPS-<M-ID>-<P-ID>-001 | Operability | | | | | | DRAFT |
-| DATA-<M-ID>-<P-ID>-001 | Data/integrity | | | | | | DRAFT |
+| NFR-<M-ID>-<P-ID>-<NFR-ID> | Performance | | | | | | DRAFT |
+| SEC-<M-ID>-<P-ID>-<SEC-ID> | Security/privacy | | | | | | DRAFT |
+| OPS-<M-ID>-<P-ID>-<OPS-ID> | Operability | | | | | | DRAFT |
+| DATA-<M-ID>-<P-ID>-<DATA-ID> | Data/integrity | | | | | | DRAFT |
 
 Các category có thể gồm performance, availability, security, privacy, accessibility, compatibility, observability, operations, data integrity, cost và compliance.
 
@@ -101,7 +101,7 @@ Các category có thể gồm performance, availability, security, privacy, acce
 
 | Requirement | ROADMAP/M/Phase | Architecture/ADR | Task | Test | Evidence | Report | Status |
 |---|---|---|---|---|---|---|---|
-| REQ-<M-ID>-<P-ID>-001 | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | DRAFT |
+| REQ-<M-ID>-<P-ID>-<REQ-ID> | | | TASK-<TASK-ID> | TEST-<TEST-ID> | EVD-<EVD-ID> | RPT-<RPT-ID> | DRAFT |
 
 - SRS/ROADMAP:
 - Architecture/ADR:

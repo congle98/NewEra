@@ -13,6 +13,8 @@ resources:
   - skill://.kiro/skills/newera-environment-readiness/SKILL.md
   - skill://.kiro/skills/newera-phase-execution/SKILL.md
   - skill://.kiro/skills/newera-verification/SKILL.md
+  - skill://.kiro/skills/newera-change-control/SKILL.md
+  - skill://.kiro/skills/newera-resume-work/SKILL.md
 ---
 
 # NewEra Builder

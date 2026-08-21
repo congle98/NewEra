@@ -30,6 +30,8 @@ NewEra là quy trình phát triển phần mềm ưu tiên tự động hóa, tr
 - `.kiro/agents/`: role, tool, permission, resource và authority boundary. Agent không sở hữu policy; agent phải dẫn chiếu tới canonical documents và skill phù hợp.
 - `.kiro/hooks/`: automation theo event để nhắc hoặc kiểm tra. Hook không tự chuyển scope, status hoặc acceptance nếu chưa có authority và evidence phù hợp.
 - `docs/00-governance/`, ROADMAP, SRS, Architecture, acceptance policy và các template là canonical source of truth. Khi runtime guidance mâu thuẫn với canonical document, canonical document được ưu tiên và runtime guidance phải được sửa.
+- Human-facing kernel guidance mặc định dùng tiếng Việt; protocol/status/field/path names giữ English khi cần tương thích. Không chèn đoạn English dài nếu không có lý do rõ.
+- Kernel release/version lấy từ canonical overview và `docs/00-governance/CHANGELOG.md`; không lặp hardcoded release trong từng skill nếu không có validator đồng bộ.
 
 Khi dùng custom agent, resources phải bao gồm `AGENTS.md`, steering cần thiết và skills liên quan bằng `file://`/`skill://`; không giả định custom agent tự nạp toàn bộ context. Agent phải tuân thủ least authority:
 
@@ -44,7 +46,7 @@ Mọi workflow `.kiro` phải giữ các invariant của NewEra: preflight trư�
 ## Thứ tự đọc
 
 1. File này
-2. `docs/00-governance/GUIDE.md`
+2. `docs/00-governance/GUIDE.md` và `docs/00-governance/ADOPTION.md` khi làm việc với adopter project
 3. `docs/00-governance/status-model.md` và `document-registry.md`
 4. `docs/00-governance/git-policy.md`
 5. ROADMAP, SRS và Architecture

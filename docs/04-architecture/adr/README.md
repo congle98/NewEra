@@ -1,4 +1,15 @@
-# Architecture Decision Records
+# Architecture Decision Records - Reference Template
+
+> Sao chép index/template này vào adopter workspace. NewEra kernel không chốt technology hoặc sở hữu project-specific ADR.
+
+## Document control
+
+- Document status: DRAFT
+- Owner/role: `<OWNER>`
+- Kernel release: `NEWERA_VERSION`
+- Kernel source commit: `SOURCE_COMMIT`
+- Project registry reference: `<REGISTRY-REF>`
+- Created/updated: `<DATE>`
 
 ADR ghi một quyết định kỹ thuật có ảnh hưởng dài hạn, khác với task implementation và khác với Decision Log ở mức governance. ADR không được tự thay đổi scope; nếu quyết định ảnh hưởng ROADMAP/SRS/timeline, liên kết CR/Decision tương ứng.
 
@@ -6,7 +17,7 @@ ADR ghi một quyết định kỹ thuật có ảnh hưởng dài hạn, khác 
 
 | ID | Tên | Scope | Trạng thái | Supersedes/superseded by |
 |---|---|---|---|---|
-| Chưa có | Chưa có quyết định kỹ thuật project-specific | NewEra kernel không chốt technology | — | — |
+| `ADR-<ADR-ID>` | `<TOPIC>` | `<SCOPE>` | PROPOSED | `<SUPERSEDES-REF-OR-NONE>` |
 
 ## Vòng đời
 

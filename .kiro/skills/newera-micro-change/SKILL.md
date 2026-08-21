@@ -3,7 +3,6 @@ name: newera-micro-change
 description: Thực hiện thay đổi cục bộ nhỏ theo route MICRO_CHANGE với request/task binding, path boundary, targeted verification và evidence ngắn. Dùng khi sửa tài liệu, code, test hoặc cấu hình mà không đổi requirement, acceptance, API, data, security, deployment hay architecture.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Micro Change

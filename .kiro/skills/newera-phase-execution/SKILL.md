@@ -3,7 +3,6 @@ name: newera-phase-execution
 description: Lập kế hoạch và triển khai một Phase từ requirements đến task, implementation, capability-based verification, evidence, checkpoint và report. Dùng khi thực hiện Phase/M bình thường của adopter project; không dùng cho micro-change.
 metadata:
   newera_layer: workflow
-  newera_version: "0.2"
 ---
 
 # NewEra Phase Execution
